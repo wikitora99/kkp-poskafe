@@ -1,4 +1,4 @@
-# POS-Kafe (Sistem Informasi Manajemen Operasional)
+# POS-Kafe (Web App)
 
 Repositori ini merupakan projek sistem informasi berbasis web yang berisi fitur aplikasi keuangan, kasir, kepegawaian, inventaris, dan laporan.
 Dibangun untuk diterapkan ke dalam unit bisnis Rumah Kopi Sabit sebagai syarat kelulusan pada mata kuliah KKP (Kuliah Kerja Praktek).
