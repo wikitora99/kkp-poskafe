@@ -20,6 +20,11 @@ Route::get('/', function () {
 
 
 Route::middleware('guest')->controller(AuthController::class)->group(function() {
-  Route::get('login', 'getLogin')->name('login');
-  Route::post('login', 'postLogin')->name('post.login');
+  Route::get('login', 'index')->name('login');
+  Route::post('login', 'login')->name('post.login');
+});
+
+Route::middleware('auth')->group(function() {
+  Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+  Route::get('dashboard', fn() => view('admin.dashboard') )->name('dashboard');
 });

@@ -14,7 +14,24 @@
   <div class="authincation h-100">
     <div class="container h-100">
       <div class="row justify-content-center h-100 align-items-center">
-        <div class="col-md-5">
+        <div class="col-md-6">
+
+          @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show">
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
+              </button>
+              <strong>Berhasil keluar! </strong>{{ session('success') }}
+            </div>
+          @endif
+
+          @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show">
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
+              </button>
+              <strong>Error! </strong>{{ session('error') }}
+            </div>
+          @endif
+
           <div class="authincation-content">
             <div class="row no-gutters">
               <div class="col-xl-12">

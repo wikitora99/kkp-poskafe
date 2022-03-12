@@ -12,20 +12,38 @@ class AuthController extends Controller
   {
     return 'username';
   }
+
   
-  public function getLogin()
+  public function index()
   {
     return view('auth.login');
   }
 
-  public function postLogin(Request $request)
+
+  public function login(Request $request)
   {
-    echo 'Login successfully!';
+    $credentials = $request->validate([
+      'username' => 'required|string',
+      'password' => 'required|string',
+    ]);
+
+    if (auth()->attempt($credentials)) {
+      $request->session()->regenerate();
+      return redirect()->intended(route('dashboard'))
+                          ->with('success', 'Selamat datang '.auth()->user()->name);;
+    }
+
+    return redirect()->back()->with('error', 'Username atau password salah.');
   }
+
 
   public function logout()
   {
-    //
+    auth()->logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+
+    return redirect()->route('login')->with('success', 'Sampai jumpa.');
   }
 
 }
