@@ -20,11 +20,6 @@ Route::get('/', function () {
 
 
 Route::middleware('guest')->controller(AuthController::class)->group(function() {
-  // Login
   Route::get('login', 'getLogin')->name('login');
   Route::post('login', 'postLogin')->name('post.login');
-
-  // Register
-  Route::get('register', 'getRegister')->name('register');
-  Route::post('register', 'postRegister')->name('post.register');
 });

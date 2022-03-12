@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+
+  public function username()
+  {
+    return 'username';
+  }
   
   public function getLogin()
   {
@@ -16,16 +21,6 @@ class AuthController extends Controller
   public function postLogin(Request $request)
   {
     echo 'Login successfully!';
-  }
-
-  public function getRegister()
-  {
-    return view('auth.register');
-  }
-
-  public function postRegister(Request $request)
-  {
-    echo 'Register successfully!';
   }
 
   public function logout()
