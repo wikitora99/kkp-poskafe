@@ -1,6 +1,6 @@
-# POS-Kafe (Web App)
+# POS-Kafe (Enterprise Resource Planning)
 
-Repositori ini merupakan projek sistem informasi berbasis web yang berisi fitur aplikasi keuangan, kasir, kepegawaian, inventaris, dan laporan.
+Repositori ini merupakan projek paket aplikasi ERP (Enterprise Resource Planning) yang berisi modul keuangan, kasir, kepegawaian, inventaris, dan laporan.
 Dibangun untuk diterapkan ke dalam unit bisnis Rumah Kopi Sabit sebagai syarat kelulusan pada mata kuliah KKP (Kuliah Kerja Praktek).
 
 ## Yang dibutuhkan
@@ -49,4 +49,3 @@ php artisan migrate --seed
 ```bash
 php artisan serve
 ```
-
