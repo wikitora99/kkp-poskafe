@@ -3,6 +3,9 @@
 @section('title')
   Dashboard
 @endsection
+@section('menutitle')
+  Dashboard
+@endsection
 
 @section('content')
     

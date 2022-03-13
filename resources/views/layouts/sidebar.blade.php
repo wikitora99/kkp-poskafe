@@ -4,7 +4,7 @@
     <div class="image-bx">
       <img src="{{ asset('src/images/profile/small/pic1.jpg') }}" alt="Profile Picture">
     </div>
-    <h5 class="name"><span class="font-w400">Hello,</span> {{ auth()->user()->username }}</h5>
+    <h5 class="name"><span class="font-w400">Halo, </span>{{ auth()->user()->username }}</h5>
     <p class="email">{{ auth()->user()->email }}</p>
   </div>
 

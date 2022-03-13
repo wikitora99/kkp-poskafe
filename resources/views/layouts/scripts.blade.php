@@ -19,3 +19,6 @@
 <!-- Datatable -->
 <script src="{{ asset('src/vendors/datatables/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('src/js/plugins-init/datatables.init.js') }}"></script>
+
+<!-- Custom -->
+<script src="{{ asset('src/js/script.js') }}"></script>
