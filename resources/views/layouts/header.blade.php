@@ -21,7 +21,7 @@
         <li class="nav-item dropdown notification_dropdown">
           <a class="nav-link bell bell-link" href="javascript:void(0)">
             <i class="ti ti-bell"></i>
-            {{-- Cek notif: show/hidden --}}
+            {{-- NOTE: cek notif show/hidden pulse --}}
             <div class="pulse-css"></div>
           </a>
         </li>
