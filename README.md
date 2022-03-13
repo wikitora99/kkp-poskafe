@@ -49,3 +49,4 @@ php artisan migrate --seed
 ```bash
 php artisan serve
 ```
+
