@@ -1,14 +1,14 @@
 <div class="deznav-scroll">
 
-  <div class="main-profile">
+  <!-- <div class="main-profile">
     <div class="image-bx">
       <img src="{{ asset('src/images/profile/small/pic1.jpg') }}" alt="Profile Picture">
     </div>
     <h5 class="name"><span class="font-w400">Halo, </span>{{ auth()->user()->username }}</h5>
     <p class="email">{{ auth()->user()->email }}</p>
-  </div>
+  </div> -->
 
-  <ul class="metismenu" id="menu">
+  <ul class="metismenu mt-5" id="menu">
 
     <li>
       <a href="{{ route('dashboard') }}" class="ai-icon" aria-expanded="false">

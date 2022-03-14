@@ -4,6 +4,7 @@ namespace App\Http\Controllers\auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -11,6 +12,15 @@ class AuthController extends Controller
   public function username()
   {
     return 'username';
+  }
+
+
+  public function redirectTo()
+  {
+    if (!Auth::check()){
+      return redirect()->route('login');
+    }
+    return redirect()->route('dashboard');
   }
 
   
@@ -27,10 +37,10 @@ class AuthController extends Controller
       'password' => 'required|string',
     ]);
 
-    if (auth()->attempt($credentials)) {
+    if (Auth::attempt($credentials)) {
       $request->session()->regenerate();
       return redirect()->intended(route('dashboard'))
-                          ->with('success', 'Selamat datang '.auth()->user()->name);;
+                          ->with('success', 'Selamat datang '.Auth::user()->name);
     }
 
     return redirect()->back()->with('error', 'Username atau password salah.');
@@ -39,7 +49,7 @@ class AuthController extends Controller
 
   public function logout()
   {
-    auth()->logout();
+    Auth::logout();
     request()->session()->invalidate();
     request()->session()->regenerateToken();
 
