@@ -16,16 +16,25 @@
         <span class="nav-text">Dashboard</span>
       </a>
     </li>
-
+    
     <li>
       <a class="has-arrow ai-icon" href="#" aria-expanded="false">
         <i class="flaticon-144-layout"></i>
         <span class="nav-text">Laporan</span>
       </a>
       <ul aria-expanded="false">
-        <li><a href="#">Submenu Laporan 1</a></li>
-        <li><a href="#">Submenu Laporan 2</a></li>
-        <li><a href="#">Submenu Laporan 3</a></li>
+        <li>
+          <a href="#">Laporan Keuangan</a>
+        </li>
+        <li>
+          <a href="#">Laporan Penjualan</a>
+        </li>
+        <li>
+          <a href="#">Laporan Inventoris</a>
+        </li>
+        <li>
+          <a href="#">Laporan Absensi</a>
+        </li>
       </ul>
     </li>
 
@@ -35,9 +44,24 @@
         <span class="nav-text">Transaksi</span>
       </a>
       <ul aria-expanded="false">
-        <li><a href="#">Submenu Transaksi 1</a></li>
-        <li><a href="#">Submenu Transaksi 2</a></li>
-        <li><a href="#">Submenu Transaksi 3</a></li>
+        <li>
+          <a class="has-arrow" href="#" aria-expanded="false">Kelola Transaksi</a>
+          <ul aria-expanded="false">
+            <li>
+              <a href="#">Kasir</a>
+            </li>
+            <li>
+              <a href="#">Atur Kas Kasir</a>
+            </li>
+            <li>
+              <a href="#">Atur Diskon</a>
+            </li>
+            <li>
+              <a href="#">Riwayat Penjualan</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">Transaksi Keluar</a></li>
       </ul>
     </li>
 
@@ -47,9 +71,12 @@
         <span class="nav-text">Produk</span>
       </a>
       <ul aria-expanded="false">
-        <li><a href="#">Submenu Produk 1</a></li>
-        <li><a href="#">Submenu Produk 2</a></li>
-        <li><a href="#">Submenu Produk 3</a></li>
+        <li>
+          <a href="{{ route('produk.index') }}">Daftar Produk</a>
+        </li>
+        <li>
+          <a href="#">Daftar Kategori</a>
+        </li>
       </ul>
     </li>
 
@@ -59,9 +86,15 @@
         <span class="nav-text">Inventori</span>
       </a>
       <ul aria-expanded="false">
-        <li><a href="#">Submenu Inventori 1</a></li>
-        <li><a href="#">Submenu Inventori 2</a></li>
-        <li><a href="#">Submenu Inventori 3</a></li>
+        <li>
+          <a href="#"></a>
+        </li>
+        <li>
+          <a href="#">Submenu Inventori 2</a>
+        </li>
+        <li>
+          <a href="#">Submenu Inventori 3</a>
+        </li>
       </ul>
     </li>
 

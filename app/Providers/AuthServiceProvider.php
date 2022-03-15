@@ -25,6 +25,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('tambah-produk', function($user) {
+            return $user->username === 'bagas';
+        });
     }
 }

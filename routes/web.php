@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
-
+use App\Http\Controllers\ProdukController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +14,10 @@ use App\Http\Controllers\Auth\AuthController;
 |
 */
 
-
 Route::get('/', [AuthController::class, 'redirectTo'])->name('home');
 // Route::get('/', fn() => view('welcome'));
+
+// Route::get('/', [AuthController::class, 'index'])->name('home');
 
 Route::middleware('guest')->controller(AuthController::class)->group(function() {
   Route::get('login', 'index')->name('login');
@@ -26,4 +27,7 @@ Route::middleware('guest')->controller(AuthController::class)->group(function() 
 Route::middleware('auth')->group(function() {
   Route::post('logout', [AuthController::class, 'logout'])->name('logout');
   Route::get('dashboard', fn() => view('admin.dashboard') )->name('dashboard');
+
+  Route::resource('produk', ProdukController::class);
 });
+

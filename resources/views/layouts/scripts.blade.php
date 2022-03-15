@@ -1,3 +1,6 @@
+<!-- Jquery -->
+<script src="{{ asset('src/vendors/jquery/jquery.min.js') }}"></script>
+
 <!-- Required vendors -->
 <script src="{{ asset('src/vendors/global/global.min.js') }}"></script>
 <script src="{{ asset('src/vendors/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
@@ -22,3 +25,5 @@
 
 <!-- Custom -->
 <script src="{{ asset('src/js/script.js') }}"></script>
+
+
