@@ -10,7 +10,7 @@ $(function() {
 
   toastr.options = {
     positionClass: "toast-top-right",
-    timeOut: "7000",
+    timeOut: "5000",
     closeButton: true,
     debug: false,
     newestOnTop: true,

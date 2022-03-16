@@ -1,7 +1,14 @@
 <div class="deznav-scroll">
 
-  <ul class="metismenu mt-5" id="menu">
+  <div class="main-profile">
+      <div class="image-bx">
+        <img src="{{ asset('src/images/profile/small/pic1.jpg') }}" alt="Profile Picture">
+      </div>
+      <h5 class="name">{{ auth()->user()->name }}</h5>
+      <p class="email text-primary">Owner</p> {{-- auth()->user()->role->name --}}
+    </div>
 
+  <ul class="metismenu" id="menu">
     <li>
       <a href="{{ route('dashboard') }}" class="ai-icon" aria-expanded="false">
         <i class="flaticon-144-layout"></i>
@@ -138,18 +145,10 @@
       </a>
       <ul aria-expanded="false">
         <li>
-          <a class="has-arrow" href="#" aria-expanded="false">Kelola User</a>
-          <ul aria-expanded="false">
-            <li>
-              <a href="#">Daftar User</a>
-            </li>
-            <li>
-              <a href="#">Tambah User</a>
-            </li>
-          </ul>
+          <a href="#">Kelola User</a>
         </li>
         <li>
-          <a href="#">Profil Saya</a>
+          <a href="#">Akun Saya</a>
         </li>
         <li>
           <a href="#">Informasi Kafe</a>
@@ -162,7 +161,7 @@
   </ul>
 
   <div class="copyright">
-    <p><strong>Rumah Kopi Sabit</strong> © {{date('Y')}} All Rights Reserved</p>
+    <p><strong>Rumah Kopi Sabit</strong> © {{date('Y')}}</p>
     <p class="fs-12">Made with <span class="ti ti-heart"></span> by DexignZone</p>
   </div>
   
