@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>Backoffice RKS - @yield('title')</title>
+<title>RKS Backoffice - @yield('title')</title>
 <!-- Favicon icon -->
 <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('src/images/favicon.png') }}">
 <link rel="stylesheet" href="{{ asset('src/vendors/chartist/css/chartist.min.css') }}">

@@ -9157,7 +9157,7 @@ svg.pulse-svg {
   border-radius: 3.5rem;
   height: 12px;
   position: absolute;
-  background: var(--primary);
+  background: #F62E2E;
   right: 5px;
   top: 8px;
   border: 2px solid #fff;
@@ -9172,7 +9172,7 @@ svg.pulse-svg {
     right: 0;
     bottom: 0;
     left: -.2rem;
-    background-color: var(--primary);
+    background-color: #F62E2E;
     margin: auto;
     -webkit-transform: scale(0.3);
     transform: scale(0.3);

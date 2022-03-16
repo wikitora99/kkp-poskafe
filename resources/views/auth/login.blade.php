@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Backoffice RKS - Masuk</title>
+  <title>RKS Backoffice - Masuk</title>
   <!-- Favicon icon -->
   <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('src/images/favicon.png') }}">
   <link href="{{ asset('src/vendors/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">

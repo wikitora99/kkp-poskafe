@@ -5,7 +5,7 @@
         <img src="{{ asset('src/images/profile/small/pic1.jpg') }}" alt="Profile Picture">
       </div>
       <h5 class="name">{{ auth()->user()->name }}</h5>
-      <p class="email text-primary">Owner</p> {{-- auth()->user()->role->name --}}
+      <p class="email">Owner</p> {{-- auth()->user()->role->name --}}
     </div>
 
   <ul class="metismenu" id="menu">
@@ -55,7 +55,7 @@
           </ul>
         </li>
         <li>
-          <a href="#">Kelola Kategori</a> {{-- route('category.index') --}}
+          <a href="#">Kategori Produk</a> {{-- route('category.index') --}}
         </li>
       </ul>
     </li>
@@ -70,10 +70,10 @@
           <a class="has-arrow" href="#" aria-expanded="false">Stok Masuk</a>
           <ul aria-expanded="false">
             <li>
-              <a href="#">Daftar Stok Masuk</a> {{-- route('inventory.incoming.index') --}}
+              <a href="#">Daftar Stok Masuk</a> {{-- route('inventor.incoming.index') --}}
             </li>
             <li>
-              <a href="#">Tambah Stok Masuk</a> {{-- route('inventory.incoming.create') --}}
+              <a href="#">Tambah Stok Masuk</a> {{-- route('inventor.incoming.create') --}}
             </li>
           </ul>
         </li>
@@ -81,10 +81,10 @@
           <a class="has-arrow" href="#" aria-expanded="false">Stok Keluar</a>
           <ul aria-expanded="false">
             <li>
-              <a href="#">Daftar Stok Keluar</a> {{-- route('inventory.outgoing.index') --}}
+              <a href="#">Daftar Stok Keluar</a> {{-- route('inventor.outgoing.index') --}}
             </li>
             <li>
-              <a href="#">Tambah Stok Keluar</a> {{-- route('inventory.outgoing.create') --}}
+              <a href="#">Tambah Stok Keluar</a> {{-- route('inventor.outgoing.create') --}}
             </li>
           </ul>
         </li>
@@ -97,28 +97,28 @@
     <li>
       <a class="has-arrow ai-icon" href="#" aria-expanded="false">
         <i class="flaticon-144-layout"></i>
-        <span class="nav-text">Transaksi</span>
+        <span class="nav-text">Kasir</span>
       </a>
       <ul aria-expanded="false">
         <li>
-          <a class="has-arrow" href="#" aria-expanded="false">Kelola Penjualan</a>
-          <ul aria-expanded="false">
-            <li>
-              <a href="#">Kasir</a>
-            </li>
-            <li>
-              <a href="#">Kas Harian</a>
-            </li>
-            <li>
-              <a href="#">Atur Diskon</a>
-            </li>
-            <li>
-              <a href="#">Riwayat Penjualan</a>
-            </li>
-          </ul>
+          <a href="#">Transaksi Baru</a> {{-- route('transaksi.create') --}}
         </li>
         <li>
-          <a href="#">Transaksi Keluar</a>
+          <a href="#">Daftar Transaksi</a> {{-- route('transaksi.index') --}}
+        </li>
+        <li>
+          <a href="#">Saldo Kas Harian</a> {{-- route('saldo.index') --}}
+        </li>
+        <li>
+          <a class="has-arrow" href="#" aria-expanded="false">Kelola Diskon</a>
+          <ul aria-expanded="false">
+            <li>
+              <a href="#">Daftar Diskon</a> {{-- route('discount.index') --}}
+            </li>
+            <li>
+              <a href="#">Tambah Diskon</a> {{-- route('discount.create') --}}
+            </li>
+          </ul>
         </li>
       </ul>
     </li>
@@ -130,10 +130,10 @@
       </a>
       <ul aria-expanded="false">
         <li>
-          <a href="#">Daftar Pegawai</a>
+          <a href="#">Kelola Pegawai</a> {{-- route('employee.index') --}}
         </li>
         <li>
-          <a href="#">Daftar Jabatan</a>
+          <a href="#">Kelola Jabatan</a> {{-- route('role.index') --}}
         </li>
       </ul>
     </li>
@@ -145,16 +145,16 @@
       </a>
       <ul aria-expanded="false">
         <li>
-          <a href="#">Kelola User</a>
+          <a href="#">Kelola User</a> {{-- route('user.index') --}}
         </li>
         <li>
-          <a href="#">Akun Saya</a>
+          <a href="#">Akun Saya</a> {{-- route('user.detail') --}}
         </li>
         <li>
-          <a href="#">Informasi Kafe</a>
+          <a href="#">Informasi Kafe</a> {{-- route('setting.index') --}}
         </li>
         <li>
-          <a href="#">Keranjang Sampah</a>
+          <a href="#">Keranjang Sampah</a> {{-- route('trash.index') --}}
         </li>
       </ul>
     </li>

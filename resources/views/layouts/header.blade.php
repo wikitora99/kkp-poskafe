@@ -17,6 +17,7 @@
             <i class="fa fa-expand"></i>
           </a>
         </li>
+
         <li class="nav-item dropdown notification_dropdown">
           <a class="nav-link bell bell-link" href="#">
             <i class="ti ti-bell"></i>
@@ -29,8 +30,8 @@
           <a class="nav-link" role="button">
             <form action="{{ route('logout') }}" method="POST">
               @csrf
-              <button type="submit" class="btn btn-rounded btn-primary logout-btn">
-                <span class="btn-icon-start text-primary"><i class="fas fa-sign-out-alt color-primary"></i></span>Keluar
+              <button type="button" class="btn btn-xs light btn-rounded btn-danger logout-btn">
+                Keluar<i class="fas fa-sign-out-alt ms-2"></i>
               </button>
             </form>
           </a>
