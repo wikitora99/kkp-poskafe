@@ -9,20 +9,20 @@
 
 @section('content')
     
-  @if (session('success'))
-    <div class="alert alert-success alert-dismissible fade show">
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
-      </button>
-      <strong>Success! </strong>{{ session('success') }}
-    </div>
+  @if(session('success'))
+    <div class="d-none success-message" data-message="{{ session('success') }}"></div>
   @endif
 
-  @if (session('error'))
-    <div class="alert alert-danger alert-dismissible fade show">
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
-      </button>
-      <strong>Error! </strong>{{ session('error') }}
-    </div>
+  @if(session('info'))
+    <div class="d-none info-message" data-message="{{ session('info') }}"></div>
+  @endif
+
+  @if(session('warning'))
+    <div class="d-none warning-message" data-message="{{ session('warning') }}"></div>
+  @endif
+
+  @if(session('error'))
+    <div class="d-none error-message" data-message="{{ session('error') }}"></div>
   @endif
 
     <div class="form-head mb-sm-5 mb-3 d-flex flex-wrap align-items-center">
