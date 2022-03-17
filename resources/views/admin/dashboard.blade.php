@@ -33,8 +33,9 @@
       <div class="breadcrumb">
         <button class="btn btn-xs btn-primary" data-bs-toggle="modal" data-bs-target="#modal-dashboard-filter">
           <i class="ti ti-calendar scale5 me-2 ms-1"></i>
-          <span class="info-dashboard-filter">7 Hari lalu (09 Mar 2022 - 16 Mar 2022)</span>
-          {{-- Get selected periode (get range [first date - last date]) --}}
+          <span class="info-dashboard-filter">
+            7 Hari lalu ({{ \Carbon\Carbon::now()->subDays(6)->format('d M Y') }} - {{ \Carbon\Carbon::now()->format('d M Y') }})
+          </span>
         </button>
       </div>
     </div>
