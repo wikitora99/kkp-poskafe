@@ -33,10 +33,10 @@
           <a class="has-arrow" href="#" aria-expanded="false">Kelola Produk</a>
           <ul aria-expanded="false">
             <li>
-              <a href="#">Daftar Produk</a> {{-- route('product.index') --}}
+              <a href="{{ route('product.index') }}">Daftar Produk</a> {{-- route('product.index') --}}
             </li>
             <li>
-              <a href="#">Tambah Produk</a> {{-- route('product.create') --}}
+              <a href="{{ route('product.create') }}">Tambah Produk</a> {{-- route('product.create') --}}
             </li>
           </ul>
         </li>
