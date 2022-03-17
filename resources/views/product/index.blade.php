@@ -29,7 +29,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive text-center">
-                        <table id="example" class="display" style="min-width: 845px">
+                        <table id="example" class="display mb-3" style="min-width: 845px">
                             <thead>
                                 <tr>
                                 <th scope="col">No</th>
@@ -47,12 +47,12 @@
                                 <td>Lorem</td>
                                 <td>Lorem</td>
                                 <td>
-                                    <div class="d-flex justify-content-center action-button">
-                                        <a href="/product/{$id}/edit" class="btn btn-xs btn-warning me-1">Edit</a>
+                                    <div class="d-flex justify-content-center">
+                                        <a href="/product/{$id}/edit" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
                                         <form action="{{-- route('produk.destroy',$produk) --}}" method="POST">
                                             @method('DELETE')
                                             @csrf
-                                            <button type="submit" class="btn btn-xs btn-danger btn-delete">Delete</button>
+                                            <button type="submit" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
                                         </form>    
                                     </div>
                                 </td> 
