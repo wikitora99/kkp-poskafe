@@ -51,33 +51,33 @@ function getUrlParams(dParam)
 		// containerLayout: "full",
 		// direction: direction
 
-		// CUSTOM THEME 3 (VIOLET PRIMARY)
-		// typography: "poppins",
-		// version: "light",
-		// layout: "vertical",
-		// primary: "color_15",
-		// headerBg: "color_1",
-		// navheaderBg: "color_1",
-		// sidebarBg: "color_1",
-		// sidebarStyle: "full",
-		// sidebarPosition: "fixed",
-		// headerPosition: "fixed",
-		// containerLayout: "full",
-		// direction: direction
-
-		// CUSTOM THEME 4 (DARK SIDEBAR)
+		// CUSTOM THEME 3 (CHANGE PRIMARY COLOR)
 		typography: "poppins",
 		version: "light",
 		layout: "vertical",
+		primary: "color_9",
 		headerBg: "color_1",
-		primary: "color_2",
-		navheaderBg: "color_2",
-		sidebarBg: "color_2",
+		navheaderBg: "color_1",
+		sidebarBg: "color_1",
 		sidebarStyle: "full",
 		sidebarPosition: "fixed",
 		headerPosition: "fixed",
 		containerLayout: "full",
 		direction: direction
+
+		// CUSTOM THEME 4 (DARK SIDEBAR)
+		// typography: "poppins",
+		// version: "light",
+		// layout: "vertical",
+		// headerBg: "color_1",
+		// primary: "color_2",
+		// navheaderBg: "color_2",
+		// sidebarBg: "color_2",
+		// sidebarStyle: "full",
+		// sidebarPosition: "fixed",
+		// headerPosition: "fixed",
+		// containerLayout: "full",
+		// direction: direction
 
 		// CUSTOM THEME 5 (MODERN SIDEBAR STYLE)
 		// typography: "poppins",

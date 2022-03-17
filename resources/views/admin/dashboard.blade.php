@@ -31,7 +31,7 @@
     </div>
     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
       <div class="breadcrumb">
-        <button class="btn btn-xs btn-secondary" data-bs-toggle="modal" data-bs-target="#modal-dashboard-filter">
+        <button class="btn btn-xs btn-primary" data-bs-toggle="modal" data-bs-target="#modal-dashboard-filter">
           <i class="ti ti-calendar scale5 me-2 ms-1"></i>
           <span class="info-dashboard-filter">7 Hari lalu (09 Mar 2022 - 16 Mar 2022)</span>
           {{-- Get selected periode (get range [first date - last date]) --}}
@@ -54,7 +54,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-xs btn-danger light" data-bs-dismiss="modal">Batal</button>
-          <button type="submit" class="btn btn-xs btn-secondary">Terapkan</button>
+          <button type="submit" class="btn btn-xs btn-primary">Terapkan</button>
         </div>
       </div>
     </div>
