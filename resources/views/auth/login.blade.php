@@ -3,11 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>POS Kopi Sabit - Login</title>
+  <title>RKS Backoffice - Masuk</title>
   <!-- Favicon icon -->
   <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('src/images/favicon.png') }}">
   <link href="{{ asset('src/vendors/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
   <link href="{{ asset('src/css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset('src/vendors/toastr/css/toastr.min.css') }}" rel="stylesheet">
 </head>
 
 <body class="vh-100">
@@ -16,20 +17,12 @@
       <div class="row justify-content-center h-100 align-items-center">
         <div class="col-md-6">
 
-          @if (session('success'))
-            <div class="alert alert-success alert-dismissible fade show">
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
-              </button>
-              <strong>Berhasil keluar! </strong>{{ session('success') }}
-            </div>
+          @if(session('success'))
+            <div class="d-none success-message" data-message="{{ session('success') }}"></div>
           @endif
 
-          @if (session('error'))
-            <div class="alert alert-danger alert-dismissible fade show">
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
-              </button>
-              <strong>Error! </strong>{{ session('error') }}
-            </div>
+          @if(session('error'))
+            <div class="d-none error-message" data-message="{{ session('error') }}"></div>
           @endif
 
           <div class="authincation-content">
@@ -39,16 +32,16 @@
                   <div class="text-center mb-3">
                     <img src="{{ asset('src/images/logo-full-black.png') }}" alt="">
                   </div>
-                  <h4 class="text-center mb-4">Masuk untuk melanjutkan</h4>
+                  <h4 class="text-center mb-4">Masuk Backoffice</h4>
                   <form action="{{ route('post.login') }}" method="POST">
                     @csrf
                     <div class="form-group">
                       <label class="mb-1"><strong>Username</strong></label>
-                      <input type="text" class="form-control" name="username" placeholder="Masukkan username..." autofocus>
+                      <input type="text" class="form-control" name="username" placeholder="Masukkan username..." required autofocus>
                     </div>
                     <div class="form-group">
                       <label class="mb-1"><strong>Password</strong></label>
-                      <input type="password" class="form-control" name="password" placeholder="Masukkan password...">
+                      <input type="password" class="form-control" name="password" placeholder="Masukkan password..." required>
                     </div>
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary btn-block">Masuk</button>
@@ -68,5 +61,7 @@
   <script src="{{ asset('src/vendors/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
   <script src="{{ asset('src/js/deznav-init.js') }}"></script>
   <script src="{{ asset('src/js/custom.js') }}"></script>
+  <script src="{{ asset('src/vendors/toastr/js/toastr.min.js') }}"></script>
+  <script src="{{ asset('src/js/script.js') }}"></script>
 </body>
 </html>

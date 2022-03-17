@@ -6,6 +6,7 @@
 <script src="{{ asset('src/vendors/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
 <script src="{{ asset('src/vendors/chart.js/Chart.bundle.min.js') }}"></script>
 <script src="{{ asset('src/vendors/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('src/vendors/toastr/js/toastr.min.js') }}"></script>
 
 <!-- Chart piety plugin files -->
 <script src="{{ asset('src/vendors/peity/jquery.peity.min.js') }}"></script>

@@ -40,10 +40,10 @@ class AuthController extends Controller
     if (Auth::attempt($credentials)) {
       $request->session()->regenerate();
       return redirect()->intended(route('dashboard'))
-                          ->with('success', 'Selamat datang '.Auth::user()->name);
+                        ->with('success', 'Selamat datang, '.Auth::user()->name.'!');
     }
 
-    return redirect()->back()->with('error', 'Username atau password salah.');
+    return redirect()->back()->with('error', 'Username atau password salah!');
   }
 
 
@@ -53,7 +53,7 @@ class AuthController extends Controller
     request()->session()->invalidate();
     request()->session()->regenerateToken();
 
-    return redirect()->route('login')->with('success', 'Sampai jumpa.');
+    return redirect()->route('login')->with('success', 'Berhasil keluar, sampai jumpa!');
   }
 
 }
