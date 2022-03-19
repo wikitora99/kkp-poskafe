@@ -1,5 +1,10 @@
 $(function() {
 
+  // Dashboard periode change
+  $('select[name=date_filter]').change(function(e) {
+    $(this).parents('form').submit();
+  });
+
   /**************************
     Toastr Area-start 
   **************************/
@@ -73,10 +78,10 @@ $(function() {
   /**************************
     Apexcharts Area-start
   **************************/
-  var chartList = function() {
+  let chartList = function() {
 
-    var earningsChart = function(){
-    var options = {
+    let earningsChart = function(){
+    let options = {
       series: [{
         name: 'Pendapatan',
         data: [500000, 300000, 400000, 200000, 500000, 200000, 400000, 300000, 500000, 200000]
@@ -156,13 +161,12 @@ $(function() {
       },
     },
     };
-
-    var chart = new ApexCharts(document.querySelector("#earnings-chart"), options);
+    let chart = new ApexCharts(document.querySelector("#earnings-chart"), options);
     chart.render();
   }
 
-    var productSalesChart = function() {
-      var options = {
+    let productSalesChart = function() {
+      let options = {
         series: [120, 92, 84, 69, 30, 50],
         chart: {
           width: 380,
@@ -181,12 +185,12 @@ $(function() {
           }
         }]
       };
-      var chart = new ApexCharts(document.querySelector('#product-sales-chart'), options);
+      let chart = new ApexCharts(document.querySelector('#product-sales-chart'), options);
       chart.render();
     }
 
-    var categorySalesChart = function() {
-      var options = {
+    let categorySalesChart = function() {
+      let options = {
         series: [120, 92, 84, 69, 30, 50],
         chart: {
           width: 380,
@@ -205,7 +209,7 @@ $(function() {
           }
         }]
       };
-      var chart = new ApexCharts(document.querySelector('#category-sales-chart'), options);
+      let chart = new ApexCharts(document.querySelector('#category-sales-chart'), options);
       chart.render();
     }
 

@@ -29,32 +29,33 @@
         <h4>Dashboard</h4>
       </div>
     </div>
-    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+    <div class="col-sm-6 p-md-0 justify-content-sm-end d-flex">
       <div class="breadcrumb">
-        <button class="btn btn-xs btn-primary" data-bs-toggle="modal" data-bs-target="#modal-dashboard-filter">
-          <i class="ti ti-calendar scale5 me-2 ms-1"></i>
-          <span class="info-dashboard-filter">7 Hari lalu ({{\Carbon\Carbon::today()->subDays(6)->format('d M Y')}} - {{ \Carbon\Carbon::today()->format('d M Y') }})</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  {{-- Modal Filter Periode --}}
-  <div class="modal fade" id="modal-dashboard-filter" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Filter Periode</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal">
-          </button>
-        </div>
-        <div class="modal-body">
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-xs btn-danger light" data-bs-dismiss="modal">Batal</button>
-          <button type="submit" class="btn btn-xs btn-primary">Terapkan</button>
-        </div>
+        <form action="{{ route('dashboard.filter') }}" method="POST">
+          @csrf
+          <div class="dropdown bootstrap-select btn-primary style-1 default-select">
+            <select name="date_filter" class="btn-primary style-1 default-select">
+              <option value="{{\Carbon\Carbon::today()}}">
+                Hari ini ({{\Carbon\Carbon::today()->format('d M Y')}})
+              </option>
+              <option value="{{\Carbon\Carbon::yesterday()}}">
+                Kemarin ({{\Carbon\Carbon::yesterday()->format('d M Y')}})
+              </option>
+              <option selected value="{{\Carbon\Carbon::today()->subDays(6)}}">
+                7 hari lalu ({{\Carbon\Carbon::today()->subDays(6)->format('d M Y')}} - {{\Carbon\Carbon::today()->format('d M Y')}})
+              </option>
+              <option value="{{\Carbon\Carbon::today()->subDays(30)}}">
+                30 hari lalu ({{\Carbon\Carbon::today()->subDays(30)->format('d M Y')}} - {{\Carbon\Carbon::today()->format('d M Y')}})
+              </option>
+              <option value="{{\Carbon\Carbon::today()->firstOfMonth()}}">
+                Bulan ini ({{\Carbon\Carbon::today()->firstOfMonth()->format('d M Y')}} - {{\Carbon\Carbon::today()->format('d M Y')}})
+              </option>
+              <option value="{{\Carbon\Carbon::today()->firstOfMonth()->subMonth()}}">
+                Bulan lalu ({{\Carbon\Carbon::today()->firstOfMonth()->subMonth()->format('d M Y')}} - {{\Carbon\Carbon::today()->endOfMonth()->subMonth()->format('d M Y')}})
+              </option>
+            </select>
+          </div>
+        </form>
       </div>
     </div>
   </div>

@@ -30,7 +30,7 @@
           <a class="nav-link" role="button">
             <form action="{{ route('logout') }}" method="POST">
               @csrf
-              <button type="button" class="btn btn-xs light btn-rounded btn-danger logout-btn">
+              <button type="button" class="btn btn-xs btn-rounded btn-outline-danger logout-btn">
                 Keluar<i class="fas fa-sign-out-alt ms-2"></i>
               </button>
             </form>
