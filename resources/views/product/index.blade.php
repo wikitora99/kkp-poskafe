@@ -52,8 +52,9 @@
                                         <form action="{{-- route('produk.destroy',$produk) --}}" method="POST">
                                             @method('DELETE')
                                             @csrf
-                                            <button type="submit" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
+                                            <button type="submit" class="btn btn-danger shadow btn-xs sharp me-1"><i class="fa fa-trash"></i></button>
                                         </form>    
+                                        <a href="/product/show" class="btn btn-secondary shadow btn-xs sharp"><i class="fas fa-eye"></i></a>
                                     </div>
                                 </td> 
                             </tr>

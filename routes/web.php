@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Product\CategoriesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +28,7 @@ Route::middleware('guest')->controller(AuthController::class)->group(function() 
 Route::middleware('auth')->group(function() {
   Route::post('logout', [AuthController::class, 'logout'])->name('logout');
   Route::get('dashboard', fn() => view('admin.dashboard') )->name('dashboard');
-  
+  // Routes Product
   Route::resource('product', ProductController::class);
 });
 
