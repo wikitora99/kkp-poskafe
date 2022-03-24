@@ -23,3 +23,14 @@
 
 <!-- Custom -->
 <script src="{{ asset('src/js/script.js') }}"></script>
+
+<!-- Daterange Picker -->
+<script src="{{ asset('src/vendors/moment/moment.min.js') }}"></script>
+<script src="{{ asset('src/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+<!-- <script src="{{ asset('src/vendors/clockpicker/js/bootstrap-clockpicker.min.js') }}"></script>
+<script src="{{ asset('src/vendors/bootstrap-material-datetimepicker/js/bootstrap-material-datetime') }}picker.js"></script>
+<script src="{{ asset('src/vendors/pickadate/picker.js') }}"></script>
+<script src="{{ asset('src/vendors/pickadate/picker.time.js') }}"></script>
+<script src="{{ asset('src/vendors/pickadate/picker.date.js') }}"></script> -->
+<!-- <script src="{{ asset('src/js/plugins-init/bs-daterange-picker-init.js') }}"></script> -->
+

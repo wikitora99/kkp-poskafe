@@ -17,13 +17,7 @@
       <div class="row justify-content-center h-100 align-items-center">
         <div class="col-md-6">
 
-          @if(session('success'))
-            <div class="d-none success-message" data-message="{{ session('success') }}"></div>
-          @endif
-
-          @if(session('error'))
-            <div class="d-none error-message" data-message="{{ session('error') }}"></div>
-          @endif
+          @include('layouts.flasher')
 
           <div class="authincation-content">
             <div class="row no-gutters">

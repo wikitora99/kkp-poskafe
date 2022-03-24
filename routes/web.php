@@ -28,5 +28,5 @@ Route::middleware('auth')->group(function() {
   Route::get('dashboard', fn() => view('admin.dashboard') )->name('dashboard');
 
   // TEST FILTER REQUEST
-  Route::post('dashboard', fn() => dd(request('date_filter')) )->name('dashboard.filter');
+  Route::post('dashboard', fn() => dd(request()) )->name('dashboard.filter');
 });

@@ -5,22 +5,8 @@
 @endsection
 
 @section('content')
-    
-  @if(session('success'))
-    <div class="d-none success-message" data-message="{{ session('success') }}"></div>
-  @endif
-
-  @if(session('info'))
-    <div class="d-none info-message" data-message="{{ session('info') }}"></div>
-  @endif
-
-  @if(session('warning'))
-    <div class="d-none warning-message" data-message="{{ session('warning') }}"></div>
-  @endif
-
-  @if(session('error'))
-    <div class="d-none error-message" data-message="{{ session('error') }}"></div>
-  @endif
+  
+  @include('layouts.flasher')
 
   {{-- Card Page Header --}}
   <div class="row page-titles mx-0 d-flex flex-wrap align-items-center">
@@ -31,29 +17,16 @@
     </div>
     <div class="col-sm-6 p-md-0 justify-content-sm-end d-flex">
       <div class="breadcrumb">
+        <div class="btn btn-xs btn-primary filter-range">
+          <i class="ti ti-calendar"></i>
+          <span class="mx-2"></span>
+          <i class="fa fa-caret-down"></i>
+        </div>
         <form action="{{ route('dashboard.filter') }}" method="POST">
           @csrf
-          <div class="dropdown bootstrap-select btn-primary style-1 default-select">
-            <select name="date_filter" class="btn-primary style-1 default-select">
-              <option value="{{\Carbon\Carbon::today()}}">
-                Hari ini ({{\Carbon\Carbon::today()->format('d M Y')}})
-              </option>
-              <option value="{{\Carbon\Carbon::yesterday()}}">
-                Kemarin ({{\Carbon\Carbon::yesterday()->format('d M Y')}})
-              </option>
-              <option selected value="{{\Carbon\Carbon::today()->subDays(6)}}">
-                7 hari lalu ({{\Carbon\Carbon::today()->subDays(6)->format('d M Y')}} - {{\Carbon\Carbon::today()->format('d M Y')}})
-              </option>
-              <option value="{{\Carbon\Carbon::today()->subDays(30)}}">
-                30 hari lalu ({{\Carbon\Carbon::today()->subDays(30)->format('d M Y')}} - {{\Carbon\Carbon::today()->format('d M Y')}})
-              </option>
-              <option value="{{\Carbon\Carbon::today()->firstOfMonth()}}">
-                Bulan ini ({{\Carbon\Carbon::today()->firstOfMonth()->format('d M Y')}} - {{\Carbon\Carbon::today()->format('d M Y')}})
-              </option>
-              <option value="{{\Carbon\Carbon::today()->firstOfMonth()->subMonth()}}">
-                Bulan lalu ({{\Carbon\Carbon::today()->firstOfMonth()->subMonth()->format('d M Y')}} - {{\Carbon\Carbon::today()->endOfMonth()->subMonth()->format('d M Y')}})
-              </option>
-            </select>
+          <div class="d-none">
+            <input type="text" name="filter_start">
+            <input type="text" name="filter_end">
           </div>
         </form>
       </div>
@@ -120,7 +93,7 @@
           </div>
         </div>
         <div class="card-body pb-2 px-3">
-          <div id="earnings-chart" class="market-line"></div>
+          <div id="earnings-chart" class="chart"></div>
         </div>
       </div>
     </div>
@@ -133,7 +106,7 @@
           <h4 class="card-title">Penjualan by Produk</h4>
         </div>
         <div class="card-body">
-          <div id="product-sales-chart"></div>
+          <div id="product-sales-chart" class="chart"></div>
         </div>
       </div>
     </div>
@@ -144,7 +117,7 @@
           <h4 class="card-title">Penjualan by Kategori</h4>
         </div>
         <div class="card-body">
-          <div id="category-sales-chart"></div>
+          <div id="category-sales-chart" class="chart"></div>
         </div>
       </div>
     </div>
