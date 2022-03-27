@@ -15,10 +15,10 @@ class Discounts extends Migration
     {
         Schema::create('discounts', function (Blueprint $table) {
             $table->id();
-            $table->date('start_date')->default(new DateTime());
-            $table->date('due_date')->default(new DateTime());
+            $table->date('start_date');
+            $table->date('due_date');
             $table->integer('min_order');
-            $table->boolean('type')->nullable()->default(false);
+            $table->boolean('type');
             $table->integer('value');
         });
     }
