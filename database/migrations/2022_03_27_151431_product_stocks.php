@@ -18,7 +18,7 @@ class ProductStocks extends Migration
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')
                   ->references('id')
-                  ->on('products')
+                  ->on('products');
             $table->integer('cur_stock');
             $table->integer('min_stock');
         });
