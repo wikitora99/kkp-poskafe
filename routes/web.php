@@ -16,7 +16,6 @@ use App\Http\Controllers\Auth\AuthController;
 
 
 Route::get('/', [AuthController::class, 'redirectTo'])->name('home');
-// Route::get('/', fn() => view('welcome'));
 
 Route::middleware('guest')->controller(AuthController::class)->group(function() {
   Route::get('login', 'index')->name('login');
