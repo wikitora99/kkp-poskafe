@@ -17,7 +17,10 @@ class IncomingStocks extends Migration
             $table->id();
             $table->string('sku');
             $table->string('note');
-            $table->integer('supplier');
+            $table->unsignedBigInteger('supplier_id');
+            $table->foreign('supplier_id')
+                  ->references('id')
+                  ->on('suppliers');
         });
     }
 

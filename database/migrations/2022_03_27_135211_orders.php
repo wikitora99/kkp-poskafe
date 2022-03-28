@@ -17,7 +17,10 @@ class Orders extends Migration
             $table->id();
             $table->string('invoice');
             $table->dateTime('time');
-            $table->integer('status');
+            $table->unsignedBigInteger('status_id');
+            $table->foreign('status_id')
+                  ->references('id')
+                  ->on('order_status');
             $table->integer('price');
             $table->integer('discount');
             $table->integer('total_price');

@@ -15,7 +15,10 @@ class OutgoingItems extends Migration
     {
         Schema::create('outgoing_items', function (Blueprint $table) {
             $table->id();
-            $table->integer('stock_id');
+            $table->unsignedBigInteger('stock_id');
+            $table->foreign('stock_id')
+                  ->references('id')
+                  ->on('outgoing_stocks');
             $table->string('name');
             $table->integer('amount');
         });

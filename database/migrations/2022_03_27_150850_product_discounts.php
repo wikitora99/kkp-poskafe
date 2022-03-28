@@ -15,8 +15,14 @@ class ProductDiscounts extends Migration
     {
         Schema::create('product_discount', function (Blueprint $table) {
             $table->id();
-            $table->integer('discount_id');
-            $table->integer('product');
+            $table->unsignedBigInteger('discount_id');
+            $table->foreign('discount_id')
+                  ->references('id')
+                  ->on('discounts');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')
+                  ->references('id')
+                  ->on('products');
         });
     }
 

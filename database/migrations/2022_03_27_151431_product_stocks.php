@@ -15,7 +15,10 @@ class ProductStocks extends Migration
     {
         Schema::create('product_stocks', function (Blueprint $table) {
             $table->id();
-            $table->integer('product');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')
+                  ->references('id')
+                  ->on('products')
             $table->integer('cur_stock');
             $table->integer('min_stock');
         });

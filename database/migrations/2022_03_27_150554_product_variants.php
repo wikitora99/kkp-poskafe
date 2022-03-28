@@ -15,7 +15,10 @@ class ProductVariants extends Migration
     {
         Schema::create('product_variants', function (Blueprint $table) {
             $table->id();
-            $table->integer('product');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')
+                  ->references('id')
+                  ->on('products');
             $table->string('type');
             $table->string('name');
             $table->integer('price');
