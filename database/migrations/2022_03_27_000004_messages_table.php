@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ProductDiscounts extends Migration
+class MessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,18 @@ class ProductDiscounts extends Migration
      */
     public function up()
     {
-        Schema::create('product_discount', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('discount_id');
-            $table->foreign('discount_id')
+            $table->unsignedBigInteger('from');
+            $table->foreign('from')
                   ->references('id')
-                  ->on('discounts');
-            $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')
+                  ->on('users');  
+            $table->unsignedBigInteger('to');
+            $table->foreign('to')
                   ->references('id')
-                  ->on('products');
+                  ->on('users');
+            $table->string('message');
+            $table->timestamps();
         });
     }
 
@@ -33,6 +35,6 @@ class ProductDiscounts extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_discount');
+        Schema::dropIfExists('messages');
     }
 }

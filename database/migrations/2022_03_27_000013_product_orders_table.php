@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ProductOrders extends Migration
+class ProductOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -25,6 +25,7 @@ class ProductOrders extends Migration
                     ->on('products');
             $table->integer('amount');
             $table->integer('price');
+            $table->timestamps();
         });
     }
 

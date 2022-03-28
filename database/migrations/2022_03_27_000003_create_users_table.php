@@ -23,8 +23,11 @@ class CreateUsersTable extends Migration
             ->on('user_roles');
       $table->string('name');
       $table->string('phone')->unique();
-      $table->string('address')->nullable();
-      $table->string('picture')->nullable();
+      $table->string('address');
+      $table->string('picture');
+      $table->string('email')->unique();
+      $table->timestamp('email_verified_at')->nullable();
+      $table->rememberToken();
       $table->timestamps();
     });
   }
@@ -39,6 +42,3 @@ class CreateUsersTable extends Migration
     Schema::dropIfExists('users');
   }
 }
-
-
-// $2y$10$0Uznnjio0f/NDCYFJ2E4ReTb7FxboSCB2S/MqJ1PRfQwmSctP4dB6

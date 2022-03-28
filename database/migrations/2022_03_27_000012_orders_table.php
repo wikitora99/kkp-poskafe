@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Orders extends Migration
+class OrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -24,6 +24,7 @@ class Orders extends Migration
             $table->integer('price');
             $table->integer('discount');
             $table->integer('total_price');
+            $table->timestamps();
         });
     }
 

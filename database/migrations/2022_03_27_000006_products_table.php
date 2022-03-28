@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ProductVariants extends Migration
+class ProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class ProductVariants extends Migration
      */
     public function up()
     {
-        Schema::create('product_variants', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')
+            $table->string('sku');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')
                   ->references('id')
-                  ->on('products');
-            $table->string('type');
+                  ->on('product_categories');
             $table->string('name');
+            $table->string('picture')->nullable();
             $table->integer('price');
+            $table->timestamps();
         });
     }
 
@@ -32,6 +34,6 @@ class ProductVariants extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_variants');
+        Schema::dropIfExists('products');
     }
 }

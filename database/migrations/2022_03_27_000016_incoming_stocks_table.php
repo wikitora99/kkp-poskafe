@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class IncomingStocks extends Migration
+class IncomingStocksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,6 +21,7 @@ class IncomingStocks extends Migration
             $table->foreign('supplier_id')
                   ->references('id')
                   ->on('suppliers');
+            $table->timestamps();
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class OutgoingItems extends Migration
+class ProductStocksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class OutgoingItems extends Migration
      */
     public function up()
     {
-        Schema::create('outgoing_items', function (Blueprint $table) {
+        Schema::create('product_stocks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('stock_id');
-            $table->foreign('stock_id')
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')
                   ->references('id')
-                  ->on('outgoing_stocks');
-            $table->string('name');
-            $table->integer('amount');
+                  ->on('products');
+            $table->integer('cur_stock');
+            $table->integer('min_stock');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +32,6 @@ class OutgoingItems extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('outgoing_items');
+        Schema::dropIfExists('product_stock');
     }
 }

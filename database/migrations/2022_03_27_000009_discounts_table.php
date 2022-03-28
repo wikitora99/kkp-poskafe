@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Settings extends Migration
+class DiscountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class Settings extends Migration
      */
     public function up()
     {
-        Schema::create('settings', function (Blueprint $table) {
+        Schema::create('discounts', function (Blueprint $table) {
             $table->id();
-            $table->string('key');
-            $table->string('value');
+            $table->date('start_date');
+            $table->date('due_date');
+            $table->integer('min_order');
+            $table->boolean('type');
+            $table->integer('value');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +31,6 @@ class Settings extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('settings');
+        Schema::dropIfExists('discounts');
     }
 }
