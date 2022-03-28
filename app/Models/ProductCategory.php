@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserRole extends Model
+class ProductCategory extends Model
 {
   use HasFactory;
 
   protected $guarded = ['id'];
 
-  public function users()
+  public function products()
   {
-    return $this->hasMany(User::class);
+    return $this->hasMany(Product::class);
   }
 }

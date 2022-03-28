@@ -21,6 +21,7 @@ class CreateProductStocksTable extends Migration
             ->on('products');
       $table->integer('cur_stock');
       $table->integer('min_stock');
+      $table->boolean('is_active');
       $table->timestamps();
     });
   }

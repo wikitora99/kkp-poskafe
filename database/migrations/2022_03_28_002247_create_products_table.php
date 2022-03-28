@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             ->references('id')
             ->on('product_categories');
       $table->string('name');
-      $table->string('picture');
+      $table->string('picture')->nullable();
       $table->integer('price');
       $table->timestamps();
     });
