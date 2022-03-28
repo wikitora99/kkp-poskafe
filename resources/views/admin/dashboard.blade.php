@@ -17,13 +17,13 @@
     </div>
     <div class="col-sm-6 p-md-0 justify-content-sm-end d-flex">
       <div class="breadcrumb">
-        <div class="btn btn-xs btn-primary filter-range">
-          <i class="ti ti-calendar"></i>
-          <span class="mx-2"></span>
-          <i class="fa fa-caret-down"></i>
-        </div>
         <form action="{{ route('dashboard.filter') }}" method="POST">
           @csrf
+          <div class="btn btn-xs btn-primary filter-range">
+            <i class="ti ti-calendar"></i>
+            <span class="mx-2"></span>
+            <i class="fa fa-caret-down"></i>
+          </div>
           <div class="d-none">
             <input type="text" name="filter_start">
             <input type="text" name="filter_end">
@@ -103,7 +103,7 @@
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">Penjualan by Produk</h4>
+          <h4 class="card-title">Penjualan Produk</h4>
         </div>
         <div class="card-body">
           <div id="product-sales-chart" class="chart"></div>
@@ -114,7 +114,7 @@
     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">Penjualan by Kategori</h4>
+          <h4 class="card-title">Penjualan Kategori</h4>
         </div>
         <div class="card-body">
           <div id="category-sales-chart" class="chart"></div>

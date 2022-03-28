@@ -28,11 +28,10 @@
 
         <li class="nav-item dropdown header-profile">
           <a class="nav-link" role="button" data-bs-toggle="dropdown">
-            {{-- Get user picture --}}
-            <img src="{{ asset('src/images/profile/pic1.jpg') }}" width="20" alt="Foto Profil">
+            <img src="{{ asset('src/images/profile/small') }}/{{ auth()->user()->picture }}" width="20" alt="Foto Profil">
             <div class="header-info">
               <span>{{ auth()->user()->name }}</span>
-              <small>Owner</small> {{-- Get user role --}}
+              <small>{{ auth()->user()->role->name }}</small>
             </div>
           </a>
           <div class="dropdown-menu dropdown-menu-end">
