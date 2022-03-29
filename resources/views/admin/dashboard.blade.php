@@ -28,7 +28,7 @@
             <input type="text" name="filter_start">
             <input type="text" name="filter_end">
           </div>
-        </form>
+        </form> 
       </div>
     </div>
   </div>
