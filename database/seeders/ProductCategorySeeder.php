@@ -14,11 +14,11 @@ class ProductCategorySeeder extends Seeder
    */
   public function run()
   {
-    Category::insert(['name' => 'Coffee']);
-    Category::insert(['name' => 'Snack']);
-    Category::insert(['name' => 'Milkshake']);
-    Category::insert(['name' => 'Signature Sabit']);
-    Category::insert(['name' => 'Main Course']);
-    Category::insert(['name' => 'Noodle']);
+    Category::create(['name' => 'Coffee']);
+    Category::create(['name' => 'Snack']);
+    Category::create(['name' => 'Milkshake']);
+    Category::create(['name' => 'Signature Sabit']);
+    Category::create(['name' => 'Main Course']);
+    Category::create(['name' => 'Noodle']);
   }
 }
