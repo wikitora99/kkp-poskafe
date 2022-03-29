@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-{{-- @section('title')
+@section('title')
   Dashboard
-@endsection --}}
+@endsection
 
 @section('content')
   

@@ -9,7 +9,6 @@
         <span class="nav-text">Dashboard</span>
       </a>
     </li>
-    
     <li>
       <a href="#" class="ai-icon" aria-expanded="false"> {{-- route('report.index') --}}
         <i class="flaticon-144-layout"></i>
@@ -34,10 +33,10 @@
           <a class="has-arrow" href="#" aria-expanded="false">Kelola Produk</a>
           <ul aria-expanded="false">
             <li>
-              <a href="{{ route('product.index') }}">Daftar Produk</a> {{-- route('product.index') --}}
+              <a href="#">Daftar Produk</a> {{-- route('product.index') --}}
             </li>
             <li>
-              <a href="{{ route('product.create') }}">Tambah Produk</a> {{-- route('product.create') --}}
+              <a href="#">Tambah Produk</a> {{-- route('product.create') --}}
             </li>
           </ul>
         </li>
