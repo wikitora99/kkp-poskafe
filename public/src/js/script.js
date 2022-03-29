@@ -1,6 +1,51 @@
+<<<<<<< HEAD
 $(function () {
     /**************************
     Daterange Picker-start 
+=======
+$(function() {
+
+  /**************************
+    Datatables Area-sart 
+  **************************/
+  if ($('.datatables').length > 0){
+    $.fn.DataTable.ext.pager.numbers_length = 5;
+
+    let options = {
+      responsive: true,
+      pageLength: 10,
+      pagingType: 'simple_numbers',
+      ordering: false,
+      fixedColumns: {
+        leftColumns: 1
+      },
+      language: {
+        search: 'Filter',
+        emptyTable: 'Tidak ada data yang tersedia pada tabel ini',
+        info: 'Baris _START_ - _END_ dari total _TOTAL_ baris',
+        infoEmpty: 'Menampilkan 0 dari total 0 hasil',
+        infoFiltered: '(disaring dari total _MAX_ baris)',
+        lengthMenu: 'Lihat per _MENU_ baris',
+        loadingRecords: 'Sedang memuat...',
+        zeroRecords: 'Tidak ditemukan data yang sesuai',
+        infoThousands: ",",
+        searchPlaceholder: 'kata kunci...',
+        paginate: {
+          previous: '&laquo;',
+          next: '&raquo;'
+        }
+      }
+    }
+
+    $('#product-table').DataTable(options);
+  }
+  /**************************
+    Datatables Area-end
+  **************************/
+
+  /**************************
+    Daterange Picker Area-start 
+>>>>>>> test_develop
   **************************/
     if ($(".filter-range").length > 0) {
         let start = moment().subtract(29, "days");
@@ -55,6 +100,7 @@ $(function () {
                 .data("daterangepicker")
                 .endDate.format("MM/DD/YYYY");
 
+<<<<<<< HEAD
             $("input[name=filter_start]").val(filterStart);
             $("input[name=filter_end]").val(filterEnd);
             $(this).parents("form").submit();
@@ -62,6 +108,15 @@ $(function () {
     }
     /**************************
     Daterange Picker-end
+=======
+      $('input[name=filter_start]').val(filterStart);
+      $('input[name=filter_end]').val(filterEnd);
+      $(this).parents('form').submit();
+    });
+  }
+  /**************************
+    Daterange Picker Area-end
+>>>>>>> test_develop
   **************************/
 
     /**************************

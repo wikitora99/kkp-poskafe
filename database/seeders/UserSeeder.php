@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
    */
   public function run()
   { 
-    User::insert([
+    User::create([
       'name' => 'John Doe',
       'role_id' => 1,
       'username' => 'rks-owner',
@@ -26,12 +26,10 @@ class UserSeeder extends Seeder
       'phone' => '029739572523',
       'address' => 'Jl. Nusantara Satu No.5, Jakarta Timur',
       'picture' => 'pic1.jpg',
-      'remember_token' => Str::random(10),
-      'created_at' => now(),
-      'updated_at' => now()
+      'remember_token' => Str::random(10)
     ]);
 
-    User::insert([
+    User::create([
       'name' => 'Jane Doe',
       'role_id' => 2,
       'username' => 'rks-admin',
@@ -41,12 +39,10 @@ class UserSeeder extends Seeder
       'phone' => '091733295923',
       'address' => 'Jl. Kapten Patimura No.99, Bekasi Kota',
       'picture' => 'pic2.jpg',
-      'remember_token' => Str::random(10),
-      'created_at' => now(),
-      'updated_at' => now()
+      'remember_token' => Str::random(10)
     ]);
 
-    User::insert([
+    User::create([
       'name' => 'Fulan bin Fulan',
       'role_id' => 3,
       'username' => 'rks-cashier',
@@ -56,12 +52,10 @@ class UserSeeder extends Seeder
       'phone' => '090372332423',
       'address' => 'Jl. TB Simatupang No.73, Jakarta Selatan',
       'picture' => 'pic5.jpg',
-      'remember_token' => Str::random(10),
-      'created_at' => now(),
-      'updated_at' => now()
+      'remember_token' => Str::random(10)
     ]);
 
-    User::insert([
+    User::create([
       'name' => 'Fulana binti Fulan',
       'role_id' => 4,
       'username' => 'rks-kitchen',
@@ -71,9 +65,7 @@ class UserSeeder extends Seeder
       'phone' => '093538252334',
       'address' => 'Jl. Raya Bogor No.21, Depok',
       'picture' => 'pic7.jpg',
-      'remember_token' => Str::random(10),
-      'created_at' => now(),
-      'updated_at' => now()
+      'remember_token' => Str::random(10)
     ]);
   }
 }
