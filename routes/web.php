@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Product\ProductController;
-use App\Http\Controllers\Product\CategoriesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +14,8 @@ use App\Http\Controllers\Product\CategoriesController;
 |
 */
 
-Route::get('/', [AuthController::class, 'redirectTo'])->name('home');
-// Route::get('/', fn() => view('welcome'));
 
-// Route::get('/', [AuthController::class, 'index'])->name('home');
+Route::get('/', [AuthController::class, 'redirectTo'])->name('home');
 
 Route::middleware('guest')->controller(AuthController::class)->group(function() {
   Route::get('login', 'index')->name('login');
@@ -27,8 +24,8 @@ Route::middleware('guest')->controller(AuthController::class)->group(function() 
 
 Route::middleware('auth')->group(function() {
   Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-  Route::get('dashboard', fn() => view('admin.dashboard',[ 'title' => 'Dashboard']) )->name('dashboard');
-  // Routes Product
-  Route::resource('product', ProductController::class);
-});
+  Route::get('dashboard', fn() => view('admin.dashboard') )->name('dashboard');
 
+  // TEST FILTER REQUEST
+  Route::post('dashboard', fn() => dd(request()) )->name('dashboard.filter');
+});
