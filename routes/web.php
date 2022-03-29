@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 
+use App\Http\Controllers\Sales\ProductController as Product;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +27,8 @@ Route::middleware('guest')->controller(AuthController::class)->group(function() 
 Route::middleware('auth')->group(function() {
   Route::post('logout', [AuthController::class, 'logout'])->name('logout');
   Route::get('dashboard', fn() => view('admin.dashboard') )->name('dashboard');
+
+  Route::resource('product', Product::class);
 
   // TEST FILTER REQUEST
   Route::post('dashboard', fn() => dd(request()) )->name('dashboard.filter');
