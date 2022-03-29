@@ -3,6 +3,7 @@
 <script src="{{ asset('src/vendors/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
 <script src="{{ asset('src/vendors/chart.js/Chart.bundle.min.js') }}"></script>
 <script src="{{ asset('src/vendors/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('src/vendors/toastr/js/toastr.min.js') }}"></script>
 
 <!-- Chart piety plugin files -->
 <script src="{{ asset('src/vendors/peity/jquery.peity.min.js') }}"></script>
@@ -22,3 +23,14 @@
 
 <!-- Custom -->
 <script src="{{ asset('src/js/script.js') }}"></script>
+
+<!-- Daterange Picker -->
+<script src="{{ asset('src/vendors/moment/moment.min.js') }}"></script>
+<script src="{{ asset('src/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+<!-- <script src="{{ asset('src/vendors/clockpicker/js/bootstrap-clockpicker.min.js') }}"></script>
+<script src="{{ asset('src/vendors/bootstrap-material-datetimepicker/js/bootstrap-material-datetime') }}picker.js"></script>
+<script src="{{ asset('src/vendors/pickadate/picker.js') }}"></script>
+<script src="{{ asset('src/vendors/pickadate/picker.time.js') }}"></script>
+<script src="{{ asset('src/vendors/pickadate/picker.date.js') }}"></script> -->
+<!-- <script src="{{ asset('src/js/plugins-init/bs-daterange-picker-init.js') }}"></script> -->
+

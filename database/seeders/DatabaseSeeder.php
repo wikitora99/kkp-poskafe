@@ -3,9 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
+use App\Models\Product;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,13 +16,14 @@ class DatabaseSeeder extends Seeder
   {
     // \App\Models\User::factory(10)->create();
 
-    User::create([
-      'name' => 'John Doe',
-      'username' => 'username', // username
-      'email' => 'user@johndoe.com',
-      'email_verified_at' => now(),
-      'password' => Hash::make('password'), // password
-      'remember_token' => Str::random(10)
+    $this->call([
+      UserRoleSeeder::class,
+      UserSeeder::class,
+      ProductCategorySeeder::class,
+      ProductSeeder::class,
+      ProductVariantSeeder::class,
+      OrderStatusSeeder::class
     ]);
+    
   }
 }

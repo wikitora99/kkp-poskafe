@@ -24,18 +24,33 @@ function getUrlParams(dParam)
 	var direction =  getUrlParams('dir');
 	
 	dezSettingsOptions = {
+		// DEFAULT THEME
+		// typography: "poppins",
+		// version: "light",
+		// layout: "vertical",
+		// headerBg: "color_1",
+		// navheaderBg: "color_1",
+		// sidebarBg: "color_1",
+		// sidebarStyle: "full",
+		// sidebarPosition: "fixed",
+		// headerPosition: "fixed",
+		// containerLayout: "full",
+		// direction: direction
+
+		// CUSTOM THEME
 		typography: "poppins",
-			version: "light",
-			layout: "vertical",
-			headerBg: "color_1",
-			navheaderBg: "color_1",
-			sidebarBg: "color_1",
-			sidebarStyle: "full",
-			sidebarPosition: "fixed",
-			headerPosition: "fixed",
-			containerLayout: "full",
-			direction: direction
-		};
+		version: "light",
+		layout: "vertical",
+		primary: "color_9",
+		headerBg: "color_1",
+		navheaderBg: "color_1",
+		sidebarBg: "color_1",
+		sidebarStyle: "full",
+		sidebarPosition: "fixed",
+		headerPosition: "fixed",
+		containerLayout: "full",
+		direction: direction
+	};
 
 	
 	if(direction == 'rtl')
