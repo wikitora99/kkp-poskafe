@@ -1,1 +1,1 @@
-@dd('Halaman Detail Produk')
+@dd($product)

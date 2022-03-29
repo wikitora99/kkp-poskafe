@@ -23,6 +23,9 @@ class CreateProductsTable extends Migration
       $table->string('name');
       $table->string('picture')->nullable();
       $table->integer('price');
+      $table->boolean('has_stock');
+      $table->integer('cur_stock')->nullable();
+      $table->integer('min_stock')->nullable();
       $table->timestamps();
     });
   }

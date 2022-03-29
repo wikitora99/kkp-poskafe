@@ -20,5 +20,8 @@ class ProductCategorySeeder extends Seeder
     Category::create(['name' => 'Signature Sabit']);
     Category::create(['name' => 'Main Course']);
     Category::create(['name' => 'Noodle']);
+    Category::create(['name' => 'Flavour Tea']);
+    Category::create(['name' => 'Long Drink']);
+    Category::create(['name' => 'Extra Syrup']);
   }
 }
