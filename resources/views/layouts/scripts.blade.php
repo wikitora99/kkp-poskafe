@@ -26,5 +26,3 @@
 
 <!-- Custom -->
 <script src="{{ asset('src/js/script.js') }}"></script>
-
-

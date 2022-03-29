@@ -27,14 +27,26 @@
         </li>
 
         <li class="nav-item dropdown header-profile">
-          <a class="nav-link" role="button">
+          <a class="nav-link" role="button" data-bs-toggle="dropdown">
+            <img src="{{ asset('src/images/profile/small') }}/{{ auth()->user()->picture }}" width="20" alt="Foto Profil">
+            <div class="header-info">
+              <span>{{ auth()->user()->name }}</span>
+              <small>{{ auth()->user()->role->name }}</small>
+            </div>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end">
+            <a href="" class="dropdown-item ai-icon"> {{-- route('user.detail') --}}
+              <i class="fa fa-user-alt text-primary"></i>
+              <span class="ms-2 text-primary">Profil</span>
+            </a>
             <form action="{{ route('logout') }}" method="POST">
               @csrf
-              <button type="button" class="btn btn-xs light btn-rounded btn-danger logout-btn">
-                Keluar<i class="fas fa-sign-out-alt ms-2"></i>
+              <button type="submit" class="dropdown-item ai-icon logout-btn">
+                <i class="fa fa-sign-out-alt text-danger"></i>
+                <span class="ms-2 text-danger">Keluar</span>
               </button>
             </form>
-          </a>
+          </div>
         </li>
       </ul>
 

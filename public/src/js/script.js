@@ -278,4 +278,8 @@ $(function() {
     Apexcharts Area-end
   **************************/
 
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> develop

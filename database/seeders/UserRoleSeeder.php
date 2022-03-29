@@ -19,4 +19,4 @@ class UserRoleSeeder extends Seeder
     UserRole::insert(['name' => 'Cashier']);
     UserRole::insert(['name' => 'Kitchen']);
   }
-}
+}  

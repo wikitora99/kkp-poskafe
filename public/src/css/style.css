@@ -12507,7 +12507,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     padding-top: 10px; }
   .chatbox .nav {
     padding: 1rem 1rem 0 1rem;
-    background: #6418C3;
+    background: var(--primary);
     border: 0;
     justify-content: space-between; }
     .chatbox .nav .nav-link {
@@ -12518,7 +12518,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
         background: transparent;
         color: #fff;
         opacity: 1;
-        border-color: #FF4C41; }
+        border-color: #fff; }
   .chatbox .img_cont {
     width: 40px;
     border-radius: 40px;

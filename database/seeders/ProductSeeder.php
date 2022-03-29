@@ -61,6 +61,5 @@ class ProductSeeder extends Seeder
       $product->save();
       $i++;
     }
-
   }
 }
