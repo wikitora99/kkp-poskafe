@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
-{{-- @section('title')
+@section('title')
   Dashboard
-@endsection --}}
+@endsection
 
 @section('content')
   
@@ -28,7 +28,7 @@
             <input type="text" name="filter_start">
             <input type="text" name="filter_end">
           </div>
-        </form>
+        </form> 
       </div>
     </div>
   </div>

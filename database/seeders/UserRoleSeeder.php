@@ -14,9 +14,9 @@ class UserRoleSeeder extends Seeder
    */
   public function run()
   {
-    UserRole::insert(['name' => 'Owner']);
-    UserRole::insert(['name' => 'Admin']);
-    UserRole::insert(['name' => 'Cashier']);
-    UserRole::insert(['name' => 'Kitchen']);
+    UserRole::create(['name' => 'Owner']);
+    UserRole::create(['name' => 'Admin']);
+    UserRole::create(['name' => 'Cashier']);
+    UserRole::create(['name' => 'Kitchen']);
   }
 }  
