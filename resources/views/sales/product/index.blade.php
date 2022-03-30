@@ -54,7 +54,8 @@
                     <td>@currency_id($product->price)</td>
                     <td>
                       <div class="d-flex">
-                        <a href="#" class="btn btn-xs btn-primary shadow sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                        {{-- /dashboard/posts/{{ $post->slug }}/edit --}}
+                        <a href="{{ route('product.edit', $product->id) }}" class="btn btn-xs btn-primary shadow sharp me-1"><i class="fas fa-pencil-alt"></i></a>
                         <a href="#" class="btn btn-xs btn-danger shadow sharp"><i class="fa fa-trash"></i></a>
                       </div>
                       <!-- <div class="dropdown">

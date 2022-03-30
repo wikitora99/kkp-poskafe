@@ -33,7 +33,8 @@ class ProductController extends Controller
   /** Show the form for creating a new resource. **/
   public function create()
   {
-    return view('sales.product.create');
+    $category = Category::all();
+    return view('sales.product.create', compact('category'));
   }
 
 
@@ -55,7 +56,8 @@ class ProductController extends Controller
   /** Show the form for editing the specified resource. **/
   public function edit($id)
   {
-    // 
+    $category = Category::all();
+    return view('sales.product.edit', compact('category'));
   }
 
 

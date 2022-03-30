@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-    Tambah Produk
+    Ubah Produk
 @endsection
 
 @section('content')
@@ -76,7 +76,7 @@
                         <div class="mt-4 row">
                             <div class="d-flex justify-content-end">
                                 <a href="{{ route('product.index') }}" class="btn btn-xs btn-secondary mx-2"><i class="fa fa-arrow-left me-1"></i> Kembali</a>
-                                <button type="submit" class="btn btn-xs btn-primary"><i class="fa fa-plus me-1"></i> Tambah</button>
+                                <button type="submit" class="btn btn-xs btn-primary"><i class="fa fa-edit me-1"></i> Ubah</button>
                             </div>
                         </div>
                     </form>
