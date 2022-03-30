@@ -27,7 +27,7 @@
       <div class="card">
         <div class="card-body">
           <div class="table-responsive">
-            <table id="product-table" class="datatables display compact table table-striped mb-3">
+            <table id="product-table" class="datatables display compact table table-striped mb-3" >
               <thead>
                 <tr>
                   <th>Gambar</th>
