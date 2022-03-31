@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 
-use App\Http\Controllers\Sales\ProductController as Product;
+use App\Http\Controllers\Owner\ProductController as Product;
 
 /*
 |--------------------------------------------------------------------------
