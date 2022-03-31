@@ -16,15 +16,15 @@ $(function() {
       },
       language: {
         search: 'Filter',
-        emptyTable: 'Tidak ada data yang tersedia pada tabel ini',
+        emptyTable: 'Tidak ada data yang tersedia',
         info: 'Baris _START_ - _END_ dari total _TOTAL_ baris',
         infoEmpty: 'Menampilkan 0 dari total 0 hasil',
         infoFiltered: '(disaring dari total _MAX_ baris)',
         lengthMenu: 'Lihat per _MENU_ baris',
         loadingRecords: 'Sedang memuat...',
-        zeroRecords: 'Tidak ditemukan data yang sesuai',
+        zeroRecords: 'Tidak ada data yang sesuai',
         infoThousands: ",",
-        searchPlaceholder: 'kata kunci...',
+        searchPlaceholder: 'ketik di sini...',
         paginate: {
           previous: '&laquo;',
           next: '&raquo;'

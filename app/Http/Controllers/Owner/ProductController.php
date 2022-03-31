@@ -1,15 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Sales;
+namespace App\Http\Controllers\Owner;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\ {
-  Product,
-  ProductCategory as Category,
-  ProductVariant as Variant,
-  ProductStock as Stock
-};
+use App\Models\{ Product, ProductCategory};
 
 class ProductController extends Controller
 {
@@ -23,17 +18,17 @@ class ProductController extends Controller
   /** Display a listing of the resource. **/
   public function index()
   {
-    $products = Product::all();
+    $products = Product::orderBy('name', 'asc')->get();
     // dd($products->first->category->name);
 
-    return view('sales.product.index', compact('products'));
+    return view('owner.product.index', compact('products'));
   }
 
 
   /** Show the form for creating a new resource. **/
   public function create()
   {
-    return view('sales.product.create');
+    return view('owner.product.create');
   }
 
 
@@ -47,15 +42,14 @@ class ProductController extends Controller
   /** Display the specified resource. **/
   public function show(Product $product)
   {
-    // dd($product);
-    return view('sales.product.show', compact('product'));
+    return view('owner.product.show', compact('product'));
   }
 
 
   /** Show the form for editing the specified resource. **/
-  public function edit($id)
+  public function edit(Product $product)
   {
-    // 
+    dd($product);
   }
 
 

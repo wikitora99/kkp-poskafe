@@ -27,7 +27,7 @@
       <div class="card">
         <div class="card-body">
           <div class="table-responsive">
-            <table id="product-table" class="datatables display compact table table-striped mb-3">
+            <table id="product-table" class="datatables display compact table table-hover my-2">
               <thead>
                 <tr>
                   <th>Gambar</th>
@@ -54,16 +54,9 @@
                     <td>@currency_id($product->price)</td>
                     <td>
                       <div class="d-flex">
-                        <a href="#" class="btn btn-xs btn-primary shadow sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="{{ route('product.show', $product) }}" class="btn btn-xs btn-primary shadow sharp me-1"><i class="fas fa-pencil-alt"></i></a>
                         <a href="#" class="btn btn-xs btn-danger shadow sharp"><i class="fa fa-trash"></i></a>
                       </div>
-                      <!-- <div class="dropdown">
-                        <button type="button" class="btn btn-primary light" data-bs-toggle="dropdown"><i class="fa fa-ellipsis-h"></i></button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item text-primary" href="#">Detail</a>
-                          <a class="dropdown-item text-danger" href="#">Delete</a>
-                        </div>
-                      </div> -->
                     </td>                       
                   </tr>
                 @endforeach
