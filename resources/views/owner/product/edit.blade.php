@@ -6,9 +6,18 @@
 
 @section('content')
 
-    {{-- Simple Call Menu Title Partials --}}
-        @include('layouts.partials.menu-title')
-    {{-- Menu Title End --}}
+    <div class="row page-titles mx-0 d-flex flex-wrap align-items-center">
+        <div class="col-sm-6 p-md-0">
+            <div class="welcome-text">
+            <h4>Ubah Produk</h4>
+            </div>
+        </div>
+        <div class="col-sm-6 p-md-0 justify-content-sm-end d-flex">
+            <div class="breadcrumb">
+            <a href="{{ route('product.index') }}" class="btn btn-xs btn-primary light me-2"><i class="fa fa-arrow-left me-2"></i>Kembali</a>
+            </div>
+        </div>
+    </div>
 
     <div class="col-xl-8 col-lg-12">
         @if (session('success'))
@@ -75,7 +84,6 @@
                         
                         <div class="mt-4 row">
                             <div class="d-flex justify-content-end">
-                                <a href="{{ route('product.index') }}" class="btn btn-xs btn-secondary mx-2"><i class="fa fa-arrow-left me-1"></i> Kembali</a>
                                 <button type="submit" class="btn btn-xs btn-primary"><i class="fa fa-edit me-1"></i> Ubah</button>
                             </div>
                         </div>

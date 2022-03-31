@@ -26,7 +26,7 @@ class ProductController extends Controller
     $products = Product::all();
     // dd($products->first->category->name);
 
-    return view('sales.product.index', compact('products'));
+    return view('owner.product.index', compact('products'));
   }
 
 
@@ -34,7 +34,7 @@ class ProductController extends Controller
   public function create()
   {
     $category = Category::all();
-    return view('sales.product.create', compact('category'));
+    return view('owner.product.create', compact('category'));
   }
 
 
@@ -49,7 +49,7 @@ class ProductController extends Controller
   public function show(Product $product)
   {
     // dd($product);
-    return view('sales.product.show', compact('product'));
+    return view('owner.product.show', compact('product'));
   }
 
 
@@ -57,7 +57,7 @@ class ProductController extends Controller
   public function edit($id)
   {
     $category = Category::all();
-    return view('sales.product.edit', compact('category'));
+    return view('owner.product.edit', compact('category'));
   }
 
 
