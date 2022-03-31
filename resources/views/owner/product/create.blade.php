@@ -19,30 +19,15 @@
         </div>
     </div>
 
-    <div class="col-xl-8 col-lg-12">
-        @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close"></button>
-            <strong>Sukses! </strong>{{ session('success') }}
-        </div>
-      @endif
-
-      @if (session('failed'))
-        <div class="alert alert-danger alert-dismissible fade show">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close"></button>
-            <strong>Error! </strong>{{ session('failed') }}
-        </div>
-      @endif
-      
         <div class="card">
             <div class="card-body">
                 <div class="basic-form">
-                    <form action="" method="POST" enctype="multipart/form-data"> 
-
+                    <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data"> 
+                        @csrf
                         <div class="mb-3 row">
                             <label class="col-sm-3 col-form-label">SKU</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="sku" id="sku">
+                                <input type="text" class="form-control" name="sku" id="sku" autocomplete="off">
                             </div>
                         </div>
 
@@ -51,7 +36,7 @@
                             <div class="col-sm-9">
                                 <select name="category_id" id="category_id" class="default-select form-control wide">
                                     @foreach ($category as $kat)
-                                        <option value="<?= $kat['category_id']; ?>"><?= $kat['name']; ?></option>
+                                        <option value="{{ $kat->id; }}"> {{ $kat->name; }} </option>
                                     @endforeach
                                 </select>
                             </div>
@@ -60,7 +45,7 @@
                         <div class="mb-3 row">
                             <label class="col-sm-3 col-form-label">Nama Produk</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="name" id="name">
+                                <input type="text" class="form-control" name="name" id="name" autocomplete="off">
                             </div>
                         </div>
 

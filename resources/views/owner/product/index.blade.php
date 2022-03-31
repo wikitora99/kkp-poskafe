@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-
+  
   <div class="row">
     <div class="col-12">
       <div class="card">
@@ -43,7 +43,8 @@
                 @foreach ($products as $product)
                   <tr>
                     <td>
-                      <img class="rounded-circle" width="45" src="{{ asset('src/images/profile/1.png') }}" alt="Gambar produk">
+                      {{-- <img class="rounded-circle" width="45" src="{{ asset('src/images/profile/1.png') }}" alt="Gambar produk"> --}}
+                      <img class="rounded-circle" width="45" src="{{ asset('storage/' . $product->picture) }}" alt="Gambar Produk">
                     </td>
                     <td>{{ $product->sku }}</td>
                     <td>
@@ -54,17 +55,14 @@
                     <td>@currency_id($product->price)</td>
                     <td>
                       <div class="d-flex">
-                        {{-- /dashboard/posts/{{ $post->slug }}/edit --}}
                         <a href="{{ route('product.edit', $product->id) }}" class="btn btn-xs btn-primary shadow sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="#" class="btn btn-xs btn-danger shadow sharp"><i class="fa fa-trash"></i></a>
+
+                        <form action="{{ route('product.destroy', $product->id) }}" method="POST" class="d-inline">
+                          @csrf
+                          @method('DELETE')
+                          <button class="btn btn-xs btn-danger shadow sharp" onclick="return confirm('Yakin ingin menghapus produk ini ?')"><i class="fa fa-trash"></i></button>
+                        </form>
                       </div>
-                      <!-- <div class="dropdown">
-                        <button type="button" class="btn btn-primary light" data-bs-toggle="dropdown"><i class="fa fa-ellipsis-h"></i></button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item text-primary" href="#">Detail</a>
-                          <a class="dropdown-item text-danger" href="#">Delete</a>
-                        </div>
-                      </div> -->
                     </td>                       
                   </tr>
                 @endforeach

@@ -19,21 +19,6 @@
         </div>
     </div>
 
-    <div class="col-xl-8 col-lg-12">
-        @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close"></button>
-            <strong>Sukses! </strong>{{ session('success') }}
-        </div>
-      @endif
-
-      @if (session('failed'))
-        <div class="alert alert-danger alert-dismissible fade show">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close"></button>
-            <strong>Error! </strong>{{ session('failed') }}
-        </div>
-      @endif
-      
         <div class="card">
             <div class="card-body">
                 <div class="basic-form">
