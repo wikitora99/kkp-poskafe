@@ -74,21 +74,17 @@ class ProductController extends Controller
           return redirect()->back()->with('error', $validateData->errors()->first());
           // return redirect()->back()->with('error', 'Harap masukkan data dengan benar, cok!');
       }
-
-      if ($request->hasFile('picture')){
-          $product_picture = Storage::disk('local')->putFile('product-picture', $request->file('picture'), 'public');
-      }
       
-      $data = [
-          'sku' => $request->sku,
-          'category_id' => $request->category_id,
-          'name' => $request->name,
-          'picture' => $product->picture,
-          'price' => $request->price,
-          'has_stock' => $request->has_stock
-      ];
-
-      Product::create($validateData);
+      $product = new Product;
+      if ($request->hasFile('picture')){
+          $product->picture = Storage::disk('local')->putFile('product-picture', $request->file('picture'));
+      }
+      $product->sku = $request->sku;
+      $product->category_id = $request->category_id;
+      $product->name = $request->name;
+      $product->price = $request->price;
+      $product->has_stock = $request->has_stock;
+      $product->save();
       
       return redirect()->route('product.index')->with('success','Data produk berhasil ditambah !');
   }
