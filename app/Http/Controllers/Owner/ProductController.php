@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Owner;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\{ Storage, Validator, DB };
 
 use App\Models\ {
   Product,
@@ -45,19 +45,34 @@ class ProductController extends Controller
   public function store(Request $request)
   {
     // dd($request);
-      $validateData = $request->validate([
-            'sku' => 'required|unique:products',
-            'category_id' => 'required',
-            'name' => 'required|max:25',
-            'picture' => 'image|file|max:5120',
-            'price' => 'required|numeric'
-        ]);
+      $validateData = Validator::make($request->all(), [
+          'sku' => 'required|unique:products',
+          'category_id' => 'required|exists:product_categories,id',
+          'name' => 'required|max:25',
+          'picture' => 'image|file|max:5120',
+          'price' => 'required|numeric',
+          'has_stock' => 'required|boolean'
+      ]);
+
+      if ($validateData->fails()){
+          // return redirect()->back()->with('error', $validateData->errors()->first());
+          return redirect()->back()->with('error', 'Harap masukkan data dengan benar, cok!');
+      }
 
       if ($request->file('picture')) {
           $validateData['picture'] = $request->file('picture')->store('product-picture');
       }
 
-      Product::create($validateData);
+      $data = [
+          'sku' => $request->sku,
+          'category_id' => $request->category_id,
+          'name' => $request->name,
+          'picture' => $request->picture,
+          'price' => $request->price,
+          'has_stock' => $request->has_stock
+      ];
+
+      Product::create($data);
       
       return redirect()->route('product.index')->with('success','Data produk berhasil ditambah !');
   }

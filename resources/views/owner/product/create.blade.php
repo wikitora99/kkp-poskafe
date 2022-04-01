@@ -6,6 +6,8 @@
 
 @section('content')
 
+    @include('layouts.flasher')
+
     <div class="row page-titles mx-0 d-flex flex-wrap align-items-center">
         <div class="col-sm-6 p-md-0">
             <div class="welcome-text">
@@ -67,6 +69,24 @@
                             <label class="col-sm-3 col-form-label">Harga</label>
                             <div class="col-sm-9">
                                 <input type="number" class="form-control" name="price" id="price">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="col-sm-3 col-form-label">Lacak Inventori?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="has_stock"
+                                    value=1>
+                                <label class="form-check-label">
+                                    Ya
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="has_stock"
+                                    value=0>
+                                <label class="form-check-label">
+                                    Tidak
+                                </label>
                             </div>
                         </div>
                         
