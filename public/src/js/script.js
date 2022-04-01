@@ -6,7 +6,7 @@ $(function() {
   if ($('.datatables').length > 0){
     $.fn.DataTable.ext.pager.numbers_length = 5;
 
-    let options = {
+    $('.datatables').DataTable({
       responsive: true,
       pageLength: 10,
       pagingType: 'simple_numbers',
@@ -30,9 +30,7 @@ $(function() {
           next: '&raquo;'
         }
       }
-    }
-
-    $('#product-table').DataTable(options);
+    });
   }
   /**************************
     Datatables Area-end

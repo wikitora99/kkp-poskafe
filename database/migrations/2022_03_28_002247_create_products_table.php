@@ -22,10 +22,12 @@ class CreateProductsTable extends Migration
             ->on('product_categories');
       $table->string('name');
       $table->string('picture')->nullable();
-      $table->integer('price');
+      $table->integer('buy_price')->nullable();
+      $table->integer('sell_price');
       $table->boolean('has_stock');
       $table->integer('cur_stock')->nullable();
       $table->integer('min_stock')->nullable();
+      $table->boolean('is_active');
       $table->timestamps();
     });
   }

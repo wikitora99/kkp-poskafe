@@ -76,10 +76,14 @@ class ProductSeeder extends Seeder
 
       $product->name = $name;
       $product->picture = '1.jpg';
-      $product->price = $price;
-      $product->has_stock = false;
-      $product->cur_stock = 0;
-      $product->min_stock = 0;
+      $product->buy_price = 0;
+      $product->sell_price = $price;
+      $product->is_active = random_int(0,1);
+
+      $stocked = random_int(0,1);
+      $product->has_stock = $stocked ? true : false;
+      $product->cur_stock = $stocked ? random_int(10,100) : 0;
+      $product->min_stock = $stocked ? 10 : 0;
 
       $product->save();
       $i++;

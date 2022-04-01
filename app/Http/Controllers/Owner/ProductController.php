@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Owner;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{ Product, ProductCategory};
+use App\Models\{ Product, ProductCategory, ProductOrder};
 
 class ProductController extends Controller
 {
@@ -19,7 +19,6 @@ class ProductController extends Controller
   public function index()
   {
     $products = Product::orderBy('name', 'asc')->get();
-    // dd($products->first->category->name);
 
     return view('owner.product.index', compact('products'));
   }
@@ -42,6 +41,10 @@ class ProductController extends Controller
   /** Display the specified resource. **/
   public function show(Product $product)
   {
+    // $total_sales = ProductOrder::all()->sum('total_order');
+    // $product_sales = $product->orders->sum('total_order');
+    // $percentage = number_format((($product_sales / $total_sales) * 100), 2, ',', '.');
+
     return view('owner.product.show', compact('product'));
   }
 
