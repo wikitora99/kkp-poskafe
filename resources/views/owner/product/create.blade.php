@@ -24,12 +24,12 @@
         <div class="card">
             <div class="card-body">
                 <div class="basic-form">
-                    <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data"> 
+                    <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data"> 
                         @csrf
                         <div class="mb-3 row">
                             <label class="col-sm-3 col-form-label">SKU</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="sku" id="sku" autocomplete="off">
+                                <input type="text" class="form-control" name="sku" id="sku" autocomplete="off" value="{{ old('sku') }}">
                             </div>
                         </div>
 
@@ -47,7 +47,7 @@
                         <div class="mb-3 row">
                             <label class="col-sm-3 col-form-label">Nama Produk</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="name" id="name" autocomplete="off">
+                                <input type="text" class="form-control" name="name" id="name" autocomplete="off" value="{{ old('name') }}">
                             </div>
                         </div>
 
@@ -68,7 +68,7 @@
                         <div class="mb-3 row">
                             <label class="col-sm-3 col-form-label">Harga</label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" name="price" id="price">
+                                <input type="number" class="form-control" name="price" id="price" value="{{ old('price') }}">
                             </div>
                         </div>
 

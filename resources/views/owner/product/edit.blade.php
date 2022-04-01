@@ -6,6 +6,8 @@
 
 @section('content')
 
+    @include('layouts.flasher')
+
     <div class="row page-titles mx-0 d-flex flex-wrap align-items-center">
         <div class="col-sm-6 p-md-0">
             <div class="welcome-text">
@@ -22,7 +24,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="basic-form">
-                    <form type="submit" action="{{ route('product.update', $product) }}" method="POST" enctype="multipart/form-data"> 
+                    <form action="{{ route('product.update', $product) }}" method="POST" enctype="multipart/form-data"> 
                         @csrf
                         @method('PUT')
                         <div class="mb-3 row">
