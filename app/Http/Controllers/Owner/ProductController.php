@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Owner;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 use App\Models\ {
   Product,
@@ -46,7 +45,7 @@ class ProductController extends Controller
   public function store(Request $request)
   {
     // dd($request);
-      $validatedData = $request->validate([
+      $validateData = $request->validate([
             'sku' => 'required|unique:products',
             'category_id' => 'required',
             'name' => 'required|max:25',
@@ -55,13 +54,12 @@ class ProductController extends Controller
         ]);
 
       if ($request->file('picture')) {
-          $validatedData['picture'] = $request->file('picture')->store('product-picture');
+          $validateData['picture'] = $request->file('picture')->store('product-picture');
       }
 
-      // $validatedData['user_id'] = auth()->user()->id;
-      Product::create($validatedData);
+      Product::create($validateData);
       
-      return redirect()->route('product.index')->with('success','Data produk berhasil ditambah');
+      return redirect()->route('product.index')->with('success','Data produk berhasil ditambah !');
   }
 
 
@@ -70,34 +68,62 @@ class ProductController extends Controller
   {
     // dd($product);
     return view('owner.product.show', compact('product'));
+    
   }
 
 
   /** Show the form for editing the specified resource. **/
-  public function edit($id)
+  public function edit(Product $product)
   {
-    $category = Category::all();
-    return view('owner.product.edit', compact('category'));
+    return view('owner.product.edit', [
+            'category' => Category::all(),
+            'product' => $product
+    ]);
   }
 
 
   /** Update the specified resource in storage. **/
-  public function update(Request $request, $id)
+  public function update(Request $request, Product $product)
   {
-    //
+
+      $rules = [
+        'category_id' => 'required',
+        'name' => 'required|max:25',
+        'picture' => 'image|file|max:5120',
+        'price' => 'required|numeric'
+      ];
+
+      if ($request->sku != $product->sku) {
+            $rules['sku'] = 'required|unique:products';
+        }
+
+      $validateData = $request->validate($rules);
+
+      if ($request->file('picture')) {
+        if ($request->oldPicture) {
+            Storage::delete($request->oldPicture);
+        }
+        $validateData['picture'] = $request->file('picture')->store('product-picture');
+      }
+
+      $product->update($validateData);
+      
+      return redirect()->route('product.index')->with('success','Data produk berhasil diubah !');
   }
 
 
   /** Remove the specified resource from storage. **/
   public function destroy(Product $product)
   {
+    // dd($product);
+
+    // Unset Image Dari Storage
     if ($product->picture) {
-        Storage::delete($product->picture);
-    }
-
-    Product::destroy($product->id);
-
-    return redirect()->route('product.index')->with('success','Data produk berhasil di Hapus !');
+            Storage::delete($product->picture);
+        }
+    
+    $product->delete();
+    return redirect()->route('product.index')->with('success','Data produk berhasil di hapus !');
   }
 
 }

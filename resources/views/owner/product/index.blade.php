@@ -55,12 +55,12 @@
                     <td>@currency_id($product->price)</td>
                     <td>
                       <div class="d-flex">
-                        <a href="{{ route('product.edit', $product->id) }}" class="btn btn-xs btn-primary shadow sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="{{ route('product.edit', $product) }}" class="btn btn-xs btn-primary shadow sharp me-1"><i class="fas fa-pencil-alt"></i></a>
 
-                        <form action="{{ route('product.destroy', $product->id) }}" method="POST" class="d-inline">
+                        <form action="{{ route('product.destroy', $product) }}" method="POST" class="d-inline">
                           @csrf
                           @method('DELETE')
-                          <button class="btn btn-xs btn-danger shadow sharp" onclick="return confirm('Yakin ingin menghapus produk ini ?')"><i class="fa fa-trash"></i></button>
+                          <button type="submit" class="btn btn-xs btn-danger shadow sharp" onclick="return confirm('Yakin ingin menghapus produk ini ?')"><i class="fa fa-trash"></i></button>
                         </form>
                       </div>
                     </td>                       

@@ -50,11 +50,14 @@
                         </div>
 
                         <div class="mb-3 row">
-                            <label class="col-sm-3 col-form-label">Picture</label>
+                            <label for="picture" class="col-sm-3 col-form-label">Picture</label>
                             <div class="col-sm-9">
                                 <div class="input-group">
-                                    <div class="form-file">
-                                        <input type="file" class="form-file-input form-control" name="picture" id="picture">
+                                    <div class="form-file w-100">
+                                        <input type="file" class="form-file-input form-control" name="picture" id="picture"  onchange="previewPicture()">
+                                    </div>
+                                    <div class="card mt-2" style="max-width:20%">
+                                        <img class="pic-preview">
                                     </div>
                                 </div>
                             </div>
@@ -77,4 +80,17 @@
             </div>
         </div>
     </div>    
+
+    <script>
+        function previewPicture() {
+            const picture = document.querySelector('#picture');
+            const picPreview = document.querySelector('.pic-preview');
+            picPreview.style.display = 'block';
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(picture.files[0]);
+            oFReader.onload = function(oFREvent) {
+                picPreview.src = oFREvent.target.result;
+            }
+        }
+    </script>
 @endsection
