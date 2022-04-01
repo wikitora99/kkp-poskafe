@@ -75,15 +75,15 @@ class ProductController extends Controller
           // return redirect()->back()->with('error', 'Harap masukkan data dengan benar, cok!');
       }
 
-      if ($request->file('picture')) {
-          $validateData['picture'] = $request->file('picture')->store('product-picture');
+      if ($request->hasFile('picture')){
+          $product_picture = Storage::disk('local')->putFile('product-picture', $request->file('picture'), 'public');
       }
       
       $data = [
           'sku' => $request->sku,
           'category_id' => $request->category_id,
           'name' => $request->name,
-          'picture' => $request->picture,
+          'picture' => $product->picture,
           'price' => $request->price,
           'has_stock' => $request->has_stock
       ];
