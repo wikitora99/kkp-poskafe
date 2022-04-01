@@ -77,7 +77,7 @@ class ProductController extends Controller
       
       $product = new Product;
       if ($request->hasFile('picture')){
-          $product->picture = Storage::disk('local')->putFile('product-picture', $request->file('picture'));
+          $product->picture = Storage::disk('public')->putFile('product-picture', $request->file('picture'));
       }
       $product->sku = $request->sku;
       $product->category_id = $request->category_id;
