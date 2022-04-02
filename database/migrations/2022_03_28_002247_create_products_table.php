@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             ->on('product_categories');
       $table->string('name');
       $table->string('picture')->nullable();
+      $table->string('desc')->nullable();
       $table->integer('buy_price')->nullable();
       $table->integer('sell_price');
       $table->boolean('has_stock');

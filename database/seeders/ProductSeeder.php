@@ -76,6 +76,7 @@ class ProductSeeder extends Seeder
 
       $product->name = $name;
       $product->picture = '1.jpg';
+      $product->desc = 'Lorem ipsum dolor sit amet monsuer venum brahhh.';
       $product->buy_price = 0;
       $product->sell_price = $price;
       $product->is_active = random_int(0,1);
