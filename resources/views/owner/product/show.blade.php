@@ -25,84 +25,90 @@
               </li>
             </ul>
             <div class="tab-content">
-              <div class="tab-pane fade active show" id="update" role="tabpanel">
+              <div class="mt-3 tab-pane fade active show" id="update" role="tabpanel">
                 <div class="pt-4">
                   <div class="row">
-                    <div class="col">
-                        <div class="row">
-                            <div class="mb-3 col-md-12">
-                                <label class="form-label">Username</label>
-                                <input type="text" class="form-control" name="username"
-                                    placeholder="1234 Main St">
-                            </div>
-                            <div class="mb-3 col-md-12">
-                                <label class="form-label">Password</label>
-                                <input type="password" class="form-control" name="password"
-                                    placeholder="Password">
-                            </div>
-                            <div class="mb-3 col-md-12">
-                                <label class="form-label">Password Confirmation</label>
-                                <input type="password" class="form-control"
-                                    name="password_confirmation" placeholder="Password">
-                            </div>
-                            <div class="mb-3 col-md-12">
-                                <label class="form-label">Role</label>
-                                <select name="role" class="form-control" id="">
-                                    <option value=3>Agent</option>
-                                    <option value=4>Bendahara</option>
-                                </select>
-                            </div>
-                            <div class="mb-3 col-md-12">
-                                <label class="form-label">Status Pegawai Bumdes</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="is_active"
-                                        value=1>
-                                    <label class="form-check-label">
-                                        Activated
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="is_active"
-                                        value=0>
-                                    <label class="form-check-label">
-                                        Disabled
-                                    </label>
-                                </div>
-                            </div>
+                    <form action="{{ route('product.update', $product) }}" method="POST" enctype="multipart/form-data">
+                      @csrf
+                      @method('PUT')
+                      <div class="row">
+                        <div class="col-md-3">
+                          <img src="{{ asset('src/images/logos/pic1.jpg') }}" class="img-preview img-fluid w-100">
+                          <label for="picture" class="btn btn-xs btn-square btn-primary w-100">
+                            <i class="fa fa-upload me-2"></i>Upload Gambar
+                          </label>
+                          <input type="file" class="d-none" id="picture" name="picture">
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="row">
-                            <div class="mb-3 col-md-12">
-                                <label class="form-label">Nama</label>
-                                <input type="text" class="form-control" name="nama"
-                                    placeholder="1234 Main St">
-                            </div>
-                            <div class="mb-3 col-md-12">
-                                <label class="form-label">Alamat</label>
-                                <textarea class="form-control" name="alamat" id="" cols="30"
-                                    rows="10"></textarea>
-                            </div>
-                            <div class="mb-3 col-md-12">
-                                <label class="form-label">Phone</label>
-                                <input type="number" class="form-control" name="phone"
-                                    placeholder="081234567">
-                            </div>
-                            <div class="mb-3 col-md-12">
-                                <label class="form-label">Jenis Kelamin</label>
-                                <select name="jk" class="form-control" id="">
-                                    <option value="Laki-laki">Laki-laki</option>
-                                    <option value="Perempuan">Perempuan</option>
-                                    <option value="Lainnya">Lainnya</option>
+                        <div class="col-md-9">
+                          <div class="row">
+                            <div class="col">
+                              <div class="mb-3">
+                                <label class="form-label">Nama Produk<span class="text-danger ms-1">*</span></label>
+                                <input type="text" class="form-control" name="name" placeholder="Masukkan nama produk" value="{{ $product->name }}" required>
+                              </div>
+                              <div class="mb-3">
+                                <label class="form-label">Kategori Produk<span class="text-danger ms-1">*</span></label>
+                                <select name="category_id" class="default-select form-control" required>
+                                  @foreach ($categories as $category)
+                                    <option {{ ($product->category_id == $category->id) ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->name }}</option>
+                                  @endforeach
                                 </select>
+                              </div>
+                              <div class="mb-3">
+                                <label class="form-label">Deskripsi Produk</label>
+                                <textarea class="form-control bg-transparent" name="desc" rows="5" placeholder="Masukkan deskripsi produk">{{ $product->desc }}</textarea>
+                              </div>
                             </div>
-                            <div class="mb-3 col-md-12">
-                                <label class="form-label">Jabatan</label>
-                                <select name="jabatan" class="form-control" id="">
-                                </select>
+                            <div class="col">
+                              <div class="mb-3">
+                                <label class="form-label">Harga Beli</label>
+                                <div class="input-group">
+                                  <span class="input-group-text">Rp</span>
+                                  <input type="number" class="form-control" name="buy_price" placeholder="99.000" value="{{ $product->buy_price }}">
+                                </div>
+                              </div>
+                              <div class="mb-3">
+                                <label class="form-label">Harga Jual<span class="text-danger ms-1">*</span></label>
+                                <div class="input-group">
+                                  <span class="input-group-text">Rp</span>
+                                  <input type="number" class="form-control" name="sell_price" placeholder="99.000" value="{{ $product->sell_price }}" required>
+                                </div>
+                              </div>
+                              <div class="mb-3">
+                                <div class="form-check custom-checkbox mb-3 checkbox-primary">
+                                  <input type="hidden" name="is_active" value="0">
+                                  <input type="checkbox" class="form-check-input" id="is_active" name="is_active" value="1" {{ $product->is_active ? 'checked' : '' }}>
+                                  <label class="form-check-label" for="is_active">Aktifkan di Menu Kasir</label>
+                                </div>
+                              </div>
+                              <div class="mb-3">
+                                <div class="form-check custom-checkbox mb-3 checkbox-primary">
+                                  <input type="hidden" name="has_stock" value="0">
+                                  <input type="checkbox" class="form-check-input" id="has_stock" name="has_stock" value="1" {{ $product->has_stock ? 'checked' : '' }}>
+                                  <label class="form-check-label" for="has_stock">Monitoring Persediaan</label>
+                                </div>
+                              </div>
                             </div>
+                            <div class="d-none" id="product-stock">
+                              <div class="mb-3">
+                                <label class="form-label">Stok Produk Saat Ini</label>
+                                <input type="number" class="form-control" name="cur_stock" placeholder="Masukkan stok produk saat ini" value="{{ $product->cur_stock }}">
+                              </div>
+                              <div class="mb-3">
+                                <label class="form-label">Stok Minimum Produk</label>
+                                <input type="number" class="form-control" name="min_stock" placeholder="Masukkan pengingat stok minimum" value="{{ $product->min_stock }}">
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                    </div>
+                      </div>
+                      <div class="row mt-3">
+                        <div class="text-end">
+                          <a href="{{ route('product.index') }}" class="btn btn-xs btn-outline-danger me-2">Batalkan</a>
+                          <button type="submit" class="btn btn-xs btn-primary">Simpan Perubahan</button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>

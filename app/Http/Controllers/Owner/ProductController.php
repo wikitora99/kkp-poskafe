@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Owner;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{ Product, ProductCategory, ProductOrder};
+use App\Models\{ Product, ProductCategory, ProductOrder };
+use Illuminate\Support\Facades\{ Validator, Storage, DB };
 
 class ProductController extends Controller
 {
@@ -44,22 +45,16 @@ class ProductController extends Controller
     // $total_sales = ProductOrder::all()->sum('total_order');
     // $product_sales = $product->orders->sum('total_order');
     // $percentage = number_format((($product_sales / $total_sales) * 100), 2, ',', '.');
+    $categories = ProductCategory::all();
 
-    return view('owner.product.show', compact('product'));
-  }
-
-
-  /** Show the form for editing the specified resource. **/
-  public function edit(Product $product)
-  {
-    dd($product);
+    return view('owner.product.show', compact('product', 'categories'));
   }
 
 
   /** Update the specified resource in storage. **/
-  public function update(Request $request, $id)
+  public function update(Request $request, Product $product)
   {
-    //
+    dd($request);
   }
 
 

@@ -1,6 +1,32 @@
 $(function() {
 
   /**************************
+    Custom JQuery-sart 
+  **************************/
+  let stockingProduct = function(hasStock){
+    if (hasStock.is(':checked')){
+      $('#product-stock').removeClass('d-none');
+      $('input[name=cur_stock]').attr('required', true);
+      $('input[name=min_stock]').attr('required', true);
+    }else{        
+      $('#product-stock').addClass('d-none');
+      $('input[name=cur_stock]').val(0);
+      $('input[name=cur_stock]').attr('required', false);
+      $('input[name=min_stock]').val(0);
+      $('input[name=min_stock]').attr('required', false);
+    }
+  }
+
+  $('input[name=has_stock]').change(function() {
+    stockingProduct($(this));
+  });
+
+  stockingProduct($('input[name=has_stock]'));
+  /**************************
+    Custom JQuery-end 
+  **************************/
+
+  /**************************
     Datatables Area-sart 
   **************************/
   if ($('.datatables').length > 0){

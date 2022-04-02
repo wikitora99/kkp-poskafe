@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function() {
   Route::post('logout', [AuthController::class, 'logout'])->name('logout');
   Route::get('dashboard', [Dashboard::class, 'index'])->name('dashboard');
 
-  Route::resource('product', Product::class);
+  Route::resource('product', Product::class)->except(['edit']);
 
   // TEST FILTER REQUEST
   Route::post('dashboard', [Dashboard::class, 'filter'] )->name('dashboard.filter');
