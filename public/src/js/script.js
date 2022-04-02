@@ -178,6 +178,26 @@ $(function() {
       }
     })
   });
+
+  $('.delete-btn').click(function() {
+    let form = $('.delete-form');
+    
+    Swal.fire({
+      title: 'Konfirmasi Hapus!',
+      text: 'Yakin ingin menghapus data ini?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Ya, hapus!',
+      cancelButtonText: 'Batal'
+    })
+    .then((result) => {
+      if (result.value) {
+        form.submit();
+      }
+    });
+  });
   /**************************
     Sweetalert Area-end 
   **************************/
