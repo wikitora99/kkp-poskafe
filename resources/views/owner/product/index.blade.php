@@ -43,7 +43,7 @@
                 @foreach ($products as $product)
                   <tr>
                     <td>
-                      <img class="rounded-circle" width="45" src="{{ asset('src/images/profile/1.png') }}" alt="Foto produk">
+                      <img class="rounded-circle" width="45" src="{{ asset('src/images/avatar/'.$product->picture) }}" alt="Foto produk">
                     </td>
                     <td>
                       <a href="{{ route('product.show', $product) }}" class="text-info">{{ $product->name }}</a>

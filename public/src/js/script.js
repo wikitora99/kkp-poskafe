@@ -4,23 +4,28 @@ $(function() {
     Custom JQuery-sart 
   **************************/
   let stockingProduct = function(hasStock){
+    let curStock = $('input[name=cur_stock]');
+    let minStock = $('input[name=min_stock]');
+
     if (hasStock.is(':checked')){
-      $('#product-stock').removeClass('d-none');
-      $('input[name=cur_stock]').attr('required', true);
-      $('input[name=min_stock]').attr('required', true);
+      curStock.prop('disabled', false);
+      curStock.attr('required', true);
+      minStock.prop('disabled', false);
+      minStock.attr('required', true);
     }else{        
-      $('#product-stock').addClass('d-none');
-      $('input[name=cur_stock]').val(0);
-      $('input[name=cur_stock]').attr('required', false);
-      $('input[name=min_stock]').val(0);
-      $('input[name=min_stock]').attr('required', false);
+      $('#product-stock').prop('disabled', true);
+      curStock.val(0);
+      curStock.prop('disabled', true);
+      curStock.attr('required', false);
+      minStock.val(0);
+      minStock.prop('disabled', true);
+      minStock.attr('required', false);
     }
   }
 
   $('input[name=has_stock]').change(function() {
     stockingProduct($(this));
   });
-
   stockingProduct($('input[name=has_stock]'));
 
   $('input[name=picture]').change(function(){
