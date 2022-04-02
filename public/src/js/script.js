@@ -22,6 +22,18 @@ $(function() {
   });
 
   stockingProduct($('input[name=has_stock]'));
+
+  $('input[name=picture]').change(function(){
+    let img = $(this);
+    let imgPreview = $('.img-preview');
+    let getFile = new FileReader();
+
+    getFile.readAsDataURL(img[0].files[0]);
+
+    getFile.onload = function(e){
+      imgPreview[0].src = e.target.result;
+    }
+  });
   /**************************
     Custom JQuery-end 
   **************************/

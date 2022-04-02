@@ -109,7 +109,7 @@
                         </div>
                         <div class="col text-end">
                           <a href="{{ route('product.index') }}" class="btn btn-xs btn-outline-primary me-2">Batal</a>
-                          <button type="submit" class="btn btn-xs btn-primary update-btn">Simpan Perubahan</button>
+                          <button type="submit" class="btn btn-xs btn-primary">Simpan Perubahan</button>
                         </div>
                       </div>
                     </form>

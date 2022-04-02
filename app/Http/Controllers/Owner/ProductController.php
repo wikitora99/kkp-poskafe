@@ -35,7 +35,7 @@ class ProductController extends Controller
   /** Store a newly created resource in storage. **/
   public function store(Request $request)
   {
-    //
+    dd($request);
   }
 
 
@@ -54,7 +54,8 @@ class ProductController extends Controller
   /** Update the specified resource in storage. **/
   public function update(Request $request, Product $product)
   {
-    dd($request);
+    // dd($request);
+    return redirect()->back()->with('success', 'Data produk berhasil diubah!');
   }
 
 
@@ -62,7 +63,7 @@ class ProductController extends Controller
   public function destroy(Product $product)
   {
     // dd($product);
-    return redirect()->route('product.index')->with('success', 'Produk berhasil dihapus!');
+    return redirect()->route('product.index')->with('success', 'Data produk berhasil dihapus!');
   }
 
 }
