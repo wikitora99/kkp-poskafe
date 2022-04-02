@@ -14,10 +14,8 @@ $(function() {
       minStock.attr('required', true);
     }else{        
       $('#product-stock').prop('disabled', true);
-      curStock.val(0);
       curStock.prop('disabled', true);
       curStock.attr('required', false);
-      minStock.val(0);
       minStock.prop('disabled', true);
       minStock.attr('required', false);
     }

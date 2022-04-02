@@ -23,7 +23,7 @@
   </div>
 
   <div class="row">
-    <div class="col-12">
+    <div class="col">
       <div class="card">
         <div class="card-body">
           <div class="table-responsive">
@@ -43,7 +43,7 @@
                 @foreach ($products as $product)
                   <tr>
                     <td>
-                      <img class="rounded-circle" width="45" src="{{ asset('src/images/avatar/'.$product->picture) }}" alt="Foto produk">
+                      <img class="rounded-circle" width="45" src="{{ asset('storage/'.$product->picture) }}" alt="Foto produk">
                     </td>
                     <td>
                       <a href="{{ route('product.show', $product) }}" class="text-info">{{ $product->name }}</a>

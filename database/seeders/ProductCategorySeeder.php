@@ -14,14 +14,50 @@ class ProductCategorySeeder extends Seeder
    */
   public function run()
   {
-    Category::create(['name' => 'Coffee']);
-    Category::create(['name' => 'Snack']);
-    Category::create(['name' => 'Milkshake']);
-    Category::create(['name' => 'Signature Sabit']);
-    Category::create(['name' => 'Main Course']);
-    Category::create(['name' => 'Noodle']);
-    Category::create(['name' => 'Flavour Tea']);
-    Category::create(['name' => 'Long Drink']);
-    Category::create(['name' => 'Extra Syrup']);
+    Category::create([
+      'name' => 'Coffee',
+      'desc' => 'Lorem ipsum dolor sit amet.',
+      'picture' => 'product/category/default.jpg'
+    ]);
+    Category::create([
+      'name' => 'Snack',
+      'desc' => 'Lorem ipsum dolor sit amet.',
+      'picture' => 'product/category/default.jpg'
+    ]);
+    Category::create([
+      'name' => 'Milkshake',
+      'desc' => 'Lorem ipsum dolor sit amet.',
+      'picture' => 'product/category/default.jpg'
+    ]);
+    Category::create([
+      'name' => 'Signature Sabit',
+      'desc' => 'Lorem ipsum dolor sit amet.',
+      'picture' => 'product/category/default.jpg'
+    ]);
+    Category::create([
+      'name' => 'Main Course',
+      'desc' => 'Lorem ipsum dolor sit amet.',
+      'picture' => 'product/category/default.jpg'
+    ]);
+    Category::create([
+      'name' => 'Noodle',
+      'desc' => 'Lorem ipsum dolor sit amet.',
+      'picture' => 'product/category/default.jpg'
+    ]);
+    Category::create([
+      'name' => 'Flavour Tea',
+      'desc' => 'Lorem ipsum dolor sit amet.',
+      'picture' => 'product/category/default.jpg'
+    ]);
+    Category::create([
+      'name' => 'Long Drink',
+      'desc' => 'Lorem ipsum dolor sit amet.',
+      'picture' => 'product/category/default.jpg'
+    ]);
+    Category::create([
+      'name' => 'Extra Syrup',
+      'desc' => 'Lorem ipsum dolor sit amet.',
+      'picture' => 'product/category/default.jpg'
+    ]);
   }
 }

@@ -28,7 +28,7 @@
 
         <li class="nav-item dropdown header-profile">
           <a class="nav-link" role="button" data-bs-toggle="dropdown">
-            <img src="{{ asset('src/images/profile/small') }}/{{ auth()->user()->picture }}" width="20" alt="Foto Profil">
+            <img src="{{ asset('storage/'.auth()->user()->picture) }}" width="20" alt="Foto Profil">
             <div class="header-info">
               <span>{{ auth()->user()->name }}</span>
               <small>{{ auth()->user()->role->name }}</small>

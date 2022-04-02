@@ -75,7 +75,7 @@ class ProductSeeder extends Seeder
       }
 
       $product->name = $name;
-      $product->picture = '1.jpg';
+      $product->picture = 'product/default.jpg';
       $product->desc = 'Lorem ipsum dolor sit amet monsuer venum brahhh.';
       $product->buy_price = 0;
       $product->sell_price = $price;

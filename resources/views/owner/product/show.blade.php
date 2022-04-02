@@ -34,9 +34,9 @@
                       @method('PUT')
                       <div class="row my-3">
                         <div class="col-md-3">
-                          <img src="{{ asset('src/images/logos/pic'.$product->picture) }}" class="img-preview img-fluid d-block w-100">
+                          <img src="{{ asset('storage/'.$product->picture) }}" class="img-preview img-fluid d-block w-100">
                           <label for="picture" class="btn btn-xs btn-square btn-primary w-100">
-                            <i class="fa fa-upload me-2"></i>Unggah Foto
+                            <i class="fa fa-upload me-2"></i>Unggah Foto Produk
                           </label>
                           <input type="file" class="d-none" id="picture" name="picture">
                         </div>
@@ -103,7 +103,7 @@
                             <input type="number" class="form-control" name="cur_stock" placeholder="Masukkan stok produk saat ini" value="{{ $product->cur_stock }}" disabled>
                           </div>
                           <div class="mb-3">
-                            <label class="form-label">Stok Minimum</label>
+                            <label class="form-label">Peringatan Stok Minimum</label>
                             <input type="number" class="form-control" name="min_stock" placeholder="Masukkan pengingat stok minimum" value="{{ $product->min_stock }}" disabled>
                           </div>
                         </div>
