@@ -79,14 +79,14 @@
                             <label class="form-label">Harga Beli</label>
                             <div class="input-group">
                               <span class="input-group-text">Rp</span>
-                              <input type="number" class="form-control" name="buy_price" placeholder="99.000" value="{{ $product->buy_price }}">
+                              <input type="number" class="form-control" name="buy_price" placeholder="0" value="{{ $product->buy_price }}">
                             </div>  
                           </div>
                           <div class="mb-3">
                             <label class="form-label">Harga Jual<span class="text-danger ms-1">*</span></label>
                             <div class="input-group">
                               <span class="input-group-text">Rp</span>
-                              <input type="number" class="form-control" name="sell_price" placeholder="99.000" value="{{ $product->sell_price }}" required>
+                              <input type="number" class="form-control" name="sell_price" placeholder="0" value="{{ $product->sell_price }}" required>
                             </div>      
                           </div>
                         </div>
@@ -100,11 +100,11 @@
                           </div>
                           <div class="mb-3">
                             <label class="form-label">Stok Saat Ini</label>
-                            <input type="number" class="form-control" name="cur_stock" placeholder="Masukkan stok produk saat ini" value="{{ $product->cur_stock }}" disabled>
+                            <input type="number" class="form-control" name="cur_stock" placeholder="0" value="{{ $product->cur_stock }}" disabled>
                           </div>
                           <div class="mb-3">
                             <label class="form-label">Peringatan Stok Minimum</label>
-                            <input type="number" class="form-control" name="min_stock" placeholder="Masukkan pengingat stok minimum" value="{{ $product->min_stock }}" disabled>
+                            <input type="number" class="form-control" name="min_stock" placeholder="0" value="{{ $product->min_stock }}" disabled>
                           </div>
                         </div>
                       </div>
@@ -116,7 +116,7 @@
                           <button type="button" class="btn btn-xs btn-danger delete-btn">Hapus Produk</button>
                         </div>
                         <div class="col text-end">
-                          <a href="{{ route('product.index') }}" class="btn btn-xs btn-outline-primary me-2">Batal</a>
+                          <button type="button" class="btn btn-xs btn-outline-primary me-2 reset-btn">Batal</button>
                           <button type="submit" class="btn btn-xs btn-primary">Simpan Perubahan</button>
                         </div>
                       </div>

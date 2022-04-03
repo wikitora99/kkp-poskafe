@@ -71,6 +71,8 @@ class ProductController extends Controller
 
       if ($request->hasFile('picture')){
         $product->picture = Storage::disk('public')->putFile('product', $request->file('picture'));
+      }else{
+        $product->picture = 'product/default.jpg';
       }
 
       $product->save();
@@ -109,9 +111,14 @@ class ProductController extends Controller
 
   /** Remove the specified resource from storage. **/
   public function destroy(Product $product)
-  {
-    // dd($product);
-    return redirect()->route('product.index')->with('success', 'Data produk berhasil dihapus!');
+  {  
+    if ($product->picture != 'product/default.jpg') {
+      Storage::disk('public')->delete($product->picture);
+    }
+
+    $product->delete();
+
+    return redirect()->route('product.index')->with('success', 'Produk berhasil dihapus!');
   }
 
 }

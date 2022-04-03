@@ -26,7 +26,6 @@
                     <i class="fa fa-upload me-2"></i>Unggah Foto Produk
                   </label>
                   <input type="file" class="d-none" id="picture" name="picture">
-                  <small class="text-primary">Rasio 1:1 max 1 MB (JPG/PNG)</small>
                 </div>
                 <div class="col-md-9">
                   <div class="row">
@@ -102,7 +101,7 @@
 
               <div class="row mt-4">
                 <div class="col text-end">
-                  <a href="{{ route('product.index') }}" class="btn btn-xs btn-outline-primary me-2">Batal</a>
+                  <button type="button" class="btn btn-xs btn-outline-primary me-2 reset-btn">Reset</button>
                   <button type="submit" class="btn btn-xs btn-primary">Simpan</button>
                 </div>
               </div>

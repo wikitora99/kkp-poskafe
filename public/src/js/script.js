@@ -13,9 +13,10 @@ $(function() {
       minStock.prop('disabled', false);
       minStock.attr('required', true);
     }else{        
-      $('#product-stock').prop('disabled', true);
+      curStock.val('');
       curStock.prop('disabled', true);
       curStock.attr('required', false);
+      minStock.val('');
       minStock.prop('disabled', true);
       minStock.attr('required', false);
     }
@@ -36,6 +37,13 @@ $(function() {
     getFile.onload = function(e){
       imgPreview[0].src = e.target.result;
     }
+  });
+
+  $('.reset-btn').click(function() {
+    let curl = $(location).attr('href');
+    let target = curl.includes('?') ? curl.split('?')[0] : curl;
+    
+    window.location.href = target;
   });
   /**************************
     Custom JQuery-end 

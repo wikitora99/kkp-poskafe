@@ -31,7 +31,7 @@
               <thead>
                 <tr>
                   <th>Foto</th>
-                  <th>Produk</th>
+                  <th>Nama Produk</th>
                   <th>SKU</th>
                   <th>Jum. Stok</th>
                   <th>Harga Beli</th>
