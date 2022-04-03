@@ -5,7 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductStock extends Model
+class Cashier extends Model
 {
-    use HasFactory;
+  use HasFactory;
+
+  protected $table = 'cashier';
+
+  protected $guarded = ['id'];
 }

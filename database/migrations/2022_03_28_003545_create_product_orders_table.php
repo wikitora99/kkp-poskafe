@@ -23,8 +23,8 @@ class CreateProductOrdersTable extends Migration
       $table->foreign('product_id')
             ->references('id')
             ->on('products');
-      $table->integer('amount');
-      $table->integer('price');
+      $table->integer('total_order');
+      $table->integer('total_price');
       $table->timestamps();
     });
   }

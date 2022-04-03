@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
       'password' => Hash::make('password'), // password
       'phone' => '029739572523',
       'address' => 'Jl. Nusantara Satu No.5, Jakarta Timur',
-      'picture' => 'pic1.jpg',
+      'picture' => 'avatar/default.jpg',
       'remember_token' => Str::random(10)
     ]);
 
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
       'password' => Hash::make('password'), // password
       'phone' => '091733295923',
       'address' => 'Jl. Kapten Patimura No.99, Bekasi Kota',
-      'picture' => 'pic2.jpg',
+      'picture' => 'avatar/default.jpg',
       'remember_token' => Str::random(10)
     ]);
 
@@ -51,7 +51,7 @@ class UserSeeder extends Seeder
       'password' => Hash::make('password'), // password
       'phone' => '090372332423',
       'address' => 'Jl. TB Simatupang No.73, Jakarta Selatan',
-      'picture' => 'pic5.jpg',
+      'picture' => 'avatar/default.jpg',
       'remember_token' => Str::random(10)
     ]);
 
@@ -64,7 +64,7 @@ class UserSeeder extends Seeder
       'password' => Hash::make('password'), // password
       'phone' => '093538252334',
       'address' => 'Jl. Raya Bogor No.21, Depok',
-      'picture' => 'pic7.jpg',
+      'picture' => 'avatar/default.jpg',
       'remember_token' => Str::random(10)
     ]);
   }

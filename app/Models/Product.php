@@ -11,28 +11,23 @@ class Product extends Model
 
   protected $guarded = ['id'];
 
+  public function getRouteKeyName() 
+  {
+    return 'sku';
+  }
+
   public function category()
   {
     return $this->belongsTo(ProductCategory::class, 'category_id', 'id');
   }
-
-  public function variants()
-  {
-    return $this->hasMany(ProductVariant::class);
-  }
-
-  // public function stock()
-  // {
-  //   return $this->belongsTo(ProductStock::class);
-  // }
 
   // public function discounts()
   // {
   //   return $this->hasMany(ProductDiscount::class);
   // }
 
-  // public function orders()
-  // {
-  //   return $this->hasMany(ProductOrder::class);
-  // }
+  public function orders()
+  {
+    return $this->hasMany(ProductOrder::class);
+  }
 }

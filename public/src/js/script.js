@@ -1,7 +1,92 @@
 $(function() {
 
   /**************************
-    Daterange Picker-start 
+    Custom JQuery-sart 
+  **************************/
+  let stockingProduct = function(hasStock){
+    let curStock = $('input[name=cur_stock]');
+    let minStock = $('input[name=min_stock]');
+
+    if (hasStock.is(':checked')){
+      curStock.prop('disabled', false);
+      curStock.attr('required', true);
+      minStock.prop('disabled', false);
+      minStock.attr('required', true);
+    }else{        
+      curStock.val('');
+      curStock.prop('disabled', true);
+      curStock.attr('required', false);
+      minStock.val('');
+      minStock.prop('disabled', true);
+      minStock.attr('required', false);
+    }
+  }
+
+  $('input[name=has_stock]').change(function() {
+    stockingProduct($(this));
+  });
+  stockingProduct($('input[name=has_stock]'));
+
+  $('input[name=picture]').change(function(){
+    let img = $(this);
+    let imgPreview = $('.img-preview');
+    let getFile = new FileReader();
+
+    getFile.readAsDataURL(img[0].files[0]);
+
+    getFile.onload = function(e){
+      imgPreview[0].src = e.target.result;
+    }
+  });
+
+  $('.reset-btn').click(function() {
+    let curl = $(location).attr('href');
+    let target = curl.includes('?') ? curl.split('?')[0] : curl;
+    
+    window.location.href = target;
+  });
+  /**************************
+    Custom JQuery-end 
+  **************************/
+
+  /**************************
+    Datatables Area-sart 
+  **************************/
+  if ($('.datatables').length > 0){
+    $.fn.DataTable.ext.pager.numbers_length = 5;
+
+    $('.datatables').DataTable({
+      responsive: true,
+      pageLength: 10,
+      pagingType: 'simple_numbers',
+      ordering: false,
+      fixedColumns: {
+        leftColumns: 1
+      },
+      language: {
+        search: 'Filter',
+        emptyTable: 'Tidak ada data yang tersedia',
+        info: 'Baris _START_ - _END_ dari total _TOTAL_ baris',
+        infoEmpty: 'Menampilkan 0 dari total 0 hasil',
+        infoFiltered: '(disaring dari total _MAX_ baris)',
+        lengthMenu: 'Lihat per _MENU_ baris',
+        loadingRecords: 'Sedang memuat...',
+        zeroRecords: 'Tidak ada data yang sesuai',
+        infoThousands: ",",
+        searchPlaceholder: 'ketik di sini...',
+        paginate: {
+          previous: '&laquo;',
+          next: '&raquo;'
+        }
+      }
+    });
+  }
+  /**************************
+    Datatables Area-end
+  **************************/
+
+  /**************************
+    Daterange Picker Area-start 
   **************************/
   if ($('.filter-range').length > 0){
     let start = moment().subtract(29, 'days');
@@ -47,7 +132,7 @@ $(function() {
     });
   }
   /**************************
-    Daterange Picker-end
+    Daterange Picker Area-end
   **************************/
 
   /**************************
@@ -115,6 +200,26 @@ $(function() {
         form.submit();
       }
     })
+  });
+
+  $('.delete-btn').click(function() {
+    let form = $('.delete-form');
+    
+    Swal.fire({
+      title: 'Konfirmasi Hapus!',
+      text: 'Yakin ingin menghapus data ini?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Ya, hapus!',
+      cancelButtonText: 'Batal'
+    })
+    .then((result) => {
+      if (result.value) {
+        form.submit();
+      }
+    });
   });
   /**************************
     Sweetalert Area-end 

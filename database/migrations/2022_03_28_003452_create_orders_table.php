@@ -24,6 +24,8 @@ class CreateOrdersTable extends Migration
       $table->foreign('status_id')
             ->references('id')
             ->on('order_status');
+      $table->integer('total_paid');
+      $table->integer('changes');
       $table->timestamps();
     });
   }

@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Owner\ {
+  DashboardController as Dashboard,
+  ProductController as Product
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +28,10 @@ Route::middleware('guest')->controller(AuthController::class)->group(function() 
 
 Route::middleware('auth')->group(function() {
   Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-  Route::get('dashboard', fn() => view('admin.dashboard') )->name('dashboard');
+  Route::get('dashboard', [Dashboard::class, 'index'])->name('dashboard');
+
+  Route::resource('product', Product::class)->except(['edit']);
 
   // TEST FILTER REQUEST
-  Route::post('dashboard', fn() => dd(request()) )->name('dashboard.filter');
+  Route::post('dashboard', [Dashboard::class, 'filter'] )->name('dashboard.filter');
 });
