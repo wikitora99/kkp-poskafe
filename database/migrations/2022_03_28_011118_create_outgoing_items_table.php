@@ -18,7 +18,8 @@ class CreateOutgoingItemsTable extends Migration
       $table->unsignedBigInteger('stock_id');
       $table->foreign('stock_id')
             ->references('id')
-            ->on('outgoing_stocks');
+            ->on('outgoing_stocks')
+            ->onUpdate('cascade');
       $table->string('name');
       $table->integer('amount');
       $table->timestamps();

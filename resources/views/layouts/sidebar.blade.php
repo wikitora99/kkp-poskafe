@@ -55,7 +55,7 @@
           </ul>
         </li>
         <li>
-          <a href="{{ route('category.index') }}">Daftar Kategori</a>
+          <a href="{{ route('category.index') }}">Kategori Produk</a>
         </li>
       </ul>
     </li>

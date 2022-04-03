@@ -18,11 +18,13 @@ class CreateProductDiscountsTable extends Migration
       $table->unsignedBigInteger('discount_id');
       $table->foreign('discount_id')
             ->references('id')
-            ->on('discounts');
+            ->on('discounts')
+            ->onUpdate('cascade');
       $table->unsignedBigInteger('product_id');
       $table->foreign('product_id')
             ->references('id')
-            ->on('products');
+            ->on('products')
+            ->onUpdate('cascade');
       $table->timestamps();
     });
   }

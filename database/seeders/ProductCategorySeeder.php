@@ -16,48 +16,39 @@ class ProductCategorySeeder extends Seeder
   {
     Category::create([
       'name' => 'Coffee',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Snack',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Milkshake',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Signature Sabit',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Main Course',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Noodle',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Flavour Tea',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Long Drink',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Extra Syrup',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
   }
 }

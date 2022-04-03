@@ -113,7 +113,7 @@
 
                       <div class="row mt-4">
                         <div class="col text-start">
-                          <button type="button" class="btn btn-xs btn-danger delete-btn">Hapus Produk</button>
+                          <button type="button" class="btn btn-xs btn-danger delete-trigger">Hapus Produk</button>
                         </div>
                         <div class="col text-end">
                           <button type="button" class="btn btn-xs btn-outline-primary me-2 reset-btn">Batal</button>
