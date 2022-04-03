@@ -1,20 +1,30 @@
 @extends('layouts.main')
 
 @section('title')
-  Produk Baru
+  Tambah Produk
 @endsection
 
 @section('content')
   
   @include('layouts.flasher')
 
+  <div class="row page-titles mx-0 d-flex flex-wrap align-items-center">
+    <div class="col-sm-6 p-md-0">
+      <div class="welcome-text">
+        <h4>Tambah Produk</h4>
+      </div>
+    </div>
+    <div class="col-sm-6 p-md-0 justify-content-sm-end d-flex">
+      <div class="breadcrumb">
+        <button type="button" class="btn btn-xs btn-primary light me-3"><i class="fa fa-upload me-2"></i>Impor Data</button>
+        <a href="{{ route('product.index') }}" class="btn btn-xs btn-primary"><i class="fa fa-list me-2"></i>Daftar Produk</a>
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col">
       <div class="card">
-        <div class="card-header">
-          <h4 class="card-title">Tambah Produk Baru</h4>  
-        </div>
-
         <div class="card-body">
           <div class="row">
             <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
