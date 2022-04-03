@@ -86,8 +86,9 @@ class ProductController extends Controller
     // $product_sales = $product->orders->sum('total_order');
     // $percentage = number_format((($product_sales / $total_sales) * 100), 2, ',', '.');
     $categories = ProductCategory::all();
+    $sales = true;
 
-    return view('owner.product.show', compact('product', 'categories'));
+    return view('owner.product.show', compact('product', 'categories', 'sales'));
   }
 
 

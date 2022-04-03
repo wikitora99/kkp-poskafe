@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Supplier extends Model
 {
-    use HasFactory;
+  use HasFactory;
+
+  protected $guarded = ['id'];
+
+  public function stocks()
+  {
+    return $this->hasMany(IncomingStock::class);
+  }
 }

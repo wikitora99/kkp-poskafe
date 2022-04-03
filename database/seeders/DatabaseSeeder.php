@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Product;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,6 +20,7 @@ class DatabaseSeeder extends Seeder
       UserSeeder::class,
       ProductCategorySeeder::class,
       ProductSeeder::class,
+      // DiscountSeeder::class,
       OrderStatusSeeder::class
     ]);
     

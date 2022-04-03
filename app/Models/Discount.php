@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Discount extends Model
 {
-    use HasFactory;
+  use HasFactory;
+
+  protected $guarded = ['id'];
+
+  public function products()
+  {
+    return $this->hasMany(ProductDiscount::class);
+  }
 }
