@@ -10,23 +10,35 @@
 
   <div class="row">
     <div class="col">
-      <div class="card">
-        <div class="card-header">
-          <h5 class="card-title">Tambah Kategori</h5>
-        </div>
-        <div class="card-body" style="height: 100px;">
-          <form action="{{ route('product.store') }}" method="POST">
-            @csrf
-            
-          </form>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <form action="{{ route('category.store') }}" method="POST">
+              @csrf
+              <div class="card-header border-0 pb-0">
+                <h4 class="mb-0 text-black">Tambah Kategori</h4>
+                <button type="submit" class="btn btn-xs btn-primary"><i class="fa fa-paper-plane me-2"></i>Simpan</button>
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label class="form-label">Nama Kategori<span class="text-danger ms-1">*</span></label>
+                  <input type="text" class="form-control" name="name" placeholder="Masukkan nama kategori" required>
+                </div>
+                <div class="mb-0">
+                  <label class="form-label">Deskripsi</label>
+                  <textarea class="form-control bg-transparent" name="desc" rows="5" placeholder="Masukkan deskripsi kategori" style="height: 80px;"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="col">
       <div class="card">
-        <div class="card-header">
-          <h5 class="card-title">Daftar Kategori</h5>
+        <div class="card-header border-0 pb-0">
+          <h4 class="mb-0 text-black">Daftar Kategori</h4>
         </div>
         <div class="card-body">
           <div class="basic-list-group">

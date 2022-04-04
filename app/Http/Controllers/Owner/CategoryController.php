@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{ Product, ProductCategory as Category };
 use Illuminate\Support\Facades\{ Validator, Storage };
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -19,7 +20,7 @@ class CategoryController extends Controller
   /* Display a listing of the resource. */
   public function index()
   {
-    $categories = Category::all();
+    $categories = Category::orderBy('name', 'asc')->get();
 
     return view('owner.category.index', compact('categories'));
   }
@@ -28,7 +29,23 @@ class CategoryController extends Controller
   /* Store a newly created resource in storage. */
   public function store(Request $request)
   {
-    dd($request);
+    $validator = Validator::make($request->all(), [
+      'name' => 'required|string|max:255|unique:product_categories,name',
+      'desc' => 'nullable|string|max:255'
+    ]);
+
+    if ($validator->fails()){
+      return redirect()->back()->with('error', $validator->errors()->first());
+    }
+
+    $category = new Category;
+    $category->name = $request->name;
+    $category->slug = Str::slug($request->name);
+    $category->desc = $request->desc;
+    $category->save();
+
+    return redirect()->route('category.index')
+                      ->with('success', 'Berhasil menambahkan Kategori baru!');
   }
 
 
@@ -58,7 +75,8 @@ class CategoryController extends Controller
     }
 
     $category->name = $request->name;
-    $category->desc = $request->desc ?? 'Tidak ada deskripsi';
+    $category->slug = Str::slug($request->name);
+    $category->desc = $request->desc;
 
     if (!$category->isDirty()){
       return redirect()->back()->with('warning', 'Tidak ada data yang diubah!');
@@ -66,14 +84,22 @@ class CategoryController extends Controller
 
     $category->push();
 
-    return redirect()->back()->with('success', "Data kategori berhasil diubah!");
+    return redirect()->route('category.index')->with('success', 'Data Kategori berhasil diubah!');
   }
 
 
   /* Remove the specified resource from storage. */
   public function destroy(Category $category)
   {
-    return redirect()->back()->with('success', "Kategori berhasil dihapus!");
+    $products = $category->products->count();
+
+    if ($products > 0){
+      return redirect()->back()->with('info', "Tidak dapat menghapus Kategori, terdapat {$products} Produk di dalam Kategori ini!");
+    }
+
+    $category->delete();
+
+    return redirect()->route('category.index')->with('success', 'Kategori berhasil dihapus!');
   }
 
 }

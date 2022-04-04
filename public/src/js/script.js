@@ -236,7 +236,7 @@ $(function() {
     
     Swal.fire({
       title: 'Konfirmasi Hapus!',
-      html: 'Yakin ingin menghapus data ini? Data yang sudah dihapus <b>tidak dapat dipulihkan!</b>',
+      html: 'Yakin ingin menghapus data ini?<br>Data yang dihapus <b>tidak dapat dipulihkan!</b>',
       type: 'error',
       showCancelButton: true,
       confirmButtonColor: '#d33',
