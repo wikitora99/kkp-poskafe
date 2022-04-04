@@ -49,7 +49,7 @@ $(function() {
   $('.edit-category').click(function() {
     let data = $(this).data('attr');
 
-    $('#form-category').attr('action', 'https://kkp-poskafe.dev/category/'+data.id);
+    $('#form-category').attr('action', 'https://kkp-poskafe.dev/category/'+data.slug);
     $('#name').val(data.name);
     $('#desc').val(data.desc);
   });

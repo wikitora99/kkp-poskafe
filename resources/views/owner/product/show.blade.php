@@ -137,7 +137,7 @@
                       <thead>
                         <tr>
                           <th>No. Transaksi</th>
-                          <th>Waktu Pesan</th>
+                          <th>Waktu Pemesanan</th>
                           <th>Jumlah</th>
                           <th>Total Harga</th>
                           <th>Diskon</th>

@@ -14,7 +14,7 @@
         <div class="card-header">
           <h5 class="card-title">Tambah Kategori</h5>
         </div>
-        <div class="card-body">
+        <div class="card-body" style="height: 100px;">
           <form action="{{ route('product.store') }}" method="POST">
             @csrf
             
