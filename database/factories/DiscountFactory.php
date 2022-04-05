@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Carbon\Carbon;
 
 class DiscountFactory extends Factory
 {
@@ -15,29 +16,22 @@ class DiscountFactory extends Factory
   {
     $min_orders = [50000,75000,100000,250000];
     $val_percent = [5,10,15,20,25];
-    $val_nominal = [2000,5000,7500,10000];
+    $val_nominal = [5000,10000,15000,20000];
+    $to = [7,14,30,60];
+    $from = mt_rand(10,100);
 
-    $start_date = date_format($this->faker->dateTimeBetween('-6 months', '-1 month'), 'Y-m-d');
+    $start_date = Carbon::today()->subDays($from);
     $no_expired = $this->faker->boolean();
     $in_percent = $this->faker->boolean();
 
-    if ($no_expired == true){
-      $due_date = null;
-    }else{
-      $due_date = date_format($this->faker->dateTimeBetween('-1 month', '+1 month'), 'Y-m-d');
-    }
-
-    if ($in_percent == true){
-      $value = $this->faker->randomElements($val_percent);
-    }else{
-      $value = $this->faker->randomElements($val_nominal);
-    }
+    $due_date = $no_expired ? null : Carbon::today()->subDays($from)->addDays($to[mt_rand(0,3)])->toDateString();
+    $value = $in_percent ? $val_percent[mt_rand(0,4)] : $val_nominal[mt_rand(0,3)];
 
     return [
-      'start_date' => $start_date,
+      'start_date' => $start_date->toDateString(),
       'no_expired' => $no_expired,
       'due_date' => $due_date,
-      'min_order' => $this->faker->randomElements($min_orders),
+      'min_order' => $min_orders[mt_rand(0,3)],
       'in_percent' => $in_percent,
       'value' => $value
     ];
