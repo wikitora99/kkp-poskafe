@@ -48,8 +48,9 @@ $(function() {
 
   $('.edit-category').click(function() {
     let data = $(this).data('attr');
+    let curl = $(location).attr('href');
 
-    $('#form-category').attr('action', 'https://kkp-poskafe.dev/category/'+data.slug);
+    $('#form-category').attr('action', curl+'/'+data.slug);
     $('#name').val(data.name);
     $('#desc').val(data.desc);
   });

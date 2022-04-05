@@ -37,8 +37,8 @@ Route::middleware('auth')->group(function() {
   Route::get('dashboard', [Dashboard::class, 'index'])->name('dashboard');
 
   Route::resource('product', Product::class)->except(['edit']);
-  Route::resource('category', Category::class)->except(['edit', 'create']);
-  Route::resource('supplier' Supplier::class);
+  Route::resource('category', Category::class)->except(['create', 'edit']);
+  Route::resource('supplier', Supplier::class)->except(['create', 'edit', 'show']);
   Route::resource('incoming-stock', Incoming::class)->except(['edit', 'update']);
   Route::resource('outgoing-stock', Outgoing::class)->except(['edit', 'update']);
 

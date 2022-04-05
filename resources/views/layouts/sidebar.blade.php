@@ -55,10 +55,10 @@
           <a class="has-arrow" href="#" aria-expanded="false">Stok Masuk</a>
           <ul aria-expanded="false">
             <li>
-              <a href="{{ route('incoming.index') }}">Daftar Stok Masuk</a>
+              <a href="{{ route('incoming-stock.index') }}">Daftar Stok Masuk</a>
             </li>
             <li>
-              <a href="{{ route('incoming.create') }}">Tambah Stok Masuk</a>
+              <a href="{{ route('incoming-stock.create') }}">Tambah Stok Masuk</a>
             </li>
           </ul>
         </li>
@@ -66,10 +66,10 @@
           <a class="has-arrow" href="#" aria-expanded="false">Stok Keluar</a>
           <ul aria-expanded="false">
             <li>
-              <a href="{{ route('outgoing.index') }}">Daftar Stok Keluar</a>
+              <a href="{{ route('outgoing-stock.index') }}">Daftar Stok Keluar</a>
             </li>
             <li>
-              <a href="{{ route('outgoing.create') }}">Tambah Stok Keluar</a>
+              <a href="{{ route('outgoing-stock.create') }}">Tambah Stok Keluar</a>
             </li>
           </ul>
         </li>
