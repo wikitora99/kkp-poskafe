@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Owner;
+namespace App\Http\Controllers\Sales;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -22,7 +22,7 @@ class CategoryController extends Controller
   {
     $categories = Category::orderBy('name', 'asc')->get();
 
-    return view('owner.category.index', compact('categories'));
+    return view('sales.category.index', compact('categories'));
   }
 
 
@@ -52,7 +52,7 @@ class CategoryController extends Controller
   /* Display the specified resource. */
   public function show(Category $category)
   {
-    return view('owner.category.show', compact('category'));
+    return view('sales.category.show', compact('category'));
   }
 
 

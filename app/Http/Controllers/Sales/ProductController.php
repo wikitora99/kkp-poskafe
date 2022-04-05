@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Owner;
+namespace App\Http\Controllers\Sales;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -21,7 +21,7 @@ class ProductController extends Controller
   {
     $products = Product::orderBy('name', 'asc')->get();
 
-    return view('owner.product.index', compact('products'));
+    return view('sales.product.index', compact('products'));
   }
 
 
@@ -29,7 +29,7 @@ class ProductController extends Controller
   public function create()
   {
     $categories = ProductCategory::all();
-    return view('owner.product.create', compact('categories'));
+    return view('sales.product.create', compact('categories'));
   }
 
 
@@ -88,7 +88,7 @@ class ProductController extends Controller
     $categories = ProductCategory::all();
     $sales = true;
 
-    return view('owner.product.show', compact('product', 'categories', 'sales'));
+    return view('sales.product.show', compact('product', 'categories', 'sales'));
   }
 
 
