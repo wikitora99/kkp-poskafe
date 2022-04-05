@@ -14,7 +14,7 @@ class SupplierFactory extends Factory
   public function definition()
   {
     return [
-      
+      //
     ];
   }
 }
