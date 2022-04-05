@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class OutgoingItem extends Model
 {
-    use HasFactory;
+  use HasFactory;
+
+  protected $guarded = ['id'];
+
+  public function stock()
+  {
+    return $this->belongsTo(OutgoingStock::class, 'stock_id', 'id');
+  }
 }

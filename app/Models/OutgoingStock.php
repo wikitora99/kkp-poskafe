@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class OutgoingStock extends Model
 {
-    use HasFactory;
+  use HasFactory;
+
+  protected $guarded = ['id'];
+
+  public function items()
+  {
+    return $this->hasMany(OutgoingItem::class);
+  }
 }

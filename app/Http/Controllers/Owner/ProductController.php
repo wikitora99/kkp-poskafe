@@ -75,7 +75,7 @@ class ProductController extends Controller
     $product->save();
 
     return redirect()->route('product.index')
-                      ->with('success', 'Berhasil menambahkan produk baru!');
+                      ->with('success', 'Berhasil menambahkan Produk baru!');
   }
 
 
@@ -86,8 +86,9 @@ class ProductController extends Controller
     // $product_sales = $product->orders->sum('total_order');
     // $percentage = number_format((($product_sales / $total_sales) * 100), 2, ',', '.');
     $categories = ProductCategory::all();
+    $sales = true;
 
-    return view('owner.product.show', compact('product', 'categories'));
+    return view('owner.product.show', compact('product', 'categories', 'sales'));
   }
 
 
@@ -140,7 +141,7 @@ class ProductController extends Controller
 
     $product->push();
 
-    return redirect()->back()->with('success', 'Data produk berhasil diubah!');
+    return redirect()->route('product.index')->with('success', 'Data Produk berhasil diubah!');
   }
 
 

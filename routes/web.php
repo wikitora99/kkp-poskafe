@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Owner\ {
   DashboardController as Dashboard,
-  ProductController as Product
+  ProductController as Product,
+  CategoryController as Category
 };
 
 /*
@@ -31,6 +32,7 @@ Route::middleware('auth')->group(function() {
   Route::get('dashboard', [Dashboard::class, 'index'])->name('dashboard');
 
   Route::resource('product', Product::class)->except(['edit']);
+  Route::resource('category', Category::class)->except(['edit', 'create']);
 
   // TEST FILTER REQUEST
   Route::post('dashboard', [Dashboard::class, 'filter'] )->name('dashboard.filter');

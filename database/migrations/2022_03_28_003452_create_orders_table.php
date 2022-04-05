@@ -23,7 +23,8 @@ class CreateOrdersTable extends Migration
       $table->unsignedBigInteger('status_id');
       $table->foreign('status_id')
             ->references('id')
-            ->on('order_status');
+            ->on('order_status')
+            ->onUpdate('cascade');
       $table->integer('total_paid');
       $table->integer('changes');
       $table->timestamps();

@@ -18,7 +18,8 @@ class CreateIncomingItemsTable extends Migration
       $table->unsignedBigInteger('stock_id');
       $table->foreign('stock_id')
             ->references('id')
-            ->on('incoming_stocks');
+            ->on('incoming_stocks')
+            ->onUpdate('cascade');
       $table->string('name');
       $table->integer('price');
       $table->integer('amount');

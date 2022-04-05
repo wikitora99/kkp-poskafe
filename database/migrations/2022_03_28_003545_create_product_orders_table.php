@@ -18,11 +18,13 @@ class CreateProductOrdersTable extends Migration
       $table->unsignedBigInteger('order_id');
       $table->foreign('order_id')
             ->references('id')
-            ->on('orders');
+            ->on('orders')
+            ->onUpdate('cascade');
       $table->unsignedBigInteger('product_id');
       $table->foreign('product_id')
             ->references('id')
-            ->on('products');
+            ->on('products')
+            ->onUpdate('cascade');
       $table->integer('total_order');
       $table->integer('total_price');
       $table->timestamps();

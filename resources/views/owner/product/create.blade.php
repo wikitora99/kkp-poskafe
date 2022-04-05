@@ -29,7 +29,7 @@
           <div class="row">
             <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
               @csrf
-              <div class="row my-3">
+              <div class="row mb-3">
                 <div class="col-md-3">
                   <img src="{{ asset('storage/product/default.jpg') }}" class="img-preview img-fluid d-block w-100">
                   <label for="picture" class="btn btn-xs btn-square btn-primary w-100">

@@ -16,7 +16,7 @@
     </div>
     <div class="col-sm-6 p-md-0 justify-content-sm-end d-flex">
       <div class="breadcrumb">
-        <button type="button" class="btn btn-xs btn-primary light me-3"><i class="fa fa-download me-2"></i>Expor Data</button>
+        <button type="button" class="btn btn-xs btn-primary light me-3"><i class="fa fa-download me-2"></i>Ekspor Data</button>
         <a href="{{ route('product.create') }}" class="btn btn-xs btn-primary"><i class="fa fa-plus me-2"></i>Tambah Produk</a>
       </div>
     </div>
