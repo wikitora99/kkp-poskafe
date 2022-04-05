@@ -19,7 +19,7 @@ class ProductController extends Controller
   /** Display a listing of the resource. **/
   public function index()
   {
-    $products = Product::orderBy('name', 'asc')->get();
+    $products = Product::orderBy('sku', 'ASC')->get();
 
     return view('owner.product.index', compact('products'));
   }
