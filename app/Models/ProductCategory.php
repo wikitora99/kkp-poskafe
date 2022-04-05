@@ -11,8 +11,13 @@ class ProductCategory extends Model
 
   protected $guarded = ['id'];
 
+  public function getRouteKeyName()
+  {
+    return 'slug';
+  }
+
   public function products()
   {
-    return $this->hasMany(Product::class);
+    return $this->hasMany(Product::class, 'category_id', 'id');
   }
 }

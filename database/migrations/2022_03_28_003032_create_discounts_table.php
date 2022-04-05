@@ -16,7 +16,8 @@ class CreateDiscountsTable extends Migration
     Schema::create('discounts', function (Blueprint $table) {
       $table->id();
       $table->date('start_date');
-      $table->date('due_date');
+      $table->boolean('no_expired');
+      $table->date('due_date')->nullable();
       $table->integer('min_order');
       $table->boolean('in_percent');
       $table->integer('value');

@@ -7,5 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductDiscount extends Model
 {
-    use HasFactory;
+  use HasFactory; 
+
+  protected $guarded = ['id'];
+
+  public function product()
+  {
+    return $this->belongsTo(Product::class, 'product_id', 'id');
+  }
+
+  public function discount()
+  {
+    return $this->belongsTo(Discount::class, 'discount_id', 'id');
+  }
 }

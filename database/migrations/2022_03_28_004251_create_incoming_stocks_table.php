@@ -20,7 +20,8 @@ class CreateIncomingStocksTable extends Migration
       $table->unsignedBigInteger('supplier_id');
       $table->foreign('supplier_id')
             ->references('id')
-            ->on('suppliers');
+            ->on('suppliers')
+            ->onUpdate('cascade');
       $table->timestamps();
     });
   }

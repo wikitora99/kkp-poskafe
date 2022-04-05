@@ -15,9 +15,9 @@ class CreateProductCategoriesTable extends Migration
   {
     Schema::create('product_categories', function (Blueprint $table) {
       $table->id();
-      $table->string('name');
+      $table->string('name')->unique();
+      $table->string('slug')->unique();
       $table->string('desc')->nullable();
-      $table->string('picture')->nullable();
       $table->timestamps();
     });
   }

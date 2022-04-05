@@ -45,6 +45,15 @@ $(function() {
     
     window.location.href = target;
   });
+
+  $('.edit-category').click(function() {
+    let data = $(this).data('attr');
+    let curl = $(location).attr('href');
+
+    $('#form-category').attr('action', curl+'/'+data.slug);
+    $('#name').val(data.name);
+    $('#desc').val(data.desc);
+  });
   /**************************
     Custom JQuery-end 
   **************************/
@@ -202,13 +211,34 @@ $(function() {
     })
   });
 
-  $('.delete-btn').click(function() {
+  $('.delete-trigger').click(function() {
     let form = $('.delete-form');
     
     Swal.fire({
       title: 'Konfirmasi Hapus!',
       text: 'Yakin ingin menghapus data ini?',
       type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Ya, hapus!',
+      cancelButtonText: 'Batal'
+    })
+    .then((result) => {
+      if (result.value) {
+        form.submit();
+      }
+    });
+  });
+
+  $('.delete-btn').click(function(e) {
+    e.preventDefault();
+    let form = $(this).parents('form');
+    
+    Swal.fire({
+      title: 'Konfirmasi Hapus!',
+      html: 'Yakin ingin menghapus data ini?<br>Data yang dihapus <b>tidak dapat dipulihkan!</b>',
+      type: 'error',
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',

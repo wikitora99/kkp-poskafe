@@ -16,48 +16,48 @@ class ProductCategorySeeder extends Seeder
   {
     Category::create([
       'name' => 'Coffee',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'slug' => 'coffee',
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Snack',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'slug' => 'snack',
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Milkshake',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'slug' => 'milkshake',
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Signature Sabit',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'slug' => 'signature-sabit',
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Main Course',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'slug' => 'main-course',
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Noodle',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'slug' => 'noodle',
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Flavour Tea',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'slug' => 'falvour-tea',
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Long Drink',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'slug' => 'long-drink',
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
     Category::create([
       'name' => 'Extra Syrup',
-      'desc' => 'Lorem ipsum dolor sit amet.',
-      'picture' => 'product/category/default.jpg'
+      'slug' => 'extra-syrup',
+      'desc' => 'Lorem ipsum dolor sit amet.'
     ]);
   }
 }

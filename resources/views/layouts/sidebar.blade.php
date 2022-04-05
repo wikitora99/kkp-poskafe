@@ -41,21 +41,7 @@
           </ul>
         </li>
         <li>
-          <a class="has-arrow" href="#" aria-expanded="false">Tipe Spesial</a>
-          <ul aria-expanded="false">
-            <li>
-              <a href="#">Terpopuler</a> {{-- route('product.special.popular') --}}
-            </li>
-            <li>
-              <a href="#">Rilis Terbaru</a> {{-- route('product.special.newest') --}}
-            </li>
-            <li>
-              <a href="#">Stok Kosong</a> {{-- route('product.special.stockout') --}}
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">Daftar Kategori</a> {{-- route('category.index') --}}
+          <a href="{{ route('category.index') }}">Kategori Produk</a>
         </li>
       </ul>
     </li>
@@ -69,10 +55,10 @@
           <a class="has-arrow" href="#" aria-expanded="false">Stok Masuk</a>
           <ul aria-expanded="false">
             <li>
-              <a href="#">Daftar Stok Masuk</a> {{-- route('inventor.incoming.index') --}}
+              <a href="{{ route('incoming-stock.index') }}">Daftar Stok Masuk</a>
             </li>
             <li>
-              <a href="#">Tambah Stok Masuk</a> {{-- route('inventor.incoming.create') --}}
+              <a href="{{ route('incoming-stock.create') }}">Tambah Stok Masuk</a>
             </li>
           </ul>
         </li>
@@ -80,15 +66,15 @@
           <a class="has-arrow" href="#" aria-expanded="false">Stok Keluar</a>
           <ul aria-expanded="false">
             <li>
-              <a href="#">Daftar Stok Keluar</a> {{-- route('inventor.outgoing.index') --}}
+              <a href="{{ route('outgoing-stock.index') }}">Daftar Stok Keluar</a>
             </li>
             <li>
-              <a href="#">Tambah Stok Keluar</a> {{-- route('inventor.outgoing.create') --}}
+              <a href="{{ route('outgoing-stock.create') }}">Tambah Stok Keluar</a>
             </li>
           </ul>
         </li>
         <li>
-          <a href="#">Daftar Supplier</a> {{-- route('supplier.index') --}}
+          <a href="{{ route('supplier.index') }}">Daftar Supplier</a>
         </li>
       </ul>
     </li>

@@ -20,7 +20,8 @@ class CreateUsersTable extends Migration
       $table->unsignedBigInteger('role_id');
       $table->foreign('role_id')
             ->references('id')
-            ->on('user_roles');
+            ->on('user_roles')
+            ->onUpdate('cascade');
       $table->string('name');
       $table->string('phone')->unique();
       $table->string('address');

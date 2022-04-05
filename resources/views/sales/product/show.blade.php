@@ -27,12 +27,12 @@
             <div class="tab-content">
 
               <div class="tab-pane fade active show" id="update" role="tabpanel">
-                <div class="pt-4">
+                <div class="pt-5">
                   <div class="row">
                     <form action="{{ route('product.update', $product) }}" method="POST" enctype="multipart/form-data">
                       @csrf
                       @method('PUT')
-                      <div class="row my-3">
+                      <div class="row mb-3">
                         <div class="col-md-3">
                           <img src="{{ asset('storage/'.$product->picture) }}" class="img-preview img-fluid d-block w-100">
                           <label for="picture" class="btn btn-xs btn-square btn-primary w-100">
@@ -113,7 +113,7 @@
 
                       <div class="row mt-4">
                         <div class="col text-start">
-                          <button type="button" class="btn btn-xs btn-danger delete-btn">Hapus Produk</button>
+                          <button type="button" class="btn btn-xs btn-danger delete-trigger">Hapus Produk</button>
                         </div>
                         <div class="col text-end">
                           <button type="button" class="btn btn-xs btn-outline-primary me-2 reset-btn">Batal</button>
@@ -131,12 +131,49 @@
               </div>
 
               <div class="tab-pane fade" id="sales">
-                <div class="pt-4">
-                  <h4>This is product sales</h4>
-                  <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.
-                  </p>
-                  <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor.
-                  </p>
+                <div class="pt-5">
+                  <div class="table-responsive">
+                    <table class="datatables table table-hover my-2">
+                      <thead>
+                        <tr>
+                          <th>No. Transaksi</th>
+                          <th>Waktu Pemesanan</th>
+                          <th>Jumlah</th>
+                          <th>Total Harga</th>
+                          <th>Diskon</th>
+                          <th>Total Bayar</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {{-- @foreach ($sales as $item) --}}
+                          <tr>
+                            <td><a href="#" class="text-info">TX220404000009</a></td>
+                            <td>04 Apr 2022, 15:30:21</td>
+                            <td>5</td>
+                            <td>@currency_id(75000)</td>
+                            <td>10%</td>
+                            <td>@currency_id(68500)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="#" class="text-info">TX220331000029</a></td>
+                            <td>31 Mar 2022, 17:25:14</td>
+                            <td>2</td>
+                            <td>@currency_id(42000)</td>
+                            <td>Tidak ada</td>
+                            <td>@currency_id(42000)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="#" class="text-info">TX220402000072</a></td>
+                            <td>02 Apr 2022, 19:45:19</td>
+                            <td>4</td>
+                            <td>@currency_id(58000)</td>
+                            <td>@currency_id(10000)</td>
+                            <td>@currency_id(48000)</td>
+                          </tr>
+                        {{-- @endforeach --}}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
 
