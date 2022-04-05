@@ -52,7 +52,7 @@ class CategoryController extends Controller
   /* Display the specified resource. */
   public function show(Category $category)
   {
-    //
+    return view('owner.category.show', compact('category'));
   }
 
 

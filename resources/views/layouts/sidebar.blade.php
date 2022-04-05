@@ -44,13 +44,13 @@
           <a class="has-arrow" href="#" aria-expanded="false">Tipe Spesial</a>
           <ul aria-expanded="false">
             <li>
-              <a href="#">Terpopuler</a> {{-- route('product.special.popular') --}}
+              <a href="#">Terpopuler</a> {{-- route('product.popular') --}}
             </li>
             <li>
-              <a href="#">Rilis Terbaru</a> {{-- route('product.special.newest') --}}
+              <a href="#">Rilis Terbaru</a> {{-- route('product.newest') --}}
             </li>
             <li>
-              <a href="#">Stok Kosong</a> {{-- route('product.special.stockout') --}}
+              <a href="#">Stok Kosong</a> {{-- route('product.stockout') --}}
             </li>
           </ul>
         </li>
