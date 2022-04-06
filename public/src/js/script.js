@@ -54,6 +54,17 @@ $(function() {
     $('#name').val(data.name);
     $('#desc').val(data.desc);
   });
+
+  $('.edit-supplier').click(function() {
+    let data = $(this).data('attr');
+    let curl = $(location).attr('href');
+
+    $('#form-supplier').attr('action', curl+'/'+data.id);
+    $('#name').val(data.name);
+    $('#desc').val(data.desc);
+    $('#contact').val(data.contact);
+    $('#address').val(data.address);
+  });
   /**************************
     Custom JQuery-end 
   **************************/

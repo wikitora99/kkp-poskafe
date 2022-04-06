@@ -40,7 +40,7 @@
         </div>
       </div>
     @empty
-      <h2 class="text-info text-center mt-3">Kategori ini belum memiliki Produk.</h2>
+      <h4 class="text-muted text-center mt-5">Kategori ini belum memiliki Produk.</h4>
     @endforelse
   </div>
 
