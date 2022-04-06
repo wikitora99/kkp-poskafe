@@ -13,7 +13,7 @@ class UserMessage extends Model
 
   public function fromUser()
   {
-    return $this->belongsTo(User::class, 'from' 'id');
+    return $this->belongsTo(User::class, 'from', 'id');
   }
 
   public function toUser()
