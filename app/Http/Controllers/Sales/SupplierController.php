@@ -28,12 +28,31 @@ class SupplierController extends Controller
   /* Store a newly created resource in storage. */
   public function store(Request $request)
   {
-    $validator = Validator::make($request->all(), [
+    // ========== Validasi Awal ============ //
+    // $validator = Validator::make($request->all(), [
+      // 'name' => 'required|string|max:255',
+      // 'desc' => 'nullable|string|max:255',
+      // 'contact' => 'required|string|max:255',
+      // 'address' => 'nullable|string|max:255',
+    // ]);
+    // ============= End ================ //
+     
+
+    // ========== Validasi Bagas ======= //
+    $rules = [
       'name' => 'required|string|max:255',
       'desc' => 'nullable|string|max:255',
       'contact' => 'required|string|max:255',
-      'address' => 'nullable|string|max:255'
-    ]);
+      'address' => 'nullable|string|max:255',
+    ];
+
+    $eMessage = [
+      'name.required' => 'Nama Supplier Tidak Boleh Kosong !',
+      'contact.required' => 'No Tlp Supplier Tidak Boleh Kosong !'
+    ];
+
+    $validator = Validator::make($request->all(), $rules , $eMessage);
+    
 
     if ($validator->fails()){
       return redirect()->back()->with('error', $validator->errors()->first());
@@ -48,13 +67,20 @@ class SupplierController extends Controller
 
   /* Update the specified resource in storage. */
   public function update(Request $request, Supplier $supplier)
-  {
-    $validator = Validator::make($request->all(), [
+  { 
+    $rules = [
       'name' => 'required|string|max:255',
       'desc' => 'nullable|string|max:255',
       'contact' => 'required|string|max:255',
-      'address' => 'nullable|string|max:255'
-    ]);
+      'address' => 'nullable|string|max:255',
+    ];
+
+    $eMessage = [
+      'name.required' => 'Nama Supplier Tidak Boleh Kosong !',
+      'contact.required' => 'No Tlp Supplier Tidak Boleh Kosong !'
+    ];
+
+    $validator = Validator::make($request->all(), $rules , $eMessage);
 
     if ($validator->fails()){
       return redirect()->back()->with('error', $validator->errors()->first());

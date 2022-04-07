@@ -11,7 +11,7 @@
   <div class="row page-titles mx-0 d-flex flex-wrap align-items-center">
     <div class="col-sm-6 p-md-0">
       <div class="welcome-text">
-        <h4>Daftar Suplplier</h4>
+        <h4>Daftar Supplier</h4>
       </div>
     </div>
     <div class="col-sm-6 p-md-0 justify-content-sm-end d-flex">
@@ -36,19 +36,19 @@
               <div class="col">
                 <div class="mb-3">
                   <label class="form-label">Nama Suppler<span class="text-danger ms-1">*</span></label>
-                  <input type="text" class="form-control" name="name" placeholder="Masukkan nama supplier" required>
+                  <input type="text" class="form-control" name="name" placeholder="Masukkan nama supplier" autocomplete="off">
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Deskripsi</label>
-                  <textarea class="form-control bg-transparent" name="desc" rows="5" placeholder="Masukkan deskripsi" style="height: 80px;"></textarea>
+                  <textarea class="form-control bg-transparent" name="desc" rows="5" placeholder="Masukkan deskripsi" autocomplete="off" style="height: 80px;"></textarea>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Email atau No. Handphone<span class="text-danger ms-1">*</span></label>
-                  <input type="text" class="form-control" name="contact" placeholder="Masukkan kontak supplier" required>
+                  <input type="text" class="form-control" name="contact" placeholder="Masukkan kontak supplier" autocomplete="off">
                 </div>
                 <div class="mb-0">
                   <label class="form-label">Alamat Supplier</label>
-                  <textarea class="form-control bg-transparent" name="address" rows="5" placeholder="Masukkan alamat lengkap" style="height: 80px;"></textarea>
+                  <textarea class="form-control bg-transparent" name="address" rows="5" placeholder="Masukkan alamat lengkap" autocomplete="off" style="height: 80px;"></textarea>
                 </div>
               </div>
             </div>
@@ -124,19 +124,19 @@
               <div class="col">
                 <div class="mb-3">
                   <label class="form-label">Nama Suppler<span class="text-danger ms-1">*</span></label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama supplier" required>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama supplier" autocomplete="off">
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Deskripsi</label>
-                  <textarea class="form-control bg-transparent" id="desc" name="desc" rows="5" placeholder="Masukkan deskripsi" style="height: 80px;"></textarea>
+                  <textarea class="form-control bg-transparent" id="desc" name="desc" rows="5" placeholder="Masukkan deskripsi" autocomplete="off" style="height: 80px;"></textarea>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Email atau No. Handphone<span class="text-danger ms-1">*</span></label>
-                  <input type="text" class="form-control" id="contact" name="contact" placeholder="Masukkan kontak supplier" required>
+                  <input type="text" class="form-control" id="contact" name="contact" placeholder="Masukkan kontak supplier" autocomplete="off">
                 </div>
                 <div class="mb-0">
                   <label class="form-label">Alamat Supplier</label>
-                  <textarea class="form-control bg-transparent" id="address" name="address" rows="5" placeholder="Masukkan alamat lengkap" style="height: 80px;"></textarea>
+                  <textarea class="form-control bg-transparent" id="address" name="address" rows="5" placeholder="Masukkan alamat lengkap" autocomplete="off" style="height: 80px;"></textarea>
                 </div>
               </div>
             </div>
