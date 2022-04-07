@@ -36,24 +36,19 @@
               <div class="col">
                 <div class="mb-3">
                   <label class="form-label">Nama Suppler<span class="text-danger ms-1">*</span></label>
-                  <input type="text" class="form-control" name="name" placeholder="Masukkan nama supplier" autocomplete="off">
+                  <input type="text" class="form-control" name="name" placeholder="Masukkan nama supplier" autocomplete="off" required>
                 </div>
                 <div class="mb-3">
-<<<<<<< HEAD
                   <label class="form-label">Keterangan</label>
                   <textarea class="form-control bg-transparent" name="desc" rows="5" placeholder="Masukkan keterangan" style="height: 80px;"></textarea>
-=======
-                  <label class="form-label">Deskripsi</label>
-                  <textarea class="form-control bg-transparent" name="desc" rows="5" placeholder="Masukkan deskripsi" autocomplete="off" style="height: 80px;"></textarea>
->>>>>>> e0f43760bba5c642d447a7238ccdf69ca81fe6e6
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Email atau No. Handphone<span class="text-danger ms-1">*</span></label>
-                  <input type="text" class="form-control" name="contact" placeholder="Masukkan kontak supplier" autocomplete="off">
+                  <input type="text" class="form-control" name="contact" placeholder="Masukkan kontak supplier" autocomplete="off" required>
                 </div>
                 <div class="mb-0">
                   <label class="form-label">Alamat Supplier</label>
-                  <textarea class="form-control bg-transparent" name="address" rows="5" placeholder="Masukkan alamat lengkap" autocomplete="off" style="height: 80px;"></textarea>
+                  <textarea class="form-control bg-transparent" name="address" rows="5" placeholder="Masukkan alamat lengkap" style="height: 80px;"></textarea>
                 </div>
               </div>
             </div>
@@ -129,7 +124,7 @@
               <div class="col">
                 <div class="mb-3">
                   <label class="form-label">Nama Suppler<span class="text-danger ms-1">*</span></label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama supplier" autocomplete="off">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama supplier" autocomplete="off" required>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Keterangan</label>
@@ -137,7 +132,7 @@
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Email atau No. Handphone<span class="text-danger ms-1">*</span></label>
-                  <input type="text" class="form-control" id="contact" name="contact" placeholder="Masukkan kontak supplier" autocomplete="off">
+                  <input type="text" class="form-control" id="contact" name="contact" placeholder="Masukkan kontak supplier" autocomplete="off" required>
                 </div>
                 <div class="mb-0">
                   <label class="form-label">Alamat Supplier</label>

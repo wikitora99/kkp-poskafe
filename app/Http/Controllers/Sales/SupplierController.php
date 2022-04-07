@@ -28,17 +28,6 @@ class SupplierController extends Controller
   /* Store a newly created resource in storage. */
   public function store(Request $request)
   {
-    // ========== Validasi Awal ============ //
-    // $validator = Validator::make($request->all(), [
-      // 'name' => 'required|string|max:255',
-      // 'desc' => 'nullable|string|max:255',
-      // 'contact' => 'required|string|max:255',
-      // 'address' => 'nullable|string|max:255',
-    // ]);
-    // ============= End ================ //
-     
-
-    // ========== Validasi Bagas ======= //
     $rules = [
       'name' => 'required|string|max:255',
       'desc' => 'nullable|string|max:255',
@@ -47,8 +36,8 @@ class SupplierController extends Controller
     ];
 
     $eMessage = [
-      'name.required' => 'Nama Supplier Tidak Boleh Kosong !',
-      'contact.required' => 'No Tlp Supplier Tidak Boleh Kosong !'
+      'name.required' => 'Nama Supplier tidak boleh kosong!',
+      'contact.required' => 'Kontak Supplier tidak boleh kosong!'
     ];
 
     $validator = Validator::make($request->all(), $rules , $eMessage);
@@ -76,8 +65,8 @@ class SupplierController extends Controller
     ];
 
     $eMessage = [
-      'name.required' => 'Nama Supplier Tidak Boleh Kosong !',
-      'contact.required' => 'No Tlp Supplier Tidak Boleh Kosong !'
+      'name.required' => 'Nama Supplier tidak boleh kosong!',
+      'contact.required' => 'Kontak Supplier tidak boleh kosong!'
     ];
 
     $validator = Validator::make($request->all(), $rules , $eMessage);
