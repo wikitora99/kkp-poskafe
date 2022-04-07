@@ -39,8 +39,8 @@
                   <input type="text" class="form-control" name="name" placeholder="Masukkan nama supplier" required>
                 </div>
                 <div class="mb-3">
-                  <label class="form-label">Deskripsi</label>
-                  <textarea class="form-control bg-transparent" name="desc" rows="5" placeholder="Masukkan deskripsi" style="height: 80px;"></textarea>
+                  <label class="form-label">Keterangan</label>
+                  <textarea class="form-control bg-transparent" name="desc" rows="5" placeholder="Masukkan keterangan" style="height: 80px;"></textarea>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Email atau No. Handphone<span class="text-danger ms-1">*</span></label>
@@ -71,7 +71,7 @@
               <thead>
                 <tr>
                   <th>Nama Supplier</th>
-                  <th>Deskripsi</th>
+                  <th>Keterangan</th>
                   <th>Kontak</th>
                   <th>Alamat</th>
                   <th>Aksi</th>
@@ -127,8 +127,8 @@
                   <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama supplier" required>
                 </div>
                 <div class="mb-3">
-                  <label class="form-label">Deskripsi</label>
-                  <textarea class="form-control bg-transparent" id="desc" name="desc" rows="5" placeholder="Masukkan deskripsi" style="height: 80px;"></textarea>
+                  <label class="form-label">Keterangan</label>
+                  <textarea class="form-control bg-transparent" id="desc" name="desc" rows="5" placeholder="Masukkan keterangan" style="height: 80px;"></textarea>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Email atau No. Handphone<span class="text-danger ms-1">*</span></label>

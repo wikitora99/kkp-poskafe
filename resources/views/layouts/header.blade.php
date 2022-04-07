@@ -35,7 +35,7 @@
             </div>
           </a>
           <div class="dropdown-menu dropdown-menu-end">
-            <a href="" class="dropdown-item ai-icon"> {{-- route('user.detail') --}}
+            <a href="#" class="dropdown-item ai-icon"> {{-- route('user.detail') --}}
               <i class="fa fa-user-alt text-primary"></i>
               <span class="ms-2 text-primary">Profil</span>
             </a>
