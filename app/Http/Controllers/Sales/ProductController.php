@@ -36,7 +36,21 @@ class ProductController extends Controller
   /** Store a newly created resource in storage. **/
   public function store(Request $request)
   {
-    $validator = Validator::make($request->all(), [
+    // $validator = Validator::make($request->all(), [
+    //   'sku' => 'required|string|max:255|unique:products,sku',
+    //   'name' => 'required|string|max:255|unique:products,name',
+    //   'category_id' => 'required|integer|exists:product_categories,id',
+    //   'picture' => 'file|image|mimes:jpg,png|max:1024',
+    //   'desc' => 'nullable|string|max:255',
+    //   'is_active' => 'required|boolean',
+    //   'buy_price' => 'nullable|integer',
+    //   'sell_price' => 'required|integer',
+    //   'has_stock' => 'required|boolean|declined_if:cur_stock,0',
+    //   'cur_stock' => 'required_if:has_stock,1|integer',
+    //   'min_stock' => 'required_if:has_stock,1|integer'
+    // ]);
+
+    $rules = [
       'sku' => 'required|string|max:255|unique:products,sku',
       'name' => 'required|string|max:255|unique:products,name',
       'category_id' => 'required|integer|exists:product_categories,id',
@@ -48,7 +62,23 @@ class ProductController extends Controller
       'has_stock' => 'required|boolean|declined_if:cur_stock,0',
       'cur_stock' => 'required_if:has_stock,1|integer',
       'min_stock' => 'required_if:has_stock,1|integer'
-    ]);
+    ];
+
+    $eMessage = [
+      'sku.required' => 'Kolom SKU Tidak Boleh Kosong !',
+      'sku.unique' => 'Kode SKU Sudah Digunakan !',
+      'name.required' => 'Kolom Produk Tidak Boleh Kosong !',
+      'name.unique' => 'Produk Sudah Tersedia !',
+      'category_id.required' => 'Pilih Kategori Yang Sudah Disediakan !',
+      'picture.image' => 'Gambar Harus Berupa File Image !',
+      'picture.mimes' => 'Gambar Yang Diupload Hanya Berupa JPG & PNG !',
+      'picture.max' => 'Ukuran Gambar Max 1mb !',
+      'sell_price.required' => 'Harga Jual Harus Di Isi !',
+      'cur_stock.required' => 'Kolom Stok Saat Ini Tidak Boleh Kosong !',
+      'min_stock.required' => 'Kolom Peringatan Stok Minumum Tidak Boleh Kosong !',
+    ];
+
+    $validator = Validator::make($request->all(), $rules, $eMessage);
 
     if ($validator->fails()){
       return redirect()->back()->with('error', $validator->errors()->first());
@@ -101,7 +131,20 @@ class ProductController extends Controller
       $name_rules = ['required'];
     }
 
-    $validator = Validator::make($request->all(), [
+    // $validator = Validator::make($request->all(), [
+    //   'name' => $name_rules,
+    //   'category_id' => 'required|integer|exists:product_categories,id',
+    //   'picture' => 'file|image|mimes:jpg,png|max:1024',
+    //   'desc' => 'nullable|string|max:255',
+    //   'is_active' => 'required|boolean',
+    //   'buy_price' => 'nullable|integer',
+    //   'sell_price' => 'required|integer',
+    //   'has_stock' => 'required|boolean|declined_if:cur_stock,0',
+    //   'cur_stock' => 'required_if:has_stock,1|integer',
+    //   'min_stock' => 'required_if:has_stock,1|integer'
+    // ]);
+
+    $rules = [
       'name' => $name_rules,
       'category_id' => 'required|integer|exists:product_categories,id',
       'picture' => 'file|image|mimes:jpg,png|max:1024',
@@ -112,7 +155,21 @@ class ProductController extends Controller
       'has_stock' => 'required|boolean|declined_if:cur_stock,0',
       'cur_stock' => 'required_if:has_stock,1|integer',
       'min_stock' => 'required_if:has_stock,1|integer'
-    ]);
+    ];
+
+    $eMessage = [
+      'name.required' => 'Kolom Produk Tidak Boleh Kosong !',
+      'name.unique' => 'Produk Sudah Tersedia !',
+      'category_id.required' => 'Pilih Kategori Yang Sudah Disediakan !',
+      'picture.image' => 'Gambar Harus Berupa File Image !',
+      'picture.mimes' => 'Gambar Yang Diupload Hanya Berupa JPG & PNG !',
+      'picture.max' => 'Ukuran Gambar Max 1mb !',
+      'sell_price.required' => 'Harga Jual Harus Di Isi !',
+      'cur_stock.required' => 'Kolom Stok Saat Ini Tidak Boleh Kosong !',
+      'min_stock.required' => 'Kolom Peringatan Stok Minumum Tidak Boleh Kosong !',
+    ];
+
+    $validator = Validator::make($request->all(), $rules, $eMessage);
 
     if ($validator->fails()){
       return redirect()->back()->with('error', $validator->errors()->first());

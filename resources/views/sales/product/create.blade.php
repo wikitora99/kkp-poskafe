@@ -41,15 +41,15 @@
                   <div class="row">
                     <div class="mb-3">
                       <label class="form-label">SKU (Stock Keeping Unit)<span class="text-danger ms-1">*</span></label>
-                      <input type="text" class="form-control" name="sku" placeholder="Masukkan SKU produk" required>
+                      <input type="text" class="form-control" name="sku" placeholder="Masukkan SKU produk" >
                     </div>
                     <div class="mb-3">
                       <label class="form-label">Nama Produk<span class="text-danger ms-1">*</span></label>
-                      <input type="text" class="form-control" name="name" placeholder="Masukkan nama produk" required>
+                      <input type="text" class="form-control" name="name" placeholder="Masukkan nama produk">
                     </div>
                     <div class="mb-3">
                       <label class="form-label">Kategori Produk<span class="text-danger ms-1">*</span></label>
-                      <select name="category_id" class="default-select form-control" required>
+                      <select name="category_id" class="default-select form-control">
                         <option selected disabled>Pilih kategori</option>
                         @foreach ($categories as $category)
                           <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -84,7 +84,7 @@
                     <label class="form-label">Harga Jual<span class="text-danger ms-1">*</span></label>
                     <div class="input-group">
                       <span class="input-group-text">Rp</span>
-                      <input type="number" class="form-control" name="sell_price" placeholder="0" required>
+                      <input type="number" class="form-control" name="sell_price" placeholder="0">
                     </div>      
                   </div>
                 </div>
