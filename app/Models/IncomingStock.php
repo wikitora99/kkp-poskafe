@@ -11,6 +11,23 @@ class IncomingStock extends Model
 
   protected $guarded = ['id'];
 
+  protected $dates = ['date'];
+
+  protected static $relations_on_cascade = ['items'];
+
+	protected static function boot()
+	{
+		parent::boot();
+
+		static::deleting(function ($stocks) {
+			foreach (static::$relations_on_cascade as $relation){
+				foreach ($stocks->{$relation}()->get() as $stock) {
+					$stock->delete();
+				}
+			}			
+		});
+	}
+
   public function getRouteKeyName() 
   {
     return 'code';
@@ -18,7 +35,7 @@ class IncomingStock extends Model
 
   public function items()
   {
-    return $this->hasMany(IncomingItem::class);
+    return $this->hasMany(IncomingItem::class, 'stock_id', 'id');
   }
 
   public function supplier()

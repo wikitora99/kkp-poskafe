@@ -20,7 +20,7 @@ class IncomingController extends Controller
     /* Display a listing of the resource. */
     public function index()
     {
-        $stocks = Stock::latest()->get();
+        $stocks = Stock::orderBy('date', 'DESC')->get();
 
         return view('sales.inventory.incoming.index', compact('stocks'));
     }
@@ -95,15 +95,18 @@ class IncomingController extends Controller
 
 
     /* Display the specified resource. */
-    public function show(Stock $stock)
+    public function show(Stock $incoming_stock)
     {
-        return view('sales.inventory.incoming.show', compact('stock'));
+        return view('sales.inventory.incoming.show', compact('incoming_stock'));
     }
 
 
     /* Remove the specified resource from storage. */
-    public function destroy(Stock $stock)
+    public function destroy(Stock $incoming_stock)
     {
-        dd($stock);
+        $incoming_stock->delete();
+
+        return redirect()->route('incoming-stock.index')->with('success', 'Data Stok Masuk berhasil dihapus!');
     }
+
 }
