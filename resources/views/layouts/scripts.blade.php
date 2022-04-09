@@ -27,10 +27,15 @@
 <!-- Daterange Picker -->
 <script src="{{ asset('src/vendors/moment/moment.min.js') }}"></script>
 <script src="{{ asset('src/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
-<!-- <script src="{{ asset('src/vendors/clockpicker/js/bootstrap-clockpicker.min.js') }}"></script>
 <script src="{{ asset('src/vendors/bootstrap-material-datetimepicker/js/bootstrap-material-datetime') }}picker.js"></script>
 <script src="{{ asset('src/vendors/pickadate/picker.js') }}"></script>
 <script src="{{ asset('src/vendors/pickadate/picker.time.js') }}"></script>
-<script src="{{ asset('src/vendors/pickadate/picker.date.js') }}"></script> -->
-<!-- <script src="{{ asset('src/js/plugins-init/bs-daterange-picker-init.js') }}"></script> -->
+<script src="{{ asset('src/vendors/pickadate/picker.date.js') }}"></script>
+<script src="{{ asset('src/js/plugins-init/bs-daterange-picker-init.js') }}"></script>
+
+{{-- Form Validate Input --}}
+<script src="{{ asset('src/js/plugins-init/jquery.validate-init.js') }}"></script>
+
+{{-- Form Step --}}
+<script src="{{ asset('src/vendors/jquery-smartwizard/dist/js/jquery.smartWizard.js') }}"></script>
 

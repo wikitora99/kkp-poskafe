@@ -15,8 +15,9 @@ class CreateOutgoingStocksTable extends Migration
   {
     Schema::create('outgoing_stocks', function (Blueprint $table) {
       $table->id();
-      $table->string('sku')->unique();
-      $table->string('note');
+      $table->string('code')->unique();
+      $table->string('note')->nullable();
+      $table->date('date');
       $table->timestamps();
     });
   }

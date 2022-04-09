@@ -11,6 +11,11 @@ class IncomingStock extends Model
 
   protected $guarded = ['id'];
 
+  public function getRouteKeyName() 
+  {
+    return 'code';
+  }
+
   public function items()
   {
     return $this->hasMany(IncomingItem::class);
