@@ -19,7 +19,7 @@ class ProductController extends Controller
   /** Display a listing of the resource. **/
   public function index()
   {
-    $products = Product::orderBy('sku', 'ASC')->get();
+    $products = Product::orderBy('name', 'ASC')->get();
 
     return view('sales.product.index', compact('products'));
   }
@@ -36,8 +36,9 @@ class ProductController extends Controller
   /** Store a newly created resource in storage. **/
   public function store(Request $request)
   {
-    $validator = Validator::make($request->all(), [
-      'sku' => 'required|string|max:255|unique:products,sku',
+
+    $rules = [
+      'sku' => 'required|alpha_num|max:255|unique:products,sku',
       'name' => 'required|string|max:255|unique:products,name',
       'category_id' => 'required|integer|exists:product_categories,id',
       'picture' => 'file|image|mimes:jpg,png|max:1024',
@@ -48,7 +49,24 @@ class ProductController extends Controller
       'has_stock' => 'required|boolean|declined_if:cur_stock,0',
       'cur_stock' => 'required_if:has_stock,1|integer',
       'min_stock' => 'required_if:has_stock,1|integer'
-    ]);
+    ];
+
+    $eMessage = [
+      'sku.required' => 'Kode SKU tidak boleh kosong!',
+      'sku.unique' => 'Kode SKU sudah digunakan!',
+      'sku.alpha_num' => 'Kode SKU harus berupa huruf atau angka!',
+      'name.required' => 'Nama Produk tidak boleh kosong!',
+      'name.unique' => 'Nama Produk sudah digunakan!',
+      'category_id.required' => 'Data Kategori tidak ditemukan!',
+      'picture.image' => 'File harus berupa gambar!',
+      'picture.mimes' => 'Format File harus berupa JPG/PNG!',
+      'picture.max' => 'Ukuran File harus kurang dari 1MB!',
+      'sell_price.required' => 'Harga Jual tidak boleh kosong!',
+      'cur_stock.required' => 'Stok Saat Ini tidak boleh kosong!',
+      'min_stock.required' => 'Stok Minimun tidak boleh kosong!',
+    ];
+
+    $validator = Validator::make($request->all(), $rules, $eMessage);
 
     if ($validator->fails()){
       return redirect()->back()->with('error', $validator->errors()->first());
@@ -101,7 +119,7 @@ class ProductController extends Controller
       $name_rules = ['required'];
     }
 
-    $validator = Validator::make($request->all(), [
+    $rules = [
       'name' => $name_rules,
       'category_id' => 'required|integer|exists:product_categories,id',
       'picture' => 'file|image|mimes:jpg,png|max:1024',
@@ -112,7 +130,21 @@ class ProductController extends Controller
       'has_stock' => 'required|boolean|declined_if:cur_stock,0',
       'cur_stock' => 'required_if:has_stock,1|integer',
       'min_stock' => 'required_if:has_stock,1|integer'
-    ]);
+    ];
+
+    $eMessage = [
+      'name.required' => 'Nama Produk tidak boleh kosong!',
+      'name.unique' => 'Nama Produk sudah digunakan!',
+      'category_id.required' => 'Data Kategori tidak ditemukan!',
+      'picture.image' => 'File harus berupa gambar!',
+      'picture.mimes' => 'Format File harus berupa JPG atau PNG!',
+      'picture.max' => 'Ukuran File harus kurang dari 1MB!',
+      'sell_price.required' => 'Harga Jual tidak boleh kosong!',
+      'cur_stock.required' => 'Stok Saat Ini tidak boleh kosong!',
+      'min_stock.required' => 'Stok Minimun tidak boleh kosong!',
+    ];
+
+    $validator = Validator::make($request->all(), $rules, $eMessage);
 
     if ($validator->fails()){
       return redirect()->back()->with('error', $validator->errors()->first());

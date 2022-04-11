@@ -74,7 +74,7 @@
           </ul>
         </li>
         <li>
-          <a href="{{ route('supplier.index') }}">Daftar Supplier</a>
+          <a href="{{ route('supplier.index') }}">Supplier</a>
         </li>
       </ul>
     </li>

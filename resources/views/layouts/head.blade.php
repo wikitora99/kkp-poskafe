@@ -10,14 +10,12 @@
 <link href="{{ asset('src/css/style.css') }}" rel="stylesheet">
 <link href="{{ asset('src/vendors/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
 
+{{-- Form Step --}}
+<link href="{{ asset('src/vendors/jquery-smartwizard/dist/css/smart_wizard.min.css') }}" rel="stylesheet">
+
 <!-- Daterange picker -->
 <link href="{{ asset('src/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
-<!-- Clockpicker -->
-<!-- <link href="{{ asset('src/vendors/clockpicker/css/bootstrap-clockpicker.min.css') }}" rel="stylesheet"> -->
-<!-- asColorpicker -->
-<!-- <link href="{{ asset('src/vendors/jquery-asColorPicker/css/asColorPicker.min.css') }}" rel="stylesheet"> -->
-<!-- Material color picker -->
-<!-- <link href="{{ asset('src/vendors/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css') }}" rel="stylesheet"> -->
+
 <!-- Pick date -->
-<!-- <link rel="stylesheet" href="{{ asset('src/vendors/pickadate/themes/default.css') }}">
-<link rel="stylesheet" href="{{ asset('src/vendors/pickadate/themes/default.date.css') }}"> -->
+<link rel="stylesheet" href="{{ asset('src/vendors/pickadate/themes/default.css') }}">
+<link rel="stylesheet" href="{{ asset('src/vendors/pickadate/themes/default.date.css') }}">

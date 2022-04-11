@@ -16,7 +16,7 @@
     </div>
     <div class="col-sm-6 p-md-0 justify-content-sm-end d-flex">
       <div class="breadcrumb">
-        <a href="{{ route('product.index') }}" class="btn btn-xs btn-primary"><i class="fa fa-list me-2"></i>Semua Produk</a>
+        <a href="{{ route('category.index') }}" class="btn btn-xs btn-primary"><i class="fa fa-list me-2"></i>Daftar Kategori</a>
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@
         </div>
       </div>
     @empty
-      <h2 class="text-info text-center mt-3">Kategori ini belum memiliki Produk.</h2>
+      <h4 class="text-muted text-center mt-5">Kategori ini belum memiliki Produk.</h4>
     @endforelse
   </div>
 

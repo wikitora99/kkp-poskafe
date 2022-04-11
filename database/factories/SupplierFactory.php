@@ -14,13 +14,18 @@ class SupplierFactory extends Factory
   public function definition()
   {
     $is_mail = $this->faker->boolean();
+    $no_desc = $this->faker->boolean();
+    $no_address = $this->faker->boolean();
+
     $contact = $is_mail ? $this->faker->companyEmail() : $this->faker->phoneNumber();
+    $desc = $no_desc ? null : $this->faker->sentence(mt_rand(8,15));
+    $address = $no_address ? null : $this->faker->address();
 
     return [
       'name' => $this->faker->company(),
-      'desc' => $this->faker->sentence(mt_rand(8,15)),
+      'desc' => $desc,
       'contact' => $contact,
-      'address' => $this->faker->address()
+      'address' => $address
     ];
   }
 }

@@ -15,13 +15,14 @@ class CreateIncomingStocksTable extends Migration
   {
     Schema::create('incoming_stocks', function (Blueprint $table) {
       $table->id();
-      $table->string('sku')->unique();
-      $table->string('note');
+      $table->string('code')->unique();
+      $table->string('note')->nullable();
       $table->unsignedBigInteger('supplier_id');
       $table->foreign('supplier_id')
             ->references('id')
             ->on('suppliers')
             ->onUpdate('cascade');
+      $table->date('date');
       $table->timestamps();
     });
   }
