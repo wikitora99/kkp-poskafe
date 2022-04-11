@@ -97,7 +97,9 @@ class IncomingController extends Controller
     /* Display the specified resource. */
     public function show(Stock $incoming_stock)
     {
-        return view('sales.inventory.incoming.show', compact('incoming_stock'));
+        $items = Item::where('stock_id', $incoming_stock->id)->get();
+
+        return view('sales.inventory.incoming.show', compact('incoming_stock', 'items'));
     }
 
 
