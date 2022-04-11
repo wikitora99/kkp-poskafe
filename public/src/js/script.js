@@ -145,6 +145,67 @@ $(function () {
     });
     // INCOMING STOCK AREA-END
 
+    // OUTGOING STOCK AREA-START
+    $("#item-amount, #item-name").keyup(function () {
+        if (
+            $("#item-amount").val() != "" &&
+            $("#item-amount").val() != 0 &&
+            $("#item-name").val() != ""
+        ) {
+            $("#add-outgoing-item").prop("disabled", false);
+        } else {
+            $("#add-outgoing-item").prop("disabled", true);
+        }
+    });
+
+    $("#add-outgoing-item").click(function () {
+        let id = $("#item-id").val();
+        let name = $("#item-name").val();
+        let amount = $("#item-amount").val();
+        let del =
+            '<button type="button" class="btn btn-danger shadow btn-xs sharp del-outgoing-item" id="' +
+            id +
+            '" data-id="' +
+            id +
+            '"><i class="fa fa-trash"></i></button>';
+
+        $("#outgoing-items").append(
+            "<tr><td>" +
+                name +
+                "</td><td>" +
+                amount +
+                "</td><td>" +
+                del +
+                "</td></tr>"
+        );
+
+        $("#outgoing-datas").append(
+            '<div id="dataset-' +
+                id +
+                '"><input type="hidden" name="names[]" value="' +
+                name +
+                '"><input type="hidden" name="amounts[]" value="' +
+                amount +
+                '"></div>'
+        );
+
+        id++;
+
+        $("#item-id").val(id);
+        $("#item-name").val("");
+        $("#item-amount").val("");
+        $(this).prop("disabled", true);
+    });
+
+    $(document).on("click", ".del-outgoing-item", function () {
+        let id = $(this).data("id");
+        $("#" + id)
+            .closest("tr")
+            .remove();
+        $("#dataset-" + id).remove();
+    });
+    // OUTGOING STOCK AREA-END
+
     /**************************
     Custom JQuery-end 
   **************************/

@@ -37,7 +37,7 @@
                 <div class="card">
                     <div class="card-body">
                         <label class="form-label fw-bold">Catatan</label>
-                        <input type="text" class="form-control bg-transparent" name="note" placeholder="Masukkan catatan">
+                        <input type="text" class="form-control" name="note" placeholder="Masukkan catatan">
                     </div>
                 </div>
             </div>
