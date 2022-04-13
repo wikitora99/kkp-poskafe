@@ -25,7 +25,9 @@ class DatabaseSeeder extends Seeder
       OrderStatusSeeder::class,
       SupplierSeeder::class,
       IncomingStockSeeder::class,
-      IncomingItemSeeder::class
+      IncomingItemSeeder::class,
+      OutgoingStockSeeder::class,
+      OutgoingItemSeeder::class
     ]);
     
   }

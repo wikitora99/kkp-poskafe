@@ -18,20 +18,20 @@ class DiscountFactory extends Factory
     $val_percent = [5,10,15,20,25];
     $val_nominal = [5000,10000,15000,20000];
     $to = [7,14,30,60];
-    $from = mt_rand(10,100);
+    $from = rand(10,100);
 
     $start_date = Carbon::today()->subDays($from);
     $no_expired = $this->faker->boolean();
     $in_percent = $this->faker->boolean();
 
-    $due_date = $no_expired ? null : Carbon::today()->subDays($from)->addDays($to[mt_rand(0,3)])->toDateString();
-    $value = $in_percent ? $val_percent[mt_rand(0,4)] : $val_nominal[mt_rand(0,3)];
+    $due_date = $no_expired ? null : Carbon::today()->subDays($from)->addDays($to[rand(0,3)])->toDateString();
+    $value = $in_percent ? $val_percent[rand(0,4)] : $val_nominal[rand(0,3)];
 
     return [
       'start_date' => $start_date->toDateString(),
       'no_expired' => $no_expired,
       'due_date' => $due_date,
-      'min_order' => $min_orders[mt_rand(0,3)],
+      'min_order' => $min_orders[rand(0,3)],
       'in_percent' => $in_percent,
       'value' => $value
     ];
