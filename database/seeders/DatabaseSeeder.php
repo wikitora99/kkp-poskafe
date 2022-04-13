@@ -23,7 +23,9 @@ class DatabaseSeeder extends Seeder
       DiscountSeeder::class,
       // ProductDiscountSeeder::class,
       OrderStatusSeeder::class,
-      SupplierSeeder::class
+      SupplierSeeder::class,
+      IncomingStockSeeder::class,
+      IncomingItemSeeder::class
     ]);
     
   }
