@@ -16,7 +16,7 @@
       </a>
     </li>
     <li>
-      <a href="#" class="ai-icon" aria-expanded="false"> {{-- route('order.create') --}}
+      <a href="{{ route('order.create') }}" class="ai-icon" aria-expanded="false"> {{-- route('order.create') --}}
         <i class="flaticon-144-layout"></i>
         <span class="nav-text">Kasir</span>
       </a>

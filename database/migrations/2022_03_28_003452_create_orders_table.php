@@ -20,6 +20,11 @@ class CreateOrdersTable extends Migration
       $table->integer('price');
       $table->integer('discount');
       $table->integer('total_price');
+      $table->unsignedBigInteger('type_id');
+      $table->foreign('type_id')
+            ->references('id')
+            ->on('order_type')
+            ->onUpdate('cascade');
       $table->unsignedBigInteger('status_id');
       $table->foreign('status_id')
             ->references('id')
