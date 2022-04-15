@@ -39,3 +39,4 @@
 {{-- Form Step --}}
 <script src="{{ asset('src/vendors/jquery-smartwizard/dist/js/jquery.smartWizard.js') }}"></script>
 
+@livewireScripts

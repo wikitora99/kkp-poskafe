@@ -24,20 +24,21 @@
   <div class="row">
     @forelse ($category->products as $product)
       <div class="col-xl-3 col-lg-6 col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <div class="new-arrival-product">
-              <div class="new-arrivals-img-contnent">
-                <img class="img-fluid" src="{{ asset('storage/'.$product->picture) }}" alt="Gambar produk">
-              </div>
-              <div class="new-arrival-content text-center mt-3">
-                <h4><a href="{{ route('product.show', $product) }}" class="text-primary">{{ $product->name }}</a></h4>
-                <h6 class="text-muted">{{ $category->name }}</h6>
-                <span class="price text-warning">@currency_id($product->sell_price)</span>
+        <a href="{{ route('product.show', $product) }}">
+          <div class="card">
+            <div class="card-body p-0">
+              <div class="new-arrival-product">
+                <div class="new-arrivals-img-contnent">
+                  <img class="img-fluid" src="{{ asset('storage/'.$product->picture) }}" alt="Gambar produk">
+                </div>
+                <div class="new-arrival-content text-center m-3">
+                  <h4 class="text-primary">{{ $product->name }}</h4>
+                  <h4 class="text-muted">123 terjual</h4>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     @empty
       <h4 class="text-muted text-center mt-5">Kategori ini belum memiliki Produk.</h4>

@@ -75,6 +75,7 @@ $(function () {
         $("#address").val(data.address);
     });
 
+    
     // INCOMING STOCK AREA-START
     $("#item-amount, #item-name").keyup(function () {
         if (
@@ -145,6 +146,7 @@ $(function () {
     });
     // INCOMING STOCK AREA-END
 
+
     // OUTGOING STOCK AREA-START
     $("#item-amount, #item-name").keyup(function () {
         if (
@@ -205,6 +207,13 @@ $(function () {
         $("#dataset-" + id).remove();
     });
     // OUTGOING STOCK AREA-END
+
+
+    // CASHIER AREA-START
+    $('.product-order').click(function() {
+        console.log($(this).data('attr'));
+    });
+    // CASHIER AREA-END
 
     /**************************
     Custom JQuery-end 
