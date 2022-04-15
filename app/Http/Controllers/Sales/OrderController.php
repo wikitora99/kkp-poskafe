@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Sales;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{ Product, Discount };
+use App\Models\{ Product, Discount, OrderType as Type };
 use Illuminate\Support\Facades\{ Validator, DB };
+use Illuminate\Support\Str;
 use Carbon\Carbon;
 
 class OrderController extends Controller
@@ -25,7 +26,9 @@ class OrderController extends Controller
   
     public function create()
     {
-        return view('sales.order.create');
+        $types = Type::all();
+
+        return view('sales.order.create', compact('types'));
     }
 
 

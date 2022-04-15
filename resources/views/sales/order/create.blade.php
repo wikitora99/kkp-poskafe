@@ -10,119 +10,100 @@
 
     <div class="row">
 
+        {{-- Product List --}}
         <div class="col-md-7">
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            
-                            @livewire('cashier.product-list')
-
-                            {{-- <div class="cutstom-tab-1">
-                                
-                                <ul class="nav nav-tabs">
-                                    <li class="nav-item">
-                                        <a class="nav-link h5 active" data-bs-toggle="tab" href="#all">Semua</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link h5" data-bs-toggle="tab" href="#coffee">Kopi</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link h5" data-bs-toggle="tab" href="#snack">Snack</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link h5" data-bs-toggle="tab" href="#milkshake">Milkshake</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link h5" data-bs-toggle="tab" href="#noodle">Noodle</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link h5" data-bs-toggle="tab" href="#longdrink">Long Drink</a>
-                                    </li>
-                                </ul>
-
-                                <div class="tab-content">
-                                    <div class="tab-pane fade show active" id="all" role="tabpanel">
-                                        <div class="pt-4">
-                                            <div class="row">
-                                                @foreach ($products as $product)
-                                                    <div class="col-xl-3 col-lg-6 col-sm-6">
-                                                        <a class="product-order" data-attr="{{ $product }}">
-                                                            <div class="card">
-                                                                <div class="card-body p-0">
-                                                                    <div class="new-arrival-product">
-                                                                        <div class="new-arrivals-img-contnent">
-                                                                            <img class="img-fluid" src="{{ asset('storage/'.$product->picture) }}" alt="Gambar produk">
-                                                                        </div>
-                                                                        <div class="new-arrival-content text-center m-2">
-                                                                            <h5 class="text-primary">{{ $product->name }}</h5>
-                                                                            <span class="text-black">@currency_id($product->sell_price)</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="coffee" role="tabpanel">
-                                        <div class="pt-3">
-                                            <div class="row">
-                                                <h4 class="text-center mt-3">Daftar Produk Coffee</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="snack" role="tabpanel">
-                                        <div class="pt-3">
-                                            <div class="row">
-                                                <h4 class="text-center mt-3">Daftar Produk Snack</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="milkshake" role="tabpanel">
-                                        <div class="pt-3">
-                                            <div class="row">
-                                                <h4 class="text-center mt-3">Daftar Produk Milkshake</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="noodle" role="tabpanel">
-                                        <div class="pt-3">
-                                            <div class="row">
-                                                <h4 class="text-center mt-3">Daftar Produk Noodle</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="longdrink" role="tabpanel">
-                                        <div class="pt-3">
-                                            <div class="row">
-                                                <h4 class="text-center mt-3">Daftar Produk Long Drink</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div> --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @livewire('cashier.product-list')
         </div>
         
+        {{-- Order List --}}
         <div class="col-md-5">
             <div class="row">
                 <div class="col">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col">
+                                    <select class="form-select bg-primary text-white rounded">
+                                        <option hidden selected>Jenis Pesanan</option>
+                                        @foreach ($types as $type)
+                                            <option value="{{ $type->id }}">{{ Str::title($type->name) }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="card-body pb-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <tbody id="order-list">
+                                        <tr>
+                                            <td><strong>2</strong></td>
+                                            <td><strong>Nasi Goreng Sabit</strong></td>
+                                            <td><strong>@currency_id(40000)</strong></td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>    
+                                            </td>  
+                                        </tr>
+                                        <tr>
+                                            <td><strong>1</strong></td>
+                                            <td><strong>Rice Bowl Karage</strong></td>
+                                            <td><strong>@currency_id(25000)</strong></td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>    
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>2</strong></td>
+                                            <td><strong>Extrajoss Anggur Merah</strong></td>
+                                            <td><strong>@currency_id(32000)</strong></td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>    
+                                            </td>  
+                                        </tr>
+                                        <tr>
+                                            <td><strong>2</strong></td>
+                                            <td><strong>Caramel Milkshake</strong></td>
+                                            <td><strong>@currency_id(40000)</strong></td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>    
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="card-footer border-0">
+                            <div class="row mb-3">
+                                <div class="col d-flex justify-content-between">
+                                    <div class="row">
+                                        <button type="button" class="btn btn-danger light">
+                                            <i class="fa fa-trash me-2"></i>Hapus Semua
+                                        </button>
+                                    </div>
+                                    <div class="row">
+                                        <button type="button" class="btn btn-info light">
+                                            <i class="fa fa-bookmark me-2"></i>Bayar Nanti
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <button type="button" class="btn btn-primary d-flex justify-content-between">
+                                    <span>
+                                        <i class="fa fa-dollar-sign me-2"></i>Bayar Sekarang
+                                    </span>
+                                    <span>
+                                        @currency_id(137000)<i class="fa fa-chevron-right ms-2"></i>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
 @endsection
