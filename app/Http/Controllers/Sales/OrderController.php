@@ -25,8 +25,7 @@ class OrderController extends Controller
   
     public function create()
     {
-        $products = Product::all();
-        return view('sales.order.create', compact('products'));
+        return view('sales.order.create');
     }
 
 

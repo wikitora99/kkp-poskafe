@@ -15,7 +15,10 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <div class="cutstom-tab-1">
+                            
+                            @livewire('cashier.product-list')
+
+                            {{-- <div class="cutstom-tab-1">
                                 
                                 <ul class="nav nav-tabs">
                                     <li class="nav-item">
@@ -101,7 +104,7 @@
                                     </div>
                                 </div>
                                 
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
