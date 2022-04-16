@@ -23,7 +23,7 @@ class Product extends Model
 
   public function discounts()
   {
-    return $this->hasMany(ProductDiscount::class);
+    return $this->hasMany(Discount::class);
   }
 
   public function orders()

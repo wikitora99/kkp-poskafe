@@ -37,7 +37,14 @@
                                             </div>
                                             <div class="new-arrival-content text-center m-2">
                                                 <h5 class="text-primary">{{ $product->name }}</h5>
-                                                <span class="text-black">@currency_id($product->sell_price)</span>
+                                                @if ($product->discounts->count() > 0 && $product->discounts->first()->due_date >= now())
+                                                    <div class="d-flex justify-content-between">
+                                                        <strike><span class="text-danger">@number_id($product->sell_price)</span></strike>
+                                                        <span class="text-success product-price">@number_id($product->sell_price)</span>
+                                                    </div>
+                                                @else
+                                                    <span class="text-black product-price">@number_id($product->sell_price)</span>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>

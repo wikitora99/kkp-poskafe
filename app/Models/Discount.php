@@ -11,8 +11,8 @@ class Discount extends Model
 
   protected $guarded = ['id'];
 
-  public function products()
+  public function product()
   {
-    return $this->hasMany(ProductDiscount::class);
+    return $this->belongsTo(Product::class, 'product_id', 'id');
   }
 }
