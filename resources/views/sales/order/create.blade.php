@@ -39,6 +39,9 @@
                                 <div class="row mb-3">
                                     <div class="table-responsive">
                                         <table class="table table-hover">
+                                            <div class="text-center" id="no-order">
+                                                <span class="text-muted h6">Daftar pesanan kosong</span>
+                                            </div>
                                             <tbody id="order-list">
                                             </tbody>
                                         </table>

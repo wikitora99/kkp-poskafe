@@ -270,10 +270,12 @@ $(function () {
 
     $("#order-list").bind("DOMSubtreeModified", function () {
         if ($("#order-list tr").length > 0) {
+            $("#no-order").addClass("d-none");
             $(".del-all-order").prop("disabled", false);
             $(".pay-latter").prop("disabled", false);
             $(".pay-now").prop("disabled", false);
         } else {
+            $("#no-order").removeClass("d-none");
             $("#total-order-price").html("");
             $(".del-all-order").prop("disabled", true);
             $(".pay-latter").prop("disabled", true);

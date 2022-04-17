@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Sales;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{ Product, Discount, OrderType as Type };
+use App\Models\{ Product, Discount, ProductOrder as Order, OrderType as Type };
 use Illuminate\Support\Facades\{ Validator, DB };
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 
 class OrderController extends Controller
 {
-   
+
     public function __construct()
     {
 
@@ -23,7 +23,7 @@ class OrderController extends Controller
         //
     }
 
-  
+
     public function create()
     {
         $types = Type::all();
@@ -43,7 +43,7 @@ class OrderController extends Controller
         //
     }
 
-  
+
     public function destroy($id)
     {
         //

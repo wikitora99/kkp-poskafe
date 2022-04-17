@@ -30,23 +30,17 @@
                         <div class="col-xl-3 col-lg-6 col-sm-6">
                             <a class="product-order" data-attr="{{ $product }}">
                                 <div class="card">
-                                    <div class="card-body p-0">
-                                        <div class="new-arrival-product">
-                                            <div class="new-arrivals-img-contnent">
-                                                <img class="img-fluid" src="{{ asset('storage/'.$product->picture) }}" alt="Gambar produk">
-                                            </div>
-                                            <div class="new-arrival-content text-center m-2">
-                                                <h5 class="text-primary">{{ $product->name }}</h5>
-                                                @if ($product->discounts->count() > 0 && $product->discounts->first()->due_date >= now())
-                                                    <div class="d-flex justify-content-between">
-                                                        <strike><span class="text-danger">@number_id($product->sell_price)</span></strike>
-                                                        <span class="text-success product-price">@number_id($product->sell_price)</span>
-                                                    </div>
-                                                @else
-                                                    <span class="text-black product-price">@number_id($product->sell_price)</span>
-                                                @endif
-                                            </div>
-                                        </div>
+                                    <img class="img-fluid" src="{{ asset('storage/'.$product->picture) }}" alt="Gambar produk">
+                                    <div class="card-body px-2 pt-2 pb-0">
+                                        <h5 class="text-primary">{{ $product->name }}</h5>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between px-2 pb-2 pt-0 border-0">
+                                        @if ($product->discounts->count() > 0 && $product->discounts->first()->due_date >= now())
+                                            <strike><span class="text-danger">@number_id($product->sell_price)</span></strike>
+                                            <span class="text-success product-price">@number_id($product->sell_price)</span>
+                                        @else
+                                            <span class="text-black product-price">@currency_id($product->sell_price)</span>
+                                        @endif
                                     </div>
                                 </div>
                             </a>
