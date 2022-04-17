@@ -14,6 +14,6 @@ class DiscountSeeder extends Seeder
    */
   public function run()
   {
-    Discount::factory()->times(10)->create();
+    Discount::factory()->times(20)->create();
   }
 }

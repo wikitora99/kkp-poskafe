@@ -15,6 +15,11 @@ class CreateDiscountsTable extends Migration
   {
     Schema::create('discounts', function (Blueprint $table) {
       $table->id();
+      $table->unsignedBigInteger('product_id');
+      $table->foreign('product_id')
+            ->references('id')
+            ->on('products')
+            ->onUpdate('cascade');
       $table->date('start_date');
       $table->boolean('no_expired');
       $table->date('due_date')->nullable();

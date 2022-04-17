@@ -19,3 +19,5 @@
 <!-- Pick date -->
 <link rel="stylesheet" href="{{ asset('src/vendors/pickadate/themes/default.css') }}">
 <link rel="stylesheet" href="{{ asset('src/vendors/pickadate/themes/default.date.css') }}">
+
+@livewireStyles

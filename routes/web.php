@@ -10,7 +10,8 @@ use App\Http\Controllers\Sales\ {
   CategoryController as Category,
   IncomingController as Incoming,
   OutgoingController as Outgoing,
-  SupplierController as Supplier
+  SupplierController as Supplier,
+  OrderController as Order
 };
 
 
@@ -30,6 +31,9 @@ Route::middleware('auth')->group(function() {
   Route::resource('supplier', Supplier::class)->except(['create', 'edit', 'show']);
   Route::resource('incoming-stock', Incoming::class)->except(['edit', 'update']);
   Route::resource('outgoing-stock', Outgoing::class)->except(['edit', 'update']);
+
+  Route::resource('order', Order::class)->except(['update', 'edit']);
+  Route::post('order/process', [Order::class, 'process'])->name('order.process');
 
   // TEST FILTER REQUEST
   Route::post('dashboard', [Dashboard::class, 'filter'] )->name('dashboard.filter');

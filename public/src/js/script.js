@@ -5,6 +5,10 @@ $(function () {
     let numberID = function (x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     };
+
+    let numToInt = function (x) {
+        return x.replace(".", "");
+    };
     /**************************
       Global HELPERS-end
      **************************/
@@ -205,6 +209,108 @@ $(function () {
         $("#dataset-" + id).remove();
     });
     // OUTGOING STOCK AREA-END
+
+    // CASHIER AREA-START
+    $(".product-order").click(function () {
+        let data = $(this).data("attr");
+
+        if ($("#order-list").find("#" + data.sku).length > 0) {
+            let totalOrder =
+                parseInt($("#totalorder-" + data.sku).text(), 10) + 1;
+            $("#totalorder-" + data.sku).html(totalOrder);
+            $("#data-order-" + data.sku).val(totalOrder);
+
+            let curPrice = numToInt($("#totalprice-" + data.sku).text());
+            let totalPrice = parseInt(curPrice, 10) + data.sell_price;
+            $("#totalprice-" + data.sku).html(numberID(totalPrice));
+            $("#data-price-" + data.sku).val(totalPrice);
+        } else {
+            $("#order-list").append(
+                '<tr id="' +
+                    data.sku +
+                    '"><td><strong id="totalorder-' +
+                    data.sku +
+                    '">1</strong></td><td><strong id="productname-' +
+                    data.sku +
+                    '">' +
+                    data.name +
+                    '</strong></td><td><strong class="total-prices" id="totalprice-' +
+                    data.sku +
+                    '">' +
+                    numberID(data.sell_price) +
+                    '</strong></td><td><button type="button" class="btn btn-danger shadow btn-xs sharp del-product-order" id="order-' +
+                    data.sku +
+                    '" data-id="' +
+                    data.sku +
+                    '"><i class="fa fa-trash"></i></button></td></tr>'
+            );
+
+            $("#product-order-datas").append(
+                '<div id="dataset-' +
+                    data.sku +
+                    '"><input type="hidden" name="products_id[]" value="' +
+                    data.id +
+                    '"><input type="hidden" id="data-order-' +
+                    data.sku +
+                    '" name="total_orders[]" value=1><input type="hidden" id="data-price-' +
+                    data.sku +
+                    '" name="total_prices[]" value="' +
+                    data.sell_price +
+                    '"></div>'
+            );
+        }
+
+        let totalOrderPrice = 0;
+        $(".total-prices").each(function () {
+            totalOrderPrice += parseInt(numToInt($(this).text()));
+        });
+
+        $("#total-order-price").html("Rp " + numberID(totalOrderPrice));
+    });
+
+    $("#order-list").bind("DOMSubtreeModified", function () {
+        if ($("#order-list tr").length > 0) {
+            $("#no-order").addClass("d-none");
+            $(".del-all-order").prop("disabled", false);
+            $(".pay-latter").prop("disabled", false);
+            $(".pay-now").prop("disabled", false);
+        } else {
+            $("#no-order").removeClass("d-none");
+            $("#total-order-price").html("");
+            $(".del-all-order").prop("disabled", true);
+            $(".pay-latter").prop("disabled", true);
+            $(".pay-now").prop("disabled", true);
+        }
+    });
+
+    $(document).on("click", ".del-product-order", function () {
+        let id = $(this).data("id");
+        $("#" + id)
+            .closest("tr")
+            .remove();
+        $("#dataset-" + id).remove();
+    });
+
+    $(".del-all-order").click(function (e) {
+        e.preventDefault();
+        let orderList = $("#order-list");
+
+        Swal.fire({
+            title: "Konfirmasi Hapus!",
+            text: "Yakin ingin menghapus semua daftar pesanan aktif?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Ya, hapus!",
+            cancelButtonText: "Batal",
+        }).then((result) => {
+            if (result.value) {
+                orderList.empty();
+            }
+        });
+    });
+    // CASHIER AREA-END
 
     /**************************
     Custom JQuery-end 

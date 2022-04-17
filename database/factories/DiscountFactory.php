@@ -29,6 +29,7 @@ class DiscountFactory extends Factory
 
     return [
       'start_date' => $start_date->toDateString(),
+      'product_id' => $this->faker->unique()->numberBetween(1,72),
       'no_expired' => $no_expired,
       'due_date' => $due_date,
       'min_order' => $min_orders[rand(0,3)],
