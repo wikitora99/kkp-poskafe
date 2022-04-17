@@ -23,7 +23,7 @@
 
                         <form action="{{ route('order.store') }}" method="POST">
                             @csrf
-                            <div class="card-header">
+                            <div class="card-header d-flex justify-content-between">
                                 <div class="row">
                                     <div class="col">
                                         <select class="form-select bg-primary text-white rounded" name="order_type">
@@ -33,6 +33,9 @@
                                         </select>
                                     </div>
                                 </div>
+                                <a href="{{ route('order.index') }}" id="order-list-btn" class="btn btn-xs btn-primary">
+                                    <i class="fa fa-list me-2"></i>Daftar Pesanan
+                                </a>
                             </div>
 
                             <div class="card-body">
@@ -40,7 +43,7 @@
                                     <div class="table-responsive">
                                         <table class="table table-hover">
                                             <div class="text-center" id="no-order">
-                                                <span class="text-muted h6">Daftar pesanan kosong</span>
+                                                <span class="text-muted h6">Belum ada pesanan</span>
                                             </div>
                                             <tbody id="order-list">
                                             </tbody>
