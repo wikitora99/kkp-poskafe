@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function() {
   Route::resource('outgoing-stock', Outgoing::class)->except(['edit', 'update']);
 
   Route::resource('order', Order::class)->except(['update', 'edit']);
+  Route::post('order/process', [Order::class, 'process'])->name('order.process');
 
   // TEST FILTER REQUEST
   Route::post('dashboard', [Dashboard::class, 'filter'] )->name('dashboard.filter');

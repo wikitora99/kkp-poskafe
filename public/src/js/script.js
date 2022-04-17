@@ -307,7 +307,6 @@ $(function () {
         }).then((result) => {
             if (result.value) {
                 orderList.empty();
-                location.reload();
             }
         });
     });

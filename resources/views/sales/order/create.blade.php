@@ -21,7 +21,7 @@
                 <div class="col">
                     <div class="card">
 
-                        <form action="{{ route('order.store') }}" method="POST">
+                        <form action="{{ route('order.process') }}" method="POST">
                             @csrf
                             <div class="card-header d-flex justify-content-between">
                                 <div class="row">
@@ -40,7 +40,7 @@
 
                             <div class="card-body">
                                 <div class="row mb-3">
-                                    <div class="table-responsive">
+                                    <div class="table-responsive scrollable" style="max-height: 50vh !important;">
                                         <table class="table table-hover">
                                             <div class="text-center" id="no-order">
                                                 <span class="text-muted h6">Belum ada pesanan</span>
@@ -54,7 +54,7 @@
                                 <div class="d-none" id="product-order-datas">
                                 </div>
 
-                                <div class="row mb-3">
+                                <div class="row mb-3 align-items-end">
                                     <div class="col d-flex justify-content-between">
                                         <div class="row">
                                             <button type="button" class="btn btn-danger light del-all-order" disabled>
